@@ -1,0 +1,53 @@
+[gd_scene load_steps=10 format=3 uid="uid://dis7f3jvigpvf"]
+
+[ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/level_1_viewport.tscn" id="1_6dn7v"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
+[ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/level_2_viewport.tscn" id="2_xrck2"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
+viewport_path = NodePath("Level1Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
+viewport_path = NodePath("Level2Viewport")
+
+[sub_resource type="Gradient" id="Gradient_m86k4"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_3swul"]
+gradient = SubResource("Gradient_m86k4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bp5t5"]
+albedo_texture = SubResource("GradientTexture2D_3swul")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_an76a"]
+material = SubResource("StandardMaterial3D_bp5t5")
+size = Vector2(200, 200)
+orientation = 2
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_wfqjp")
+
+[node name="Level1" type="Sprite3D" parent="."]
+texture = SubResource("ViewportTexture_xgqec")
+
+[node name="Level2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+texture = SubResource("ViewportTexture_htq2j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="Level1Viewport" parent="." instance=ExtResource("1_6dn7v")]
+size = Vector2i(512, 256)
+size_2d_override = Vector2i(2048, 1024)
+size_2d_override_stretch = true
+
+[node name="Level2Viewport" parent="." instance=ExtResource("2_xrck2")]
+size = Vector2i(512, 256)
+size_2d_override = Vector2i(2048, 1024)
+size_2d_override_stretch = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128.436)
+mesh = SubResource("PlaneMesh_an76a")
