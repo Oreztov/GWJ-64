@@ -61,6 +61,8 @@ texture = SubResource("ViewportTexture_csnpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
 current = true
 
+[node name="StudioListener3D" type="StudioListener3D" parent="Camera3D"]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
