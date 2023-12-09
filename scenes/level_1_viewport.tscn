@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy28bhl71p58n"]
+
+[ext_resource type="PackedScene" uid="uid://d6xpcu51wmm8" path="res://scenes/level_1.tscn" id="1_d13bh"]
+
+[node name="Level1Viewport" type="SubViewport"]
+disable_3d = true
+transparent_bg = true
+
+[node name="Level1" parent="." instance=ExtResource("1_d13bh")]

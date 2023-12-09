@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="Gwj-64"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
+Globals="*res://scripts/globals.gd"
 
 [editor_plugins]
 

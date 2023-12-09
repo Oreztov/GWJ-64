@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://ouplnjyypmbk"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_butlc"]
+
+[sub_resource type="Gradient" id="Gradient_o2r42"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1aq14"]
+gradient = SubResource("Gradient_o2r42")
+height = 128
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1spxi"]
+radius = 32.0
+height = 128.0
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_butlc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_1aq14")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_1spxi")
