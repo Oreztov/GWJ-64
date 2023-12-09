@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbxwkapqo0p1i"]
+[gd_scene load_steps=6 format=3 uid="uid://cbxwkapqo0p1i"]
 
 [ext_resource type="Script" path="res://scripts/inspectable_window.gd" id="1_5lgu4"]
-[ext_resource type="PackedScene" uid="uid://c3ncpy4e6flfn" path="res://models/inspectables/dino plush.glb" id="2_qvxjn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jalk5"]
 font_size = 48
@@ -65,9 +64,6 @@ size = Vector2i(1920, 1080)
 
 [node name="InspectableModel" type="Node3D" parent="Inspectable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
-
-[node name="dino plush" parent="Inspectable/InspectableModel" instance=ExtResource("2_qvxjn")]
-transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647048, 0, 0.0647048, 0.241481, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Inspectable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

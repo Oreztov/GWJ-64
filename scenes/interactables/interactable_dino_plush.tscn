@@ -11,7 +11,7 @@ gradient = SubResource("Gradient_luje3")
 fill_from = Vector2(0.229358, 0.642202)
 fill_to = Vector2(0.830275, 0.100917)
 
-[node name="Interactable" instance=ExtResource("1_2dnyf")]
+[node name="DinoPlush" instance=ExtResource("1_2dnyf")]
 inspectable = 1
 
 [node name="Sprite2D" parent="." index="0"]

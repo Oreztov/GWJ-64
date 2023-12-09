@@ -9,7 +9,7 @@ var current_level
 enum DOORS {Door1To2, Door2To1, Door2To3, Door3To2}
 var doors = {}
 
-enum INSPECTABLES {Template, DinoPlush}
+enum INSPECTABLES {Template, DinoPlush, Squirrel}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
