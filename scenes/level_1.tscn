@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d6xpcu51wmm8"]
+[gd_scene load_steps=7 format=3 uid="uid://d6xpcu51wmm8"]
 
 [ext_resource type="Texture2D" uid="uid://de4dib35ba5y1" path="res://sprites/test-tilemap.png" id="1_ar66p"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="1_ntlt6"]
 [ext_resource type="PackedScene" uid="uid://ouplnjyypmbk" path="res://scenes/player.tscn" id="2_ilxt3"]
+[ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/door.tscn" id="4_14c3f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7g0n"]
 texture = ExtResource("1_ar66p")
@@ -289,3 +290,10 @@ layer_1/tile_data = PackedInt32Array(0, 65536, 1, 65536, 65536, 1, 131072, 65536
 
 [node name="Player" parent="." instance=ExtResource("2_ilxt3")]
 position = Vector2(184, 632)
+
+[node name="Doors" type="Node2D" parent="."]
+
+[node name="Door" parent="Doors" instance=ExtResource("4_14c3f")]
+position = Vector2(1240, 688)
+door_connected = 1
+level_to = 1

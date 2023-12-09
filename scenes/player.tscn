@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ouplnjyypmbk"]
+[gd_scene load_steps=6 format=3 uid="uid://ouplnjyypmbk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_butlc"]
 
@@ -12,7 +12,11 @@ height = 128
 radius = 32.0
 height = 128.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fevp6"]
+size = Vector2(64, 128)
+
+[node name="Player" type="CharacterBody2D" groups=["players"]]
+z_index = 1
 script = ExtResource("1_butlc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -20,3 +24,11 @@ texture = SubResource("GradientTexture2D_1aq14")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1spxi")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fevp6")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

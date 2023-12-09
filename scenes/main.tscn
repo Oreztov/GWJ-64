@@ -26,10 +26,12 @@ orientation = 2
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wfqjp")
 
-[node name="Level1" type="Sprite3D" parent="."]
+[node name="Levels" type="Node3D" parent="."]
+
+[node name="Level1" type="Sprite3D" parent="Levels"]
 texture = SubResource("ViewportTexture_xgqec")
 
-[node name="Level2" type="Sprite3D" parent="."]
+[node name="Level2" type="Sprite3D" parent="Levels"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
 texture = SubResource("ViewportTexture_htq2j")
 
