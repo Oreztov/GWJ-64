@@ -8,6 +8,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var near_door = false
 var door = null
 
+var near_interactable = false
+var interactable = null
+
 var prev_pos = global_position
 
 var input_enabled = false
@@ -25,10 +28,12 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
-		
+		# Use Doors
 		if Input.is_action_just_pressed("use_door") and near_door and door != null:
 			door.use_door()
-		
+		# Use Interactables
+		if Input.is_action_just_pressed("interact") and near_interactable and interactable != null:
+			interactable.inspect()
 		if velocity != Vector2(0, 0):
 			Globals.player_moved.emit()
 		
@@ -40,8 +45,14 @@ func _on_area_2d_area_entered(area):
 	if area.is_in_group("doors"):
 		near_door = true
 		door = area
+	elif area.is_in_group("interactables"):
+		near_interactable = true
+		interactable = area
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("doors"):
 		near_door = false
 		door = area
+	elif area.is_in_group("interactables"):
+		near_interactable = false
+		interactable = area

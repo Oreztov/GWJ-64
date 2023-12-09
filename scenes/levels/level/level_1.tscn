@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://555a55eht2qj"]
+[gd_scene load_steps=4 format=3 uid="uid://555a55eht2qj"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_u6v45"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/door.tscn" id="2_u4teb"]
+[ext_resource type="PackedScene" uid="uid://o3fn1dkq2v8x" path="res://scenes/interactables/interactable_dino_plush.tscn" id="3_b81ek"]
 
 [node name="Level" instance=ExtResource("1_u6v45")]
 
@@ -10,3 +11,6 @@ position = Vector2(1216, 688)
 door_connected = 1
 level_to = 1
 position_delta = Vector2(0, 2)
+
+[node name="Interactable" parent="." index="4" instance=ExtResource("3_b81ek")]
+position = Vector2(736, 720)

@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://o3fn1dkq2v8x"]
+
+[ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_2dnyf"]
+
+[sub_resource type="Gradient" id="Gradient_luje3"]
+offsets = PackedFloat32Array(0, 0.551948, 1)
+colors = PackedColorArray(0, 1, 0, 1, 0.558442, 1, 0.558442, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g8qsf"]
+gradient = SubResource("Gradient_luje3")
+fill_from = Vector2(0.229358, 0.642202)
+fill_to = Vector2(0.830275, 0.100917)
+
+[node name="Interactable" instance=ExtResource("1_2dnyf")]
+inspectable = 1
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_g8qsf")

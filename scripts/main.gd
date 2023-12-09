@@ -35,7 +35,10 @@ func level_changed(position_delta):
 	for i in Globals.levels:
 		var level = Globals.levels[i]
 		var factor = (camera.global_position.z - level.sprite.global_position.z) / camera_distance
-		level.sprite.modulate.a = factor
+		if factor >= 1:
+			level.sprite.modulate.a = factor
+		else:
+			level.sprite.modulate.a = factor - 0.25
 		
 func update_camera():
 	camera.global_position = PlayerTracker.global_position

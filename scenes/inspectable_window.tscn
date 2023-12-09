@@ -1,0 +1,77 @@
+[gd_scene load_steps=7 format=3 uid="uid://cbxwkapqo0p1i"]
+
+[ext_resource type="Script" path="res://scripts/inspectable_window.gd" id="1_5lgu4"]
+[ext_resource type="PackedScene" uid="uid://c3ncpy4e6flfn" path="res://models/inspectables/dino plush.glb" id="2_qvxjn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jalk5"]
+font_size = 48
+
+[sub_resource type="LabelSettings" id="LabelSettings_s2xny"]
+font_size = 24
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_jt1uf"]
+viewport_path = NodePath("Inspectable")
+
+[sub_resource type="World3D" id="World3D_8q5kc"]
+
+[node name="InspectableWindow" type="CanvasLayer"]
+script = ExtResource("1_5lgu4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.54902)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 1080)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 193.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "NAME"
+label_settings = SubResource("LabelSettings_jalk5")
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "DESC"
+label_settings = SubResource("LabelSettings_s2xny")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 900)
+layout_mode = 2
+texture = SubResource("ViewportTexture_jt1uf")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="CloseButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "CLOSE"
+
+[node name="Inspectable" type="SubViewport" parent="."]
+world_3d = SubResource("World3D_8q5kc")
+transparent_bg = true
+size = Vector2i(1920, 1080)
+
+[node name="InspectableModel" type="Node3D" parent="Inspectable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+
+[node name="dino plush" parent="Inspectable/InspectableModel" instance=ExtResource("2_qvxjn")]
+transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647048, 0, 0.0647048, 0.241481, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Inspectable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Inspectable"]
+
+[connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

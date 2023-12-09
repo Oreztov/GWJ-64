@@ -9,5 +9,34 @@ var current_level
 enum DOORS {Door1To2, Door2To1, Door2To3, Door3To2}
 var doors = {}
 
+enum INSPECTABLES {Template, DinoPlush}
+var inspectables = {}
+var inspectables_path = "res://scenes/inspectables"
+
 signal level_changed
 signal player_moved
+signal inspect_item
+
+func _ready():
+	# Get Inspectables
+	var inspecties = list_files_in_directory(inspectables_path)
+	for inspect in inspecties:
+		var file = load(inspectables_path + "/" + inspect)
+		inspectables[file.instantiate().id] = file
+	
+func list_files_in_directory(path):
+	var files = []
+	var dir = DirAccess.open(path)
+	
+	dir.list_dir_begin()
+
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with("."):
+			files.append(file)
+
+	dir.list_dir_end()
+
+	return files
