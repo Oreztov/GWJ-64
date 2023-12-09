@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 Globals="*res://scripts/globals.gd"
+PlayerTracker="*res://scenes/player_tracker.tscn"
 
 [editor_plugins]
 
