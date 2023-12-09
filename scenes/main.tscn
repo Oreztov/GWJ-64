@@ -1,14 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=12 format=3 uid="uid://dis7f3jvigpvf"]
 
-[ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/level_1_viewport.tscn" id="1_6dn7v"]
+[ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/levels/viewport/level_1_viewport.tscn" id="1_6dn7v"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
-[ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/level_2_viewport.tscn" id="2_xrck2"]
+[ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/levels/viewport/level_2_viewport.tscn" id="2_xrck2"]
+[ext_resource type="PackedScene" uid="uid://bmi6fka0j86av" path="res://scenes/levels/viewport/level_3_viewport.tscn" id="4_smpn3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath("Level1Viewport")
+viewport_path = NodePath("LevelViewports/Level1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath("Level2Viewport")
+viewport_path = NodePath("LevelViewports/Level2Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
+viewport_path = NodePath("LevelViewports/Level3Viewport")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -26,27 +30,30 @@ orientation = 2
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wfqjp")
 
-[node name="Levels" type="Node3D" parent="."]
+[node name="LevelViewports" type="Node" parent="."]
 
-[node name="Level1" type="Sprite3D" parent="Levels"]
+[node name="Level1Viewport" parent="LevelViewports" instance=ExtResource("1_6dn7v")]
+
+[node name="Level2Viewport" parent="LevelViewports" instance=ExtResource("2_xrck2")]
+
+[node name="Level3Viewport" parent="LevelViewports" instance=ExtResource("4_smpn3")]
+
+[node name="LevelSprites" type="Node3D" parent="."]
+
+[node name="Level1" type="Sprite3D" parent="LevelSprites"]
 texture = SubResource("ViewportTexture_xgqec")
 
-[node name="Level2" type="Sprite3D" parent="Levels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0)
+[node name="Level2" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 texture = SubResource("ViewportTexture_htq2j")
 
+[node name="Level3" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 2, -2)
+texture = SubResource("ViewportTexture_csnpp")
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-
-[node name="Level1Viewport" parent="." instance=ExtResource("1_6dn7v")]
-size = Vector2i(512, 256)
-size_2d_override = Vector2i(2048, 1024)
-size_2d_override_stretch = true
-
-[node name="Level2Viewport" parent="." instance=ExtResource("2_xrck2")]
-size = Vector2i(512, 256)
-size_2d_override = Vector2i(2048, 1024)
-size_2d_override_stretch = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 

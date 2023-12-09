@@ -10,6 +10,8 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var near_door = false
 var door = null
 
+var prev_pos = global_position
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -32,8 +34,11 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_up") and near_door and door != null:
 		door.use_door()
 	
-	Globals.player_pos = position
+	if velocity != Vector2(0, 0):
+		Globals.player_moved.emit()
 	
+	Globals.player_delta = global_position - prev_pos
+	prev_pos = global_position
 
 
 func _on_area_2d_area_entered(area):

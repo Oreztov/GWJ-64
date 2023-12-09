@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmi6fka0j86av"]
+
+[ext_resource type="PackedScene" uid="uid://ds1tw1hvtvj4g" path="res://scenes/levels/level/level_3.tscn" id="1_gapyr"]
+
+[node name="Level3Viewport" type="SubViewport"]
+disable_3d = true
+transparent_bg = true
+size = Vector2i(512, 256)
+size_2d_override = Vector2i(2048, 1024)
+size_2d_override_stretch = true
+
+[node name="Level3" parent="." instance=ExtResource("1_gapyr")]
