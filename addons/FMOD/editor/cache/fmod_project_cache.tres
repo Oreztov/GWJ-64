@@ -1,3 +1,61 @@
-[gd_resource type="ProjectCache" format=3 uid="uid://bgc05k2cwdi7t"]
+[gd_resource type="ProjectCache" load_steps=5 format=3 uid="uid://bgc05k2cwdi7t"]
+
+[sub_resource type="BankAsset" id="BankAsset_e65r8"]
+file_path = "res://soundbanks/Desktop/Master.bank"
+modified_time = 1702124132
+path = "bank:/Master"
+guid = "{86a2fde1-9d43-4f2f-9a40-af7c00fa472e}"
+name = "Master"
+
+[sub_resource type="BankAsset" id="BankAsset_vffry"]
+file_path = "res://soundbanks/Desktop/Master.strings.bank"
+modified_time = 1702124132
+path = "bank:/Master.strings"
+guid = "{1ebfdd35-ec38-036d-1c09-2582f10941b6}"
+name = "Master.strings"
+
+[sub_resource type="BusAsset" id="BusAsset_wg35l"]
+path = "bus:/Reverb"
+guid = "{5ebd1907-8287-42d3-ad48-8d949395dc2a}"
+name = "Reverb"
+
+[sub_resource type="BusAsset" id="BusAsset_r41jl"]
+path = "bus:/"
+guid = "{5d7c004b-7e9d-48bf-b346-13cad5ea2963}"
+name = "Master"
 
 [resource]
+banks = {
+"{1ebfdd35-ec38-036d-1c09-2582f10941b6}": SubResource("BankAsset_vffry"),
+"{86a2fde1-9d43-4f2f-9a40-af7c00fa472e}": SubResource("BankAsset_e65r8")
+}
+busses = {
+"{5d7c004b-7e9d-48bf-b346-13cad5ea2963}": SubResource("BusAsset_r41jl"),
+"{5ebd1907-8287-42d3-ad48-8d949395dc2a}": SubResource("BusAsset_wg35l")
+}
+bank_tree = [{
+"children": [],
+"item_type": 3,
+"node_name": "Master",
+"path": "bank:/Master",
+"resource": SubResource("BankAsset_e65r8")
+}, {
+"children": [],
+"item_type": 3,
+"node_name": "Master.strings",
+"path": "bank:/Master.strings",
+"resource": SubResource("BankAsset_vffry")
+}]
+bus_tree = [{
+"children": [{
+"children": [],
+"item_type": 4,
+"node_name": "Reverb",
+"path": "bus:/Reverb",
+"resource": SubResource("BusAsset_wg35l")
+}],
+"item_type": 4,
+"node_name": "bus:",
+"path": "bus:/",
+"resource": SubResource("BusAsset_r41jl")
+}]
