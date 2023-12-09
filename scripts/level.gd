@@ -17,13 +17,19 @@ func enter(position_delta = Vector2.ZERO):
 	player.show()
 	Globals.current_level = self
 	Globals.level_changed.emit(position_delta)
+	$Timers/EnterDoorTimer.start()
 	
 func exit():
 	player.set_physics_process(false)
 	player.hide()
+	player.input_enabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for door in $Doors.get_children():
 		Globals.doors[door.door_self] = door
 	exit()
+
+
+func _on_enter_door_timer_timeout():
+	player.input_enabled = true

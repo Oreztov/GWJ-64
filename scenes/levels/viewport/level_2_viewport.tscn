@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b14chn05o1fa7"]
 
-[ext_resource type="PackedScene" uid="uid://hri0lohvl5wp" path="res://scenes/levels/level/level_2.tscn" id="1_eadx7"]
+[ext_resource type="PackedScene" uid="uid://cocjsalkgf376" path="res://scenes/levels/level/level_2.tscn" id="1_eadx7"]
 
 [node name="Level2Viewport" type="SubViewport"]
 disable_3d = true

@@ -6,13 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bmi6fka0j86av" path="res://scenes/levels/viewport/level_3_viewport.tscn" id="4_smpn3"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath("LevelViewports/Level1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath("LevelViewports/Level2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
-viewport_path = NodePath("LevelViewports/Level3Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -24,7 +24,7 @@ albedo_texture = SubResource("GradientTexture2D_3swul")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_an76a"]
 material = SubResource("StandardMaterial3D_bp5t5")
-size = Vector2(200, 200)
+size = Vector2(50, 50)
 orientation = 2
 
 [node name="Main" type="Node3D"]
@@ -41,14 +41,20 @@ script = ExtResource("1_wfqjp")
 [node name="LevelSprites" type="Node3D" parent="."]
 
 [node name="Level1" type="Sprite3D" parent="LevelSprites"]
+shaded = true
+alpha_cut = 2
 texture = SubResource("ViewportTexture_xgqec")
 
 [node name="Level2" type="Sprite3D" parent="LevelSprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+shaded = true
+alpha_cut = 2
 texture = SubResource("ViewportTexture_htq2j")
 
 [node name="Level3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6, 2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -2)
+shaded = true
+alpha_cut = 2
 texture = SubResource("ViewportTexture_csnpp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -58,5 +64,5 @@ current = true
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -128.436)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.436)
 mesh = SubResource("PlaneMesh_an76a")
