@@ -4,7 +4,14 @@
 [ext_resource type="BankAsset" uid="uid://blsneiwgbkj0a" path="res://addons/FMOD/editor/resources/banks/{1ebfdd35-ec38-036d-1c09-2582f10941b6}.tres" id="2_qfuiw"]
 [ext_resource type="BusAsset" uid="uid://dk3y7vaghlev1" path="res://addons/FMOD/editor/resources/busses/{5d7c004b-7e9d-48bf-b346-13cad5ea2963}.tres" id="3_fipk6"]
 [ext_resource type="BusAsset" uid="uid://b88ehpry38say" path="res://addons/FMOD/editor/resources/busses/{5ebd1907-8287-42d3-ad48-8d949395dc2a}.tres" id="4_t4mp0"]
-[ext_resource type="EventAsset" uid="uid://c4i6tphuyf1vr" path="res://addons/FMOD/editor/resources/events/{ddaecb34-866b-4bc8-99cc-36e40cf98afc}.tres" id="5_5hyth"]
+
+[sub_resource type="EventAsset" id="EventAsset_jdov6"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Door"
+guid = "{2bce9625-512b-4ee1-b93c-e0f2cf32d553}"
+name = "Door"
 
 [resource]
 banks = {
@@ -12,7 +19,7 @@ banks = {
 "{86a2fde1-9d43-4f2f-9a40-af7c00fa472e}": ExtResource("1_fe65i")
 }
 events = {
-"{ddaecb34-866b-4bc8-99cc-36e40cf98afc}": ExtResource("5_5hyth")
+"{2bce9625-512b-4ee1-b93c-e0f2cf32d553}": SubResource("EventAsset_jdov6")
 }
 busses = {
 "{5d7c004b-7e9d-48bf-b346-13cad5ea2963}": ExtResource("3_fipk6"),
@@ -34,9 +41,9 @@ bank_tree = [{
 event_tree = [{
 "children": [],
 "item_type": 1,
-"node_name": "TestEvent",
-"path": "event:/TestEvent",
-"resource": ExtResource("5_5hyth")
+"node_name": "Door",
+"path": "event:/Door",
+"resource": SubResource("EventAsset_jdov6")
 }]
 bus_tree = [{
 "children": [{
