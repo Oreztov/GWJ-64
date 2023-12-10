@@ -1,0 +1,130 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccurpemel51jp"]
+
+[ext_resource type="Texture2D" uid="uid://7va8gih6qd72" path="res://sprites/UI/notebook_temp.png" id="1_4m3vw"]
+[ext_resource type="Script" path="res://scripts/UI/notebook.gd" id="1_4y1t5"]
+
+[sub_resource type="Animation" id="Animation_7kt0q"]
+resource_name = "move_in"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notebook:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1357.5, 1000), Vector2(1357.5, 998.862), Vector2(1357.5, 990.898), Vector2(1357.5, 969.28), Vector2(1357.5, 927.182), Vector2(1357.5, 857.778), Vector2(1357.5, 754.24), Vector2(1357.5, 609.742), Vector2(1357.5, 430.258), Vector2(1357.5, 285.76), Vector2(1357.5, 182.222), Vector2(1357.5, 112.818), Vector2(1357.5, 70.72), Vector2(1357.5, 49.1022), Vector2(1357.5, 41.1378), Vector2(1357.5, 40)]
+}
+
+[sub_resource type="Animation" id="Animation_qbmpk"]
+resource_name = "move_out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notebook:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1357.5, 40), Vector2(1357.5, 41.1378), Vector2(1357.5, 49.1022), Vector2(1357.5, 70.72), Vector2(1357.5, 112.818), Vector2(1357.5, 182.222), Vector2(1357.5, 285.76), Vector2(1357.5, 430.258), Vector2(1357.5, 609.742), Vector2(1357.5, 754.24), Vector2(1357.5, 857.778), Vector2(1357.5, 927.182), Vector2(1357.5, 969.28), Vector2(1357.5, 990.898), Vector2(1357.5, 998.862), Vector2(1357.5, 1000)]
+}
+
+[sub_resource type="Animation" id="Animation_sadym"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control/Notebook:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1357.5, 1000)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_onrfw"]
+_data = {
+"RESET": SubResource("Animation_sadym"),
+"move_in": SubResource("Animation_7kt0q"),
+"move_out": SubResource("Animation_qbmpk")
+}
+
+[node name="Notebook" type="CanvasLayer"]
+layer = 15
+script = ExtResource("1_4y1t5")
+
+[node name="Control" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Notebook" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(500, 1000)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -562.5
+offset_top = 460.0
+offset_right = 0.000976563
+offset_bottom = 1460.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("1_4m3vw")
+expand_mode = 3
+
+[node name="OpenButton" type="Button" parent="Control/Notebook"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+text = "↑ OPEN ↑"
+
+[node name="CloseButton" type="Button" parent="Control/Notebook"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "↓ CLOSE ↓"
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Control/Notebook"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.972
+anchor_bottom = 0.96
+offset_left = 3.0
+offset_top = 48.0
+offset_right = 8.24902
+offset_bottom = 8.99878
+border_width = 5.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_onrfw")
+}
+autoplay = "RESET"
+
+[connection signal="pressed" from="Control/Notebook/OpenButton" to="." method="_on_open_button_pressed"]
+[connection signal="pressed" from="Control/Notebook/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="mouse_entered" from="Control/Notebook/ReferenceRect" to="." method="_on_reference_rect_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Notebook/ReferenceRect" to="." method="_on_reference_rect_mouse_exited"]

@@ -50,7 +50,7 @@ offset_left = -248.0
 offset_top = -80.0
 offset_right = 252.0
 offset_bottom = 8.0
-text = "[Up]/[Space]"
+text = "[W]/[Up]"
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
 

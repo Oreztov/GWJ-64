@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cbxwkapqo0p1i"]
 
-[ext_resource type="Script" path="res://scripts/inspectable_window.gd" id="1_5lgu4"]
+[ext_resource type="Script" path="res://scripts/UI/inspectable_window.gd" id="1_5lgu4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jalk5"]
 font_size = 48
