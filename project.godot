@@ -29,6 +29,10 @@ window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/godot_sfxr/plugin.cfg")
+
 [fmod]
 
 settings/banks_path="res://soundbanks/Desktop"
