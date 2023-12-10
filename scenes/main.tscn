@@ -9,13 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://p7x1jv1wdx2k" path="res://audio/sfx/PH_LOOPTEST.ogg" id="6_uux8n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level3Viewport")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -86,6 +86,6 @@ follow_viewport_enabled = true
 follow_viewport_enabled = true
 
 [node name="3D sound test" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718891, -0.517769, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44794, -1.12334, 0)
 stream = ExtResource("6_uux8n")
 attenuation_model = 1

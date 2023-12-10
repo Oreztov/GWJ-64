@@ -6,7 +6,7 @@ func _ready():
 
 func player_moved():
 	var size = Vector2(Globals.current_level.viewport.size)
-	global_position.x += (Globals.player_delta.x / size.x) * Globals.camera_distance
+	global_position.x += (Globals.player_delta.x / size.x) * Globals.camera_distance #from Joey: I suspect the audio listener issue has to do with these two lines
 	global_position.y -= (Globals.player_delta.y / size.y) * Globals.camera_distance
 	
 func level_changed(position_delta):
