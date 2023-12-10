@@ -17,6 +17,7 @@ func use_door():
 	Globals.levels[level_to].enter(position_delta)
 	
 	Globals.levels[level_to].player.position = Globals.doors[door_connected].position
-	#FMODRuntime.play_one_shot_path("event:/Doord")
 	
-	#$StudioEventEmitter3D.play()
+	#play door sound
+	if $AudioStreamPlayer.playing == false:
+		$AudioStreamPlayer.play()

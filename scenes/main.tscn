@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cbxwkapqo0p1i" path="res://scenes/inspectable_window.tscn" id="5_btgik"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/Level3Viewport")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
