@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=14 format=3 uid="uid://dis7f3jvigpvf"]
 
 [ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/levels/viewport/level_1_viewport.tscn" id="1_6dn7v"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
 [ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/levels/viewport/level_2_viewport.tscn" id="2_xrck2"]
 [ext_resource type="PackedScene" uid="uid://bmi6fka0j86av" path="res://scenes/levels/viewport/level_3_viewport.tscn" id="4_smpn3"]
 [ext_resource type="PackedScene" uid="uid://cbxwkapqo0p1i" path="res://scenes/inspectable_window.tscn" id="5_btgik"]
+[ext_resource type="AudioStream" uid="uid://p7x1jv1wdx2k" path="res://audio/sfx/PH_LOOPTEST.ogg" id="6_uux8n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
 viewport_path = NodePath(".")
@@ -62,6 +63,9 @@ texture = SubResource("ViewportTexture_csnpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
 current = true
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
+current = true
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -74,3 +78,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.4, 0)
 [node name="InspectableWindow" parent="." instance=ExtResource("5_btgik")]
 layer = 3
 follow_viewport_enabled = true
+
+[node name="3D sound test" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718891, -0.517769, 0)
+stream = ExtResource("6_uux8n")
+attenuation_model = 1

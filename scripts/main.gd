@@ -23,7 +23,7 @@ func _ready():
 	
 	Globals.levels[Globals.LEVELS.LEVEL1].enter()
 	
-	#$Camera3D/StudioListener3D.position.z -= camera_distance
+	$Camera3D/AudioListener3D.position.z -= camera_distance + 5 #offset listener
 
 func player_moved():
 	update_camera()
@@ -43,4 +43,4 @@ func level_changed(position_delta):
 func update_camera():
 	camera.global_position = PlayerTracker.global_position
 	camera.global_position.z += camera_distance
-
+	#$Camera3D/AudioListener3D.position = PlayerTracker.global_position #for debugging
