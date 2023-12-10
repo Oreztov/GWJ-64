@@ -7,13 +7,13 @@
 [ext_resource type="PackedScene" uid="uid://cbxwkapqo0p1i" path="res://scenes/inspectable_window.tscn" id="5_btgik"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath("LevelViewports/Level1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath("LevelViewports/Level2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
-viewport_path = NodePath("LevelViewports/Level3Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -53,7 +53,7 @@ alpha_cut = 2
 texture = SubResource("ViewportTexture_htq2j")
 
 [node name="Level3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, -2)
 shaded = true
 alpha_cut = 2
 texture = SubResource("ViewportTexture_csnpp")

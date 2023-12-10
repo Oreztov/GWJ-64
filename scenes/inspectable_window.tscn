@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbxwkapqo0p1i"]
+[gd_scene load_steps=7 format=3 uid="uid://cbxwkapqo0p1i"]
 
 [ext_resource type="Script" path="res://scripts/inspectable_window.gd" id="1_5lgu4"]
 
@@ -11,7 +11,12 @@ font_size = 24
 [sub_resource type="ViewportTexture" id="ViewportTexture_jt1uf"]
 viewport_path = NodePath("Inspectable")
 
-[sub_resource type="World3D" id="World3D_8q5kc"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flayg"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_63xdr"]
+material = SubResource("StandardMaterial3D_flayg")
+radius = 0.1
+height = 0.2
 
 [node name="InspectableWindow" type="CanvasLayer"]
 script = ExtResource("1_5lgu4")
@@ -58,12 +63,24 @@ size_flags_vertical = 10
 text = "CLOSE"
 
 [node name="Inspectable" type="SubViewport" parent="."]
-world_3d = SubResource("World3D_8q5kc")
+own_world_3d = true
 transparent_bg = true
 size = Vector2i(1920, 1080)
 
 [node name="InspectableModel" type="Node3D" parent="Inspectable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
+
+[node name="POIRaycast" type="RayCast3D" parent="Inspectable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+target_position = Vector3(0, 0, -1000)
+collision_mask = 2
+hit_back_faces = false
+collide_with_areas = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Inspectable/POIRaycast"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+visible = false
+mesh = SubResource("SphereMesh_63xdr")
 
 [node name="Camera3D" type="Camera3D" parent="Inspectable"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)

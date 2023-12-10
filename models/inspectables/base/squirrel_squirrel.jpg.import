@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ncfdccn1y1wv"
-path.s3tc="res://.godot/imported/squirrel_squirrel.jpg-539586f262263c3b83b0ca6590b1da80.s3tc.ctex"
+path.s3tc="res://.godot/imported/squirrel_squirrel.jpg-d3a9b0a27c4ec34b5d9a2ffc7d4eea5a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://models/inspectables/squirrel_squirrel.jpg"
-dest_files=["res://.godot/imported/squirrel_squirrel.jpg-539586f262263c3b83b0ca6590b1da80.s3tc.ctex"]
+source_file="res://models/inspectables/base/squirrel_squirrel.jpg"
+dest_files=["res://.godot/imported/squirrel_squirrel.jpg-d3a9b0a27c4ec34b5d9a2ffc7d4eea5a.s3tc.ctex"]
 
 [params]
 

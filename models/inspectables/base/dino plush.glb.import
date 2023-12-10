@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c3ncpy4e6flfn"
-path="res://.godot/imported/dino plush.glb-6d41c67c96bd25824d0e3d8e400e0ff0.scn"
+path="res://.godot/imported/dino plush.glb-54bd38413dabe9ab2bcb23dbd15e3cfd.scn"
 
 [deps]
 
-source_file="res://models/inspectables/dino plush.glb"
-dest_files=["res://.godot/imported/dino plush.glb-6d41c67c96bd25824d0e3d8e400e0ff0.scn"]
+source_file="res://models/inspectables/base/dino plush.glb"
+dest_files=["res://.godot/imported/dino plush.glb-54bd38413dabe9ab2bcb23dbd15e3cfd.scn"]
 
 [params]
 

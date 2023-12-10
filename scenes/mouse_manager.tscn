@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc2fe8j17blgy"]
+
+[ext_resource type="Script" path="res://scripts/mouse_manager.gd" id="1_874kr"]
+
+[sub_resource type="Gradient" id="Gradient_7frnh"]
+colors = PackedColorArray(0.870588, 0.607843, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tyhcv"]
+gradient = SubResource("Gradient_7frnh")
+width = 32
+fill_from = Vector2(0.477064, 1)
+fill_to = Vector2(0.504587, 0.0458716)
+
+[node name="MouseManager" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_874kr")
+
+[node name="POIMarker" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_tyhcv")
+
+[node name="Label" type="Label" parent="POIMarker"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0

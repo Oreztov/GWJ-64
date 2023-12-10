@@ -1,12 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://subnwcnqckji"]
+[gd_scene load_steps=5 format=3 uid="uid://subnwcnqckji"]
 
 [ext_resource type="PackedScene" uid="uid://bjdbdl20mce2f" path="res://scenes/inspectables/inspectable.tscn" id="1_whoh6"]
-[ext_resource type="PackedScene" uid="uid://c3ncpy4e6flfn" path="res://models/inspectables/dino plush.glb" id="2_i8x1x"]
+[ext_resource type="PackedScene" uid="uid://cve2nixhfd44t" path="res://models/inspectables/collision/dino_plush_col.tscn" id="2_c1i0q"]
+[ext_resource type="FontFile" uid="uid://djnhcsy1g3idv" path="res://fonts/playpen/static/PlaypenSans-Light.ttf" id="3_q13qv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hn0g0"]
+radius = 0.7
 
 [node name="DinoPlush" instance=ExtResource("1_whoh6")]
 id = 1
 title = "Dino Plushie"
 description = "A soft toy."
 
-[node name="dino plush" parent="." index="0" instance=ExtResource("2_i8x1x")]
-transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647048, 0, 0.0647048, 0.241481, 0, 0, 0)
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+
+[node name="dino plush2" parent="." index="1" instance=ExtResource("2_c1i0q")]
+transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647049, 0, 0.0647049, 0.241481, 0, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="." index="2"]
+transform = Transform3D(0.998031, -0.0108914, 0.061768, 0.0627208, 0.173306, -0.982869, 6.25625e-09, 0.984808, 0.173648, 0.5, -0.814698, -0.5)
+shaded = true
+text = "Owned by
+Simey H."
+font = ExtResource("3_q13qv")
+font_size = 52
+outline_size = 0
+
+[node name="OwnerText" type="Area3D" parent="POIs" index="0" groups=["POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/OwnerText" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.6)
+shape = SubResource("SphereShape3D_hn0g0")
