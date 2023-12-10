@@ -17,7 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-FMODRuntime="*res://addons/FMOD/runtime/fmod_runtime_manager.gd"
 Globals="*res://scripts/globals.gd"
 PlayerTracker="*res://scenes/player_tracker.tscn"
 
@@ -28,10 +27,6 @@ window/size/viewport_height=1080
 window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/FMOD/plugin.cfg")
 
 [fmod]
 

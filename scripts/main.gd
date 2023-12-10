@@ -23,7 +23,7 @@ func _ready():
 	
 	Globals.levels[Globals.LEVELS.LEVEL1].enter()
 	
-	$Camera3D/StudioListener3D.position.z -= camera_distance
+	#$Camera3D/StudioListener3D.position.z -= camera_distance
 
 func player_moved():
 	update_camera()

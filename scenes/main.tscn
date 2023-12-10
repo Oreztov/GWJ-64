@@ -1,17 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=13 format=3 uid="uid://dis7f3jvigpvf"]
 
 [ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/levels/viewport/level_1_viewport.tscn" id="1_6dn7v"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
 [ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/levels/viewport/level_2_viewport.tscn" id="2_xrck2"]
 [ext_resource type="PackedScene" uid="uid://bmi6fka0j86av" path="res://scenes/levels/viewport/level_3_viewport.tscn" id="4_smpn3"]
 [ext_resource type="PackedScene" uid="uid://cbxwkapqo0p1i" path="res://scenes/inspectable_window.tscn" id="5_btgik"]
-
-[sub_resource type="BankAsset" id="BankAsset_e65r8"]
-file_path = "res://soundbanks/Desktop/Master.bank"
-modified_time = 1702124132
-path = "bank:/Master"
-guid = "{86a2fde1-9d43-4f2f-9a40-af7c00fa472e}"
-name = "Master"
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
 viewport_path = NodePath(".")
@@ -37,11 +30,6 @@ orientation = 2
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wfqjp")
-
-[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
-load_on = 1
-num_banks = 1
-bank_0 = SubResource("BankAsset_e65r8")
 
 [node name="LevelViewports" type="Node" parent="."]
 
@@ -73,8 +61,6 @@ texture = SubResource("ViewportTexture_csnpp")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 5)
 current = true
-
-[node name="StudioListener3D" type="StudioListener3D" parent="Camera3D"]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
