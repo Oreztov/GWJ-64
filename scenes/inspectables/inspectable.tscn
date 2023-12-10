@@ -4,5 +4,6 @@
 
 [node name="Inspectable" type="Node3D"]
 script = ExtResource("1_y6jkb")
+clue = Array[int]([0])
 
 [node name="POIs" type="Node3D" parent="."]

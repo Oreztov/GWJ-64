@@ -8,8 +8,8 @@ var on_poi = false
 func _ready():
 	poi_marker.hide()
 
-
 func check_poi(raycast: RayCast3D, camera: Camera3D, depth):
+	show()
 	var pos = camera.project_position(get_viewport().get_mouse_position(), depth)
 	raycast.position.x = pos.x
 	raycast.position.y = pos.y

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbxwkapqo0p1i"]
+[gd_scene load_steps=9 format=3 uid="uid://cbxwkapqo0p1i"]
 
 [ext_resource type="Script" path="res://scripts/inspectable_window.gd" id="1_5lgu4"]
 
@@ -10,6 +10,13 @@ font_size = 24
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jt1uf"]
 viewport_path = NodePath("Inspectable")
+
+[sub_resource type="InputEventKey" id="InputEventKey_6b3bu"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_wfutk"]
+events = [SubResource("InputEventKey_6b3bu")]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_flayg"]
 
@@ -60,6 +67,7 @@ stretch_mode = 2
 [node name="CloseButton" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+shortcut = SubResource("Shortcut_wfutk")
 text = "CLOSE"
 
 [node name="Inspectable" type="SubViewport" parent="."]

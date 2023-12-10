@@ -31,6 +31,7 @@ func inspect_item(item):
 	# Open menu
 	$Inspectable/InspectableModel.rotation = Vector3.ZERO
 	set_process_input(true)
+	Globals.current_level.player.input_enabled = false
 	show()
 
 func close_menu():
@@ -40,6 +41,8 @@ func close_menu():
 		model.queue_free()
 	# Close menu
 	set_process_input(false)
+	MouseManager.hide()
+	Globals.current_level.player.input_enabled = true
 	hide()
 
 
