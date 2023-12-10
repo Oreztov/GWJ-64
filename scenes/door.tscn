@@ -5,12 +5,13 @@
 [ext_resource type="AudioStream" uid="uid://22nwptxa1pxx" path="res://audio/sfx/PH_Door.ogg" id="3_k1s5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acsco"]
-size = Vector2(64, 128)
+size = Vector2(32, 64)
 
 [node name="Door" type="Area2D" groups=["doors"]]
 script = ExtResource("1_b8adj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3u6m2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

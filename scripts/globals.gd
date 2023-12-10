@@ -1,5 +1,6 @@
 extends Node
 
+var camera_distance = 4 # Meters on the z axis
 var player_delta = Vector2(0, 0)
 
 enum LEVELS {LEVEL1, LEVEL2, LEVEL3}

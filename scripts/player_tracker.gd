@@ -6,8 +6,8 @@ func _ready():
 
 func player_moved():
 	var size = Vector2(Globals.current_level.viewport.size)
-	global_position.x += Globals.player_delta.x / size.x
-	global_position.y -= Globals.player_delta.y / size.y
+	global_position.x += (Globals.player_delta.x / size.x) * Globals.camera_distance
+	global_position.y -= (Globals.player_delta.y / size.y) * Globals.camera_distance
 	
 func level_changed(position_delta):
 	global_position.x += position_delta.x
