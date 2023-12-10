@@ -80,10 +80,10 @@ mesh = SubResource("PlaneMesh_an76a")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1, -0.4, 0)
 
 [node name="InspectableWindow" parent="." instance=ExtResource("5_btgik")]
-layer = 3
 follow_viewport_enabled = true
 
 [node name="Notebook" parent="." instance=ExtResource("6_fbo3f")]
+follow_viewport_enabled = true
 
 [node name="3D sound test" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.718891, -0.517769, 0)

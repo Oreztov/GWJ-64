@@ -26,6 +26,7 @@ radius = 0.1
 height = 0.2
 
 [node name="InspectableWindow" type="CanvasLayer"]
+layer = 5
 script = ExtResource("1_5lgu4")
 
 [node name="ColorRect" type="ColorRect" parent="."]

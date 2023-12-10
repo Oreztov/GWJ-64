@@ -9,16 +9,19 @@ func _ready():
 	hide()
 	
 func _input(event):
-	MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
-	if event is InputEventMouseButton:
-		# Check for camera dragging
-		if event.is_pressed():
-			dragging = true
-		else:
-			dragging = false
-	elif event is InputEventMouseMotion and dragging:
-		$Inspectable/InspectableModel.rotation.x += event.relative.y / 100
-		$Inspectable/InspectableModel.rotation.y += event.relative.x / 100
+	if not Globals.using_notebook:
+		MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
+		if event is InputEventMouseButton:
+			# Check for camera dragging
+			if event.is_pressed():
+				dragging = true
+			else:
+				dragging = false
+		elif event is InputEventMouseMotion and dragging:
+			$Inspectable/InspectableModel.rotation.x += event.relative.y / 100
+			$Inspectable/InspectableModel.rotation.y += event.relative.x / 100
+	else:
+		dragging = false
 
 func inspect_item(item):
 	# Get inspectable

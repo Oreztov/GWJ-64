@@ -20,5 +20,5 @@ door_connected = 1
 level_to = 1
 position_delta = Vector2(0, 4)
 
-[node name="Interactable" parent="." index="4" instance=ExtResource("3_b81ek")]
+[node name="DinoPlush" parent="." index="4" instance=ExtResource("3_b81ek")]
 position = Vector2(736, 736)
