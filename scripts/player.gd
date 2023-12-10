@@ -15,6 +15,10 @@ var prev_pos = global_position
 
 var input_enabled = false
 
+func _ready():
+	$PromptInteract.hide()
+	$PromptDoor.hide()
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
@@ -28,12 +32,22 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
+		
 		# Use Doors
-		if Input.is_action_just_pressed("use_door") and near_door and door != null:
-			door.use_door()
+		if near_door and door != null:
+			$PromptDoor.show()
+			if Input.is_action_just_pressed("use_door"):
+				door.use_door()
+		else:
+			$PromptDoor.hide()
 		# Use Interactables
-		if Input.is_action_just_pressed("interact") and near_interactable and interactable != null:
-			interactable.inspect()
+		if near_interactable and interactable != null:
+			$PromptInteract.show()
+			if Input.is_action_just_pressed("interact"):
+				interactable.inspect()
+		else:
+			$PromptInteract.hide()
+		
 		if velocity != Vector2(0, 0):
 			Globals.player_moved.emit()
 		

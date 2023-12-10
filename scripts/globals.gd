@@ -13,6 +13,11 @@ enum INSPECTABLES {Template, DinoPlush, Squirrel}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
+enum CLUES {DinoOwner}
+var clues = {
+	CLUES.DinoOwner: "Simey H."
+}
+
 signal level_changed
 signal player_moved
 signal inspect_item

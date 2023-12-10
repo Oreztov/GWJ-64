@@ -45,18 +45,21 @@ script = ExtResource("1_wfqjp")
 [node name="Level1" type="Sprite3D" parent="LevelSprites"]
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = SubResource("ViewportTexture_xgqec")
 
 [node name="Level2" type="Sprite3D" parent="LevelSprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = SubResource("ViewportTexture_htq2j")
 
 [node name="Level3" type="Sprite3D" parent="LevelSprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 2, -2)
 shaded = true
 alpha_cut = 2
+texture_filter = 0
 texture = SubResource("ViewportTexture_csnpp")
 
 [node name="Camera3D" type="Camera3D" parent="."]
