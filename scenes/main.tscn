@@ -1,21 +1,37 @@
-[gd_scene load_steps=15 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=23 format=3 uid="uid://dis7f3jvigpvf"]
 
-[ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/levels/viewport/level_1_viewport.tscn" id="1_6dn7v"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
-[ext_resource type="PackedScene" uid="uid://b14chn05o1fa7" path="res://scenes/levels/viewport/level_2_viewport.tscn" id="2_xrck2"]
-[ext_resource type="PackedScene" uid="uid://bmi6fka0j86av" path="res://scenes/levels/viewport/level_3_viewport.tscn" id="4_smpn3"]
+[ext_resource type="PackedScene" uid="uid://bfya5g58c4ai6" path="res://scenes/levels/viewport/level_b1_viewport.tscn" id="2_fso20"]
+[ext_resource type="PackedScene" uid="uid://sgfm4gw4qiat" path="res://scenes/levels/viewport/level_gf1_viewport.tscn" id="2_g8w35"]
+[ext_resource type="PackedScene" uid="uid://c2iiakgrsep7q" path="res://scenes/levels/viewport/level_b2_viewport.tscn" id="3_7e57x"]
+[ext_resource type="PackedScene" uid="uid://b0524a5yvkiy1" path="res://scenes/levels/viewport/level_gf2_viewport.tscn" id="3_8uknv"]
+[ext_resource type="PackedScene" uid="uid://qdd1yrih17qm" path="res://scenes/levels/viewport/level_gf3_viewport.tscn" id="4_1eoj0"]
+[ext_resource type="PackedScene" uid="uid://j8jle1h1jrd8" path="res://scenes/levels/viewport/level_ff2_viewport.tscn" id="4_5nhr2"]
+[ext_resource type="PackedScene" uid="uid://cqf2mratpm38o" path="res://scenes/levels/viewport/level_ff3_viewport.tscn" id="5_7fw6m"]
 [ext_resource type="PackedScene" uid="uid://cbxwkapqo0p1i" path="res://scenes/UI/inspectable_window.tscn" id="5_btgik"]
 [ext_resource type="PackedScene" uid="uid://ccurpemel51jp" path="res://scenes/UI/notebook.tscn" id="6_fbo3f"]
 [ext_resource type="AudioStream" uid="uid://p7x1jv1wdx2k" path="res://audio/sfx/PH_LOOPTEST.ogg" id="6_uux8n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelGF1Viewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath(".")
+[sub_resource type="ViewportTexture" id="ViewportTexture_nlti1"]
+viewport_path = NodePath("LevelViewports/LevelGF2Viewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
-viewport_path = NodePath(".")
+[sub_resource type="ViewportTexture" id="ViewportTexture_pk3kh"]
+viewport_path = NodePath("LevelViewports/LevelGF3Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fq5m2"]
+viewport_path = NodePath("LevelViewports/LevelFF3Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vf3x4"]
+viewport_path = NodePath("LevelViewports/LevelFF2Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3srau"]
+viewport_path = NodePath("LevelViewports/LevelB1Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lg4tq"]
+viewport_path = NodePath("LevelViewports/LevelB2Viewport")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -35,33 +51,69 @@ script = ExtResource("1_wfqjp")
 
 [node name="LevelViewports" type="Node" parent="."]
 
-[node name="Level1Viewport" parent="LevelViewports" instance=ExtResource("1_6dn7v")]
+[node name="LevelB1Viewport" parent="LevelViewports" instance=ExtResource("2_fso20")]
 
-[node name="Level2Viewport" parent="LevelViewports" instance=ExtResource("2_xrck2")]
+[node name="LevelB2Viewport" parent="LevelViewports" instance=ExtResource("3_7e57x")]
 
-[node name="Level3Viewport" parent="LevelViewports" instance=ExtResource("4_smpn3")]
+[node name="LevelFF2Viewport" parent="LevelViewports" instance=ExtResource("4_5nhr2")]
+
+[node name="LevelFF3Viewport" parent="LevelViewports" instance=ExtResource("5_7fw6m")]
+
+[node name="LevelGF1Viewport" parent="LevelViewports" instance=ExtResource("2_g8w35")]
+
+[node name="LevelGF2Viewport" parent="LevelViewports" instance=ExtResource("3_8uknv")]
+
+[node name="LevelGF3Viewport" parent="LevelViewports" instance=ExtResource("4_1eoj0")]
 
 [node name="LevelSprites" type="Node3D" parent="."]
 
-[node name="Level1" type="Sprite3D" parent="LevelSprites"]
+[node name="LevelGF1" type="Sprite3D" parent="LevelSprites"]
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_xgqec")
 
-[node name="Level2" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+[node name="LevelGF2" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0, -3)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
-texture = SubResource("ViewportTexture_htq2j")
+texture = SubResource("ViewportTexture_nlti1")
 
-[node name="Level3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -3)
+[node name="LevelGF3" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -6)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
-texture = SubResource("ViewportTexture_csnpp")
+texture = SubResource("ViewportTexture_pk3kh")
+
+[node name="LevelFF3" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.55, 2.4, -6)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_fq5m2")
+
+[node name="LevelFF2" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.45, 2.4, -3)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_vf3x4")
+
+[node name="LevelB1" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_3srau")
+
+[node name="LevelB2" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4, -3)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_lg4tq")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)

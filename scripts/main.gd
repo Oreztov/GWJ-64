@@ -16,7 +16,7 @@ func _ready():
 		Globals.levels[level.index] = level
 	
 	Globals.level_changed.connect(level_changed)
-	Globals.levels[Globals.LEVELS.LEVEL1].enter()
+	Globals.levels[Globals.LEVELS.GroundFloor1].enter()
 	
 func _process(delta):
 	update_camera()
