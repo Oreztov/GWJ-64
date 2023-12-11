@@ -33,7 +33,7 @@ func level_changed():
 		
 func update_camera():
 	level_changed()
-	camera.global_position = PlayerTracker.global_position
+	camera.global_position = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos)
 	camera.global_position.z += Globals.camera_distance
 	
-	listener.global_position = PlayerTracker.global_position
+	listener.global_position = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos)

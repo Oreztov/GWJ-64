@@ -49,7 +49,7 @@ func _physics_process(delta):
 			$PromptInteract.hide()
 		
 	prev_pos = global_position
-	PlayerTracker.player_pos = position
+	Globals.player_pos = position
 
 
 func _on_area_2d_area_entered(area):

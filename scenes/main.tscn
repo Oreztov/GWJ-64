@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=15 format=3 uid="uid://dis7f3jvigpvf"]
 
 [ext_resource type="PackedScene" uid="uid://dy28bhl71p58n" path="res://scenes/levels/viewport/level_1_viewport.tscn" id="1_6dn7v"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
@@ -9,17 +9,13 @@
 [ext_resource type="AudioStream" uid="uid://p7x1jv1wdx2k" path="res://audio/sfx/PH_LOOPTEST.ogg" id="6_uux8n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath("LevelViewports/Level1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_htq2j"]
-viewport_path = NodePath("LevelViewports/Level2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_csnpp"]
 viewport_path = NodePath(".")
-
-[sub_resource type="SphereMesh" id="SphereMesh_eybpb"]
-radius = 0.1
-height = 0.125
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 
@@ -75,18 +71,11 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
 current = true
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="AudioListener3D"]
-mesh = SubResource("SphereMesh_eybpb")
-skeleton = NodePath("../..")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.436)
 mesh = SubResource("PlaneMesh_an76a")
-
-[node name="PlayerStartPos" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1.1, 0)
 
 [node name="InspectableWindow" parent="." instance=ExtResource("5_btgik")]
 follow_viewport_enabled = true

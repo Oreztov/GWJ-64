@@ -17,8 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Globals="*res://scripts/globals.gd"
-PlayerTracker="*res://scenes/helpers/player_tracker.tscn"
+Globals="*res://scripts/helpers/globals.gd"
 MouseManager="*res://scenes/helpers/mouse_manager.tscn"
 
 [display]
