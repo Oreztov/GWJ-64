@@ -14,7 +14,7 @@ layer_1/tile_data = PackedInt32Array(0, 2, 2, 65536, 2, 2, 131072, 2, 2, 196608,
 position = Vector2(392, 736)
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("2_ii2ue")]
-position = Vector2(1216, 736)
+position = Vector2(1217, 736)
 door_self = 1
 level_from = 1
 position_delta = Vector2(0, -4)

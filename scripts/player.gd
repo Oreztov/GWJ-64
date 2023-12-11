@@ -48,11 +48,8 @@ func _physics_process(delta):
 		else:
 			$PromptInteract.hide()
 		
-		if velocity != Vector2(0, 0):
-			Globals.player_moved.emit()
-		
-	Globals.player_delta = global_position - prev_pos
 	prev_pos = global_position
+	PlayerTracker.player_pos = position
 
 
 func _on_area_2d_area_entered(area):

@@ -12,11 +12,11 @@ func init():
 	sprite.texture.viewport_path = "LevelViewports/" + viewport.name
 	viewport.size_2d_override = get_viewport_rect().size
 
-func enter(position_delta = Vector2.ZERO):
+func enter():
 	player.set_physics_process(true)
 	player.show()
 	Globals.current_level = self
-	Globals.level_changed.emit(position_delta)
+	Globals.level_changed.emit()
 	$Timers/EnterDoorTimer.start()
 	
 func exit():

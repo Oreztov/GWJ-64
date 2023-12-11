@@ -18,7 +18,6 @@ position = Vector2(224, 736)
 position = Vector2(1216, 736)
 door_connected = 1
 level_to = 1
-position_delta = Vector2(0, 4)
 
 [node name="DinoPlush" parent="." index="4" instance=ExtResource("3_b81ek")]
 position = Vector2(736, 736)

@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var camera = $Camera3D
+@onready var listener = $AudioListener3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -15,20 +16,12 @@ func _ready():
 		Globals.levels[level.index] = level
 	
 	Globals.level_changed.connect(level_changed)
-	Globals.player_moved.connect(player_moved)
-	
-	PlayerTracker.global_position = $PlayerStartPos.global_position
-	
 	Globals.levels[Globals.LEVELS.LEVEL1].enter()
 	
-	$Camera3D/AudioListener3D.position.z -= Globals.camera_distance #offset listener
+func _process(delta):
+	update_camera()
 
-func player_moved():
-	update_camera()
-	
-func level_changed(position_delta):
-	# Adjust camera
-	update_camera()
+func level_changed():
 	# Fade layers close to camera
 	for i in Globals.levels:
 		var level = Globals.levels[i]
@@ -39,6 +32,8 @@ func level_changed(position_delta):
 			level.sprite.modulate.a = factor
 		
 func update_camera():
+	level_changed()
 	camera.global_position = PlayerTracker.global_position
 	camera.global_position.z += Globals.camera_distance
-	#$Camera3D/AudioListener3D.position = PlayerTracker.global_position #for debugging
+	
+	listener.global_position = PlayerTracker.global_position

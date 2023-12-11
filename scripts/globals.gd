@@ -22,7 +22,6 @@ var clues = {
 }
 
 signal level_changed
-signal player_moved
 signal inspect_item
 
 func _ready():
