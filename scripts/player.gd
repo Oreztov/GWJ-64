@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 600.0
 
+@onready var player_sprite = %AnimatedPlayerSprite as AnimatedSprite2D
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -27,8 +29,15 @@ func _physics_process(delta):
 	if input_enabled:
 		var direction = Input.get_axis("move_left", "move_right")
 		if direction:
+			if direction == -1:
+				player_sprite.scale.x = -2
+			else:
+				player_sprite.scale.x = 2
+			
+			player_sprite.play("Walk")
 			velocity.x = direction * SPEED
 		else:
+			player_sprite.play("Idle")
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		move_and_slide()
@@ -50,7 +59,6 @@ func _physics_process(delta):
 		
 	prev_pos = global_position
 	Globals.player_pos = position
-
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("doors"):

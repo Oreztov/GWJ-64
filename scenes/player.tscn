@@ -1,12 +1,117 @@
-[gd_scene load_steps=7 format=3 uid="uid://ouplnjyypmbk"]
+[gd_scene load_steps=21 format=3 uid="uid://ouplnjyypmbk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_butlc"]
+[ext_resource type="Texture2D" uid="uid://d2566tvvhboxl" path="res://sprites/characters/other_npc/cop_1_idle.png" id="2_e88h7"]
+[ext_resource type="Texture2D" uid="uid://r4kycpepsmn3" path="res://sprites/characters/other_npc/cop_1_walk.png" id="3_sf8cw"]
 
-[sub_resource type="Gradient" id="Gradient_o2r42"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_irm6i"]
+atlas = ExtResource("2_e88h7")
+region = Rect2(0, 0, 28, 36)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_1aq14"]
-gradient = SubResource("Gradient_o2r42")
-width = 32
+[sub_resource type="AtlasTexture" id="AtlasTexture_7p60d"]
+atlas = ExtResource("2_e88h7")
+region = Rect2(28, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rji21"]
+atlas = ExtResource("2_e88h7")
+region = Rect2(56, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3t8w"]
+atlas = ExtResource("2_e88h7")
+region = Rect2(84, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug1qt"]
+atlas = ExtResource("2_e88h7")
+region = Rect2(112, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7gh2"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(0, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6cfg"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(28, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efhva"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(56, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ayon0"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(84, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xltta"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(112, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efurh"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(140, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3583"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(168, 0, 28, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avi6q"]
+atlas = ExtResource("3_sf8cw")
+region = Rect2(196, 0, 28, 36)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nisve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_irm6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7p60d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rji21")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3t8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug1qt")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7gh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6cfg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efhva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ayon0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xltta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efurh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3583")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avi6q")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1spxi"]
 radius = 16.0
@@ -24,8 +129,13 @@ outline_color = Color(0, 0, 0, 1)
 z_index = 1
 script = ExtResource("1_butlc")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("GradientTexture2D_1aq14")
+[node name="AnimatedPlayerSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -4)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_nisve")
+animation = &"Walk"
+frame_progress = 0.588165
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1spxi")
