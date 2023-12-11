@@ -15,6 +15,11 @@ run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+general/2d_panning_strength=0.2
+general/3d_panning_strength=0.2
+
 [autoload]
 
 Globals="*res://scripts/helpers/globals.gd"

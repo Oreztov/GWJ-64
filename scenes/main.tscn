@@ -67,8 +67,7 @@ texture = SubResource("ViewportTexture_csnpp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
 current = true
 
-[node name="AudioListener3D" type="AudioListener3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -1, 0)
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
 current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -86,5 +85,10 @@ follow_viewport_enabled = true
 [node name="3D sound test" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44794, -1.12334, 0)
 stream = ExtResource("6_uux8n")
-attenuation_model = 1
+unit_size = 1.0
+max_db = 0.0
 autoplay = true
+bus = &"sfx"
+emission_angle_degrees = 90.0
+emission_angle_filter_attenuation_db = -80.0
+attenuation_filter_db = -3.0
