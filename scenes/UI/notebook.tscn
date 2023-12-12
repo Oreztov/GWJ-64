@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://ccurpemel51jp"]
+[gd_scene load_steps=11 format=3 uid="uid://ccurpemel51jp"]
 
 [ext_resource type="Script" path="res://scripts/UI/notebook.gd" id="1_4y1t5"]
 [ext_resource type="AudioStream" uid="uid://xlgp5c8dcl24" path="res://audio/sfx/PH_notebook_open.ogg" id="2_vxhdf"]
 [ext_resource type="AudioStream" uid="uid://yk6ugyhmntg3" path="res://audio/sfx/PH_notebook_close.ogg" id="3_k64ax"]
+[ext_resource type="Texture2D" uid="uid://jfcsaeukwdt7" path="res://sprites/UI/report.png" id="4_75lwv"]
 
 [sub_resource type="Image" id="Image_sj3ix"]
 data = {
@@ -30,6 +31,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1357.5, 1000)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Report:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(952, 1009)]
+}
 
 [sub_resource type="Animation" id="Animation_7kt0q"]
 resource_name = "move_in"
@@ -46,6 +59,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1357.5, 1000), Vector2(1357.5, 998.862), Vector2(1357.5, 990.898), Vector2(1357.5, 969.28), Vector2(1357.5, 927.182), Vector2(1357.5, 857.778), Vector2(1357.5, 754.24), Vector2(1357.5, 609.742), Vector2(1357.5, 430.258), Vector2(1357.5, 285.76), Vector2(1357.5, 182.222), Vector2(1357.5, 112.818), Vector2(1357.5, 70.72), Vector2(1357.5, 49.1022), Vector2(1357.5, 41.1378), Vector2(1357.5, 40)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Report:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(952, 1009), Vector2(952, 1006.79), Vector2(952, 1000.15), Vector2(952, 989.08), Vector2(952, 973.587), Vector2(952, 953.667), Vector2(952, 929.32), Vector2(952, 900.547), Vector2(952, 868.453), Vector2(952, 839.68), Vector2(952, 815.333), Vector2(952, 795.413), Vector2(952, 779.92), Vector2(952, 768.853), Vector2(952, 762.213), Vector2(952, 760)]
+}
 
 [sub_resource type="Animation" id="Animation_qbmpk"]
 resource_name = "move_out"
@@ -61,6 +86,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(1357.5, 40), Vector2(1357.5, 41.1378), Vector2(1357.5, 49.1022), Vector2(1357.5, 70.72), Vector2(1357.5, 112.818), Vector2(1357.5, 182.222), Vector2(1357.5, 285.76), Vector2(1357.5, 430.258), Vector2(1357.5, 609.742), Vector2(1357.5, 754.24), Vector2(1357.5, 857.778), Vector2(1357.5, 927.182), Vector2(1357.5, 969.28), Vector2(1357.5, 990.898), Vector2(1357.5, 998.862), Vector2(1357.5, 1000)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Report:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4, 0.433333, 0.466667, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(952, 760), Vector2(952, 762.213), Vector2(952, 768.853), Vector2(952, 779.92), Vector2(952, 795.413), Vector2(952, 815.333), Vector2(952, 839.68), Vector2(952, 868.453), Vector2(952, 900.547), Vector2(952, 929.32), Vector2(952, 953.667), Vector2(952, 973.587), Vector2(952, 989.08), Vector2(952, 1000.15), Vector2(952, 1006.79), Vector2(952, 1009)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_onrfw"]
@@ -178,6 +215,49 @@ layout_mode = 2
 size_flags_horizontal = 10
 text = "RMB to erase"
 
+[node name="Report" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(125, 250)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 952.0
+offset_top = 1009.0
+offset_right = 1358.67
+offset_bottom = 1259.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("4_75lwv")
+expand_mode = 3
+
+[node name="ReferenceRect" type="ReferenceRect" parent="Control/Report"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.972
+anchor_bottom = 0.96
+offset_left = 3.0
+offset_top = 55.0
+offset_right = 8.24902
+offset_bottom = 9.0
+border_width = 5.0
+
+[node name="ClueGrid" type="GridContainer" parent="Control/Report/ReferenceRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = -7.99902
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 24
+columns = 3
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_onrfw")
@@ -189,3 +269,5 @@ autoplay = "RESET"
 [connection signal="mouse_entered" from="Control/Notebook/ReferenceRect" to="." method="_on_reference_rect_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Notebook/ReferenceRect" to="." method="_on_reference_rect_mouse_exited"]
 [connection signal="pressed" from="Control/Notebook/Instructions/ClearButton" to="." method="_on_clear_button_pressed"]
+[connection signal="mouse_entered" from="Control/Report/ReferenceRect" to="." method="_on_reference_rect_mouse_entered"]
+[connection signal="mouse_exited" from="Control/Report/ReferenceRect" to="." method="_on_reference_rect_mouse_exited"]
