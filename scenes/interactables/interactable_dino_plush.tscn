@@ -20,5 +20,5 @@ inspectable = 1
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_g8qsf")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_jk3ho")

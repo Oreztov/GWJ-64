@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=5 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
+[ext_resource type="AudioStream" uid="uid://8kbigbcg4oo8" path="res://audio/sfx/PH_Enlightenment_Loop.ogg" id="3_1aqfc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -42,3 +43,8 @@ offset_right = 346.0
 offset_bottom = 91.0
 mouse_filter = 2
 show_percentage = false
+
+[node name="sfxEnlightenment" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_1aqfc")
+volume_db = -80.0
+autoplay = true
