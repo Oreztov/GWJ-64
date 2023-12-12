@@ -21,7 +21,5 @@ func check_poi(raycast: RayCast3D, camera: Camera3D, depth):
 			on_poi = true
 		else:
 			col = null
-	poi_marker.visible = on_poi
 	poi_marker.global_position = get_viewport().get_mouse_position()
-	$POIMarker/Label.text = str(get_viewport().get_mouse_position())
 	return col

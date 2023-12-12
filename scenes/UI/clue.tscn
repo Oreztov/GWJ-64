@@ -5,11 +5,16 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_62j4t"]
 font = ExtResource("1_ejnuy")
-font_size = 32
-font_color = Color(0.168627, 0.172549, 1, 1)
+font_size = 36
+font_color = Color(0.156863, 0.156863, 1, 1)
 outline_size = 2
+shadow_size = 2
+shadow_color = Color(1, 1, 1, 1)
+shadow_offset = Vector2(0.975, 1)
 
 [node name="Clue" type="Label"]
+offset_right = 141.0
+offset_bottom = 56.0
 text = "dasdasd"
 label_settings = SubResource("LabelSettings_62j4t")
 script = ExtResource("2_jjwlm")

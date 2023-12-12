@@ -12,14 +12,17 @@ func _ready():
 func _input(event):
 	if not Globals.using_notebook:
 		# Check for clicking on POI
+		MouseManager.poi_marker.hide()
 		var col = MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
 		if col != null:
-			if event is InputEventMouseButton:
-				if event.is_pressed():
-					Globals.notebook_ref.add_clue(current_inspect.get_clue(col))
+			if !Globals.clues_obtained[current_inspect.get_clue(col)]:
+				MouseManager.poi_marker.show()
+				if event is InputEventMouseButton:
+					if event.is_pressed():
+						Globals.notebook_ref.add_clue(current_inspect.get_clue(col))
 					
 					
-		elif event is InputEventMouseButton:
+		if event is InputEventMouseButton:
 			# Check for camera dragging
 			if event.is_pressed():
 				dragging = true
