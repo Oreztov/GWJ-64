@@ -10,8 +10,11 @@ var draw_color = Color.BLACK
 var near_pixels = [Vector2i(0, 1), Vector2i(0, -1), Vector2i(1, 0), Vector2i(-1, 0),
 Vector2i(1, 1), Vector2i(1, -1), Vector2i(-1, 1), Vector2i(-1, -1)]
 
+@onready var clue_scene = preload("res://scenes/UI/clue.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Globals.notebook_ref = self
 	image.copy_from(image_orig)
 	$Control/Notebook/Instructions.hide()
 
@@ -57,7 +60,13 @@ func get_coords():
 	
 func update_texture():
 	notebook.texture = ImageTexture.create_from_image(image)
-
+	
+func add_clue(clue: Globals.CLUES):
+	if not Globals.clues_obtained[clue]:
+		var new_clue = clue_scene.instantiate()
+		new_clue.clue = clue
+		%ClueGrid.add_child(new_clue)
+		Globals.clues_obtained[clue] = true
 
 func _on_open_button_pressed():
 	$AnimationPlayer.play("move_in")

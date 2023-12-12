@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://62etp0qhf3i5"]
+
+[ext_resource type="FontFile" uid="uid://bckuh15tthdx0" path="res://fonts/playpen/static/PlaypenSans-Regular.ttf" id="1_ejnuy"]
+[ext_resource type="Script" path="res://scripts/UI/clue.gd" id="2_jjwlm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_62j4t"]
+font = ExtResource("1_ejnuy")
+font_size = 32
+font_color = Color(0.168627, 0.172549, 1, 1)
+outline_size = 2
+
+[node name="Clue" type="Label"]
+text = "dasdasd"
+label_settings = SubResource("LabelSettings_62j4t")
+script = ExtResource("2_jjwlm")

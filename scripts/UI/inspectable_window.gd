@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var dragging = false
+var current_inspect = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,8 +11,15 @@ func _ready():
 	
 func _input(event):
 	if not Globals.using_notebook:
-		MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
-		if event is InputEventMouseButton:
+		# Check for clicking on POI
+		var col = MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
+		if col != null:
+			if event is InputEventMouseButton:
+				if event.is_pressed():
+					Globals.notebook_ref.add_clue(current_inspect.get_clue(col))
+					
+					
+		elif event is InputEventMouseButton:
 			# Check for camera dragging
 			if event.is_pressed():
 				dragging = true
@@ -36,6 +44,7 @@ func inspect_item(item):
 	set_process_input(true)
 	Globals.current_level.player.input_enabled = false
 	show()
+	current_inspect = ins
 
 func close_menu():
 	# Clear models
@@ -47,6 +56,7 @@ func close_menu():
 	MouseManager.hide()
 	Globals.current_level.player.input_enabled = true
 	hide()
+	current_inspect = null
 
 
 func _on_close_button_pressed():

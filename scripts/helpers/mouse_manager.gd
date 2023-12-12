@@ -14,11 +14,14 @@ func check_poi(raycast: RayCast3D, camera: Camera3D, depth):
 	raycast.position.x = pos.x
 	raycast.position.y = pos.y
 	on_poi = false
+	var col = null
 	if raycast.is_colliding():
-		var col = raycast.get_collider()
+		col = raycast.get_collider()
 		if col.is_in_group("POIs"):
 			on_poi = true
+		else:
+			col = null
 	poi_marker.visible = on_poi
 	poi_marker.global_position = get_viewport().get_mouse_position()
 	$POIMarker/Label.text = str(get_viewport().get_mouse_position())
-	return on_poi
+	return col

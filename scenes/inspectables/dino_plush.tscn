@@ -11,6 +11,7 @@ radius = 0.7
 id = 1
 title = "Dino Plushie"
 description = "A soft toy."
+clues = Array[int]([1])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
 
@@ -28,7 +29,7 @@ font = ExtResource("3_q13qv")
 font_size = 52
 outline_size = 0
 
-[node name="OwnerText" type="Area3D" parent="POIs" index="0" groups=["POIs"]]
+[node name="OwnerText" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
 collision_layer = 2
 collision_mask = 2
 

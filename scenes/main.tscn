@@ -13,25 +13,25 @@
 [ext_resource type="AudioStream" uid="uid://p7x1jv1wdx2k" path="res://audio/sfx/PH_LOOPTEST.ogg" id="6_uux8n"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath("LevelViewports/LevelGF1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nlti1"]
-viewport_path = NodePath("LevelViewports/LevelGF2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pk3kh"]
-viewport_path = NodePath("LevelViewports/LevelGF3Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fq5m2"]
-viewport_path = NodePath("LevelViewports/LevelFF3Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vf3x4"]
-viewport_path = NodePath("LevelViewports/LevelFF2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3srau"]
-viewport_path = NodePath("LevelViewports/LevelB1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lg4tq"]
-viewport_path = NodePath("LevelViewports/LevelB2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="Gradient" id="Gradient_m86k4"]
 

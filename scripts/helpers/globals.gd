@@ -4,6 +4,7 @@ var camera_distance = 4 # Meters on the z axis
 var player_pos = Vector2(0, 0)
 
 var using_notebook = false
+var notebook_ref = null
 
 # Name is floor (y), number is layer (z)
 enum LEVELS {GroundFloor1, GroundFloor2, GroundFloor3, Basement1, Basement2, FirstFloor2, FirstFloor3}
@@ -20,10 +21,12 @@ enum INSPECTABLES {Template, DinoPlush, Squirrel}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
-enum CLUES {DinoOwner}
+enum CLUES {Template, DinoOwner}
 var clues = {
+	CLUES.Template: "Template",
 	CLUES.DinoOwner: "Simey H."
 }
+var clues_obtained = {}
 
 signal level_changed
 signal inspect_item
@@ -34,6 +37,9 @@ func _ready():
 	for inspect in inspecties:
 		var file = load(inspectables_path + "/" + inspect)
 		inspectables[file.instantiate().id] = file
+	# Set clues
+	for i in len(CLUES):
+		clues_obtained[i] = false
 	
 func list_files_in_directory(path):
 	var files = []
