@@ -139,7 +139,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44794, -1.12334, 0)
 stream = ExtResource("6_uux8n")
 unit_size = 1.0
 max_db = 0.0
-autoplay = true
 bus = &"sfx"
 emission_angle_degrees = 90.0
 emission_angle_filter_attenuation_db = -80.0

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://o3fn1dkq2v8x"]
+[gd_scene load_steps=5 format=3 uid="uid://o3fn1dkq2v8x"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_2dnyf"]
+[ext_resource type="AudioStream" uid="uid://d2ys6k4gms2l" path="res://audio/sfx/PH_Plushie.ogg" id="2_jk3ho"]
 
 [sub_resource type="Gradient" id="Gradient_luje3"]
 offsets = PackedFloat32Array(0, 0.551948, 1)
@@ -18,3 +19,6 @@ inspectable = 1
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_g8qsf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_jk3ho")

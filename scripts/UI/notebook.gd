@@ -64,6 +64,7 @@ func _on_open_button_pressed():
 	$Control/Notebook/OpenButton.hide()
 	$Control/Notebook/CloseButton.show()
 	$Control/Notebook/Instructions.show()
+	$sfxNoteOpen.play()
 
 
 func _on_close_button_pressed():
@@ -71,6 +72,7 @@ func _on_close_button_pressed():
 	$Control/Notebook/OpenButton.show()
 	$Control/Notebook/CloseButton.hide()
 	$Control/Notebook/Instructions.hide()
+	$sfxNoteClose.play()
 
 
 func _on_reference_rect_mouse_entered():

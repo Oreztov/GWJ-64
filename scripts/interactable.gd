@@ -9,3 +9,4 @@ func _ready():
 
 func inspect():
 	Globals.inspect_item.emit(inspectable)
+	$AudioStreamPlayer.play()
