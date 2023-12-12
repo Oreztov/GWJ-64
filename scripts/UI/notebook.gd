@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 var on_notebook = false
+var on_clue = null
 
 @onready var notebook = $Control/Notebook
 @onready var image_orig = preload("res://sprites/UI/notebook_temp.png")
@@ -20,17 +21,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	Globals.using_notebook = false
+	if MouseManager.dragging_clue:
+		return
 	if on_notebook:
 		if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+			if on_clue != null and not Globals.using_notebook:
+				MouseManager.pickup_clue(on_clue)
+				return
 			Globals.using_notebook = true
 			paint()
 		elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 			Globals.using_notebook = true
 			erase()
-			
-		
-		
+		else:
+			Globals.using_notebook = false
+	else:
+		Globals.using_notebook = false
+
 func paint():
 	var coordsi = get_coords()
 	image.set_pixelv(coordsi, draw_color)
@@ -96,3 +103,24 @@ func _on_reference_rect_mouse_exited():
 func _on_clear_button_pressed():
 	image.copy_from(image_orig)
 	update_texture()
+
+
+func _on_submit_button_pressed():
+	var qna = $Control/Report/Puzzle1.get_children()
+	var a = []
+	for node in qna:
+		if node.is_in_group("answers"):
+			a.append(node)
+	for answer in a:
+		if answer.clue != answer.answer:
+			set_answer_text("That's not quite right...") 
+			return
+	set_answer_text("Yes! That's it!") 
+	
+func set_answer_text(text):
+	var label = $Control/Report/AnswerLabel
+	label.modulate = Color(1,1,1,1)
+	label.text = text
+	var tween = get_tree().create_tween()
+	tween.tween_property(label, "modulate", Color(1,1,1,0), 3)
+	

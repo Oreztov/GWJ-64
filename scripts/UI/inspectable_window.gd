@@ -10,7 +10,7 @@ func _ready():
 	hide()
 	
 func _input(event):
-	if not Globals.using_notebook:
+	if not Globals.using_notebook and not MouseManager.dragging_clue:
 		# Check for clicking on POI
 		var col = MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
 		if col != null:
