@@ -47,8 +47,7 @@ signal inspect_item
 func _ready():
 	# Get Inspectables
 	var inspecties = list_files_in_directory(inspectables_path)
-	for inspect in inspecties:
-		var file = load(inspectables_path + "/" + inspect)
+	for file in FileData.inspectables:
 		inspectables[file.instantiate().id] = file
 	# Set clues
 	for i in len(CLUES):

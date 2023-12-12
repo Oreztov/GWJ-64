@@ -13,6 +13,7 @@ outline_color = Color(0, 0, 0, 1)
 custom_minimum_size = Vector2(200, 0)
 size_flags_horizontal = 8
 mouse_filter = 0
+mouse_default_cursor_shape = 7
 label_settings = SubResource("LabelSettings_fu0y5")
 script = ExtResource("2_08mef")
 

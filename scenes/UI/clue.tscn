@@ -16,6 +16,7 @@ shadow_offset = Vector2(0.975, 1)
 offset_right = 141.0
 offset_bottom = 56.0
 mouse_filter = 1
+mouse_default_cursor_shape = 6
 text = "dasdasd"
 label_settings = SubResource("LabelSettings_62j4t")
 script = ExtResource("2_jjwlm")

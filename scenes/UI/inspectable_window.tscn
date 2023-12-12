@@ -10,7 +10,7 @@ font_size = 48
 font_size = 24
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_jt1uf"]
-viewport_path = NodePath("Inspectable")
+viewport_path = NodePath("SubViewport")
 
 [sub_resource type="InputEventKey" id="InputEventKey_6b3bu"]
 device = -1
@@ -75,29 +75,30 @@ size_flags_vertical = 10
 shortcut = SubResource("Shortcut_wfutk")
 text = "CLOSE"
 
-[node name="Inspectable" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="."]
 own_world_3d = true
 transparent_bg = true
 size = Vector2i(1920, 1080)
 
-[node name="InspectableModel" type="Node3D" parent="Inspectable"]
+[node name="InspectableModel" type="Node3D" parent="SubViewport"]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
 
-[node name="POIRaycast" type="RayCast3D" parent="Inspectable"]
+[node name="POIRaycast" type="RayCast3D" parent="SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 target_position = Vector3(0, 0, -1000)
 collision_mask = 2
 hit_back_faces = false
 collide_with_areas = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Inspectable/POIRaycast"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/POIRaycast"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 visible = false
 mesh = SubResource("SphereMesh_63xdr")
 
-[node name="Camera3D" type="Camera3D" parent="Inspectable"]
+[node name="Camera3D" type="Camera3D" parent="SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Inspectable"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport"]
 
 [connection signal="pressed" from="VBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
