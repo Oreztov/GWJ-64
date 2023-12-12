@@ -67,6 +67,7 @@ func add_clue(clue: Globals.CLUES):
 		new_clue.clue = clue
 		%ClueGrid.add_child(new_clue)
 		Globals.clues_obtained[clue] = true
+		$sfxNoteWrite.play()
 
 func _on_open_button_pressed():
 	$AnimationPlayer.play("move_in")
