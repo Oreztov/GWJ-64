@@ -66,14 +66,14 @@ func _on_area_2d_area_entered(area):
 			near_door = true
 			door = area
 	elif area.is_in_group("interactables"):
-		near_interactable = true
-		interactable = area
+		if not (area.single_use and area.used):
+			near_interactable = true
+			interactable = area
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("doors"):
-		if not area.interact_disabled:
-			near_door = false
-			door = area
+		near_door = false
+		door = null
 	elif area.is_in_group("interactables"):
 		near_interactable = false
-		interactable = area
+		interactable = null

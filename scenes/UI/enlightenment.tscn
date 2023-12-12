@@ -41,7 +41,4 @@ offset_top = 64.0
 offset_right = 346.0
 offset_bottom = 91.0
 mouse_filter = 2
-min_value = 1.0
-value = 1.0
-exp_edit = true
 show_percentage = false

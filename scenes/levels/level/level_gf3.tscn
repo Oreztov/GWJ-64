@@ -25,10 +25,10 @@ level_to = 1
 
 [node name="Stairs" parent="Doors" index="1" instance=ExtResource("3_nr5f6")]
 position = Vector2(1104, 736)
-door_self = 10
-door_connected = 11
+door_self = 12
+door_connected = 13
 level_from = 2
-level_to = 6
+level_to = 7
 
 [node name="Hole" parent="Doors" index="2" instance=ExtResource("4_y3glw")]
 position = Vector2(-320, 784)

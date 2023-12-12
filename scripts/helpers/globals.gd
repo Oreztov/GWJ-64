@@ -15,7 +15,8 @@ enum DOORS {DoorGF1ToGF2, DoorGF2ToGF1, DoorGF2ToGF3, DoorGF3ToGF2,
 DoorB1ToB2, DoorB2ToB1, DoorB2ToB3, DoorB3ToB2,
 DoorFF2ToFF3, DoorFF3ToFF2,
 StairsGF1ToB1, StairsB1ToGF1, StairsGF3ToFF3, StairsFF3ToGF3,
-HoleGF3ToB3, HoleB3ToGF3
+HoleGF3ToB3, HoleB3ToGF3,
+DoorFF22ToFF3
 }
 var doors = {}
 

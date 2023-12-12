@@ -22,6 +22,7 @@ height = 32
 
 [node name="Gate" instance=ExtResource("1_d5led")]
 script = ExtResource("2_2vtlm")
+single_use = true
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_kks6s")

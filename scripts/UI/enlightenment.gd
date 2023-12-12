@@ -3,7 +3,7 @@ extends CanvasLayer
 @export var value = 0
 @export var decay = 0.1
 var max_value = 100
-var min_value = 1
+var min_value = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,8 +14,9 @@ func _physics_process(delta):
 	update()
 	
 func change_value(a):
-	var tween = get_tree().create_tween()
-	tween.tween_property(self, "value", value+a, 0.25)
+	#var tween = get_tree().create_tween()
+	#tween.tween_property(self, "value", value+a, 0.25)
+	value += a
 	value = clamp(value, min_value, max_value)
 	update()
 

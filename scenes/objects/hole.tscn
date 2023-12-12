@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://qwqi0w1iwaj5"]
+[gd_scene load_steps=12 format=3 uid="uid://qwqi0w1iwaj5"]
 
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="1_aymgr"]
+[ext_resource type="Script" path="res://scripts/objects/hole.gd" id="2_gffft"]
 [ext_resource type="AudioStream" uid="uid://bspm35w2kim15" path="res://audio/sfx/PH_Stairs.ogg" id="2_hisw0"]
 
 [sub_resource type="Gradient" id="Gradient_a67c2"]
@@ -15,7 +16,39 @@ fill_to = Vector2(0.486239, 0)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0msm"]
 size = Vector2(64, 40)
 
+[sub_resource type="Gradient" id="Gradient_n562m"]
+offsets = PackedFloat32Array(0.196721, 0.909836, 0.97541)
+colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2qwww"]
+gradient = SubResource("Gradient_n562m")
+
+[sub_resource type="Curve" id="Curve_8ou6q"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.946667, 0.373626), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_08bst"]
+curve_y = SubResource("Curve_8ou6q")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wyu6b"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(16, 1, 1)
+direction = Vector3(0, -1, 0)
+spread = 10.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+directional_velocity_min = 1.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_08bst")
+gravity = Vector3(0, 33, 0)
+scale_min = 3.0
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_2qwww")
+
 [node name="Hole" instance=ExtResource("1_aymgr")]
+script = ExtResource("2_gffft")
+light_threshold = 50
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_66vqj")
@@ -26,3 +59,8 @@ shape = SubResource("RectangleShape2D_r0msm")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_hisw0")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
+position = Vector2(0, -16)
+process_material = SubResource("ParticleProcessMaterial_wyu6b")
+lifetime = 1.5

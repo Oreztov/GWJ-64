@@ -16,15 +16,15 @@ layer_1/tile_data = PackedInt32Array(0, 2, 2, 65536, 2, 2, 131072, 2, 2, 196608,
 position = Vector2(488, 376)
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("2_usgd0")]
-position = Vector2(208, 416)
-door_self = 7
-door_connected = 6
-level_from = 6
-level_to = 5
+position = Vector2(210, 416)
+door_self = 9
+door_connected = 16
+level_from = 7
+level_to = 6
 
 [node name="Stairs" parent="Doors" index="1" instance=ExtResource("3_6funf")]
 position = Vector2(992, 416)
-door_self = 11
-door_connected = 10
-level_from = 6
+door_self = 13
+door_connected = 12
+level_from = 7
 level_to = 2

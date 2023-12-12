@@ -16,10 +16,10 @@ position = Vector2(488, 376)
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("2_hw52p")]
 position = Vector2(992, 416)
-door_self = 6
-door_connected = 7
-level_from = 5
-level_to = 6
+door_self = 16
+door_connected = 9
+level_from = 6
+level_to = 7
 
 [node name="Squirrel" parent="." index="4" instance=ExtResource("3_wl417")]
 position = Vector2(336, 432)
