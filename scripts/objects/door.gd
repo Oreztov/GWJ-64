@@ -6,11 +6,15 @@ extends Area2D
 @export var level_from: Globals.LEVELS
 @export var level_to: Globals.LEVELS
 
+@export var interact_disabled = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func use_door():
+	if interact_disabled:
+		return
 	Globals.levels[level_from].exit()
 	Globals.levels[level_to].enter()
 	

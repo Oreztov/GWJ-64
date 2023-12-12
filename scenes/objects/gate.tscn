@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://b6nfgobo68w7h"]
+
+[ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_d5led"]
+[ext_resource type="Script" path="res://scripts/objects/gate.gd" id="2_2vtlm"]
+
+[sub_resource type="Gradient" id="Gradient_5rra6"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kks6s"]
+gradient = SubResource("Gradient_5rra6")
+width = 32
+height = 128
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5i3nk"]
+size = Vector2(32, 128)
+
+[sub_resource type="Gradient" id="Gradient_je7cu"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cnnpm"]
+gradient = SubResource("Gradient_je7cu")
+width = 32
+height = 32
+
+[node name="Gate" instance=ExtResource("1_d5led")]
+script = ExtResource("2_2vtlm")
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_kks6s")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Sprite2D" index="0"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_5i3nk")
+
+[node name="Button" type="Sprite2D" parent="." index="1"]
+position = Vector2(32, 0)
+texture = SubResource("GradientTexture2D_cnnpm")
+
+[node name="CollisionShape2D" parent="." index="2"]
+position = Vector2(32, 0)

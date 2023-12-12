@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://qwqi0w1iwaj5"]
+
+[ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="1_aymgr"]
+[ext_resource type="AudioStream" uid="uid://bspm35w2kim15" path="res://audio/sfx/PH_Stairs.ogg" id="2_hisw0"]
+
+[sub_resource type="Gradient" id="Gradient_a67c2"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.301961)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_66vqj"]
+gradient = SubResource("Gradient_a67c2")
+width = 128
+fill_from = Vector2(0.504587, 0.591743)
+fill_to = Vector2(0.486239, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0msm"]
+size = Vector2(64, 40)
+
+[node name="Hole" instance=ExtResource("1_aymgr")]
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_66vqj")
+
+[node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_r0msm")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_hisw0")

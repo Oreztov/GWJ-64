@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://csg86sscjba5r"]
+
+[ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
+[ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
+shader = ExtResource("2_o55hn")
+shader_parameter/alpha = 0.5
+
+[node name="Enlightenment" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_w02es")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Pattern" type="ColorRect" parent="Control"]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_wo1dp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.356863)
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 32)
+layout_mode = 0
+offset_left = 96.0
+offset_top = 64.0
+offset_right = 346.0
+offset_bottom = 91.0
+min_value = 1.0
+value = 1.0
+exp_edit = true
+show_percentage = false

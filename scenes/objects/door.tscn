@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c4fsf75nfrc5b"]
 
 [ext_resource type="Texture2D" uid="uid://d1vajnvnm0kln" path="res://sprites/objects/door_temp.png" id="1_3u6m2"]
-[ext_resource type="Script" path="res://scripts/door.gd" id="1_b8adj"]
+[ext_resource type="Script" path="res://scripts/objects/door.gd" id="1_b8adj"]
 [ext_resource type="AudioStream" uid="uid://22nwptxa1pxx" path="res://audio/sfx/PH_Door.ogg" id="3_k1s5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acsco"]

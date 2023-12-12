@@ -62,16 +62,18 @@ func _physics_process(delta):
 
 func _on_area_2d_area_entered(area):
 	if area.is_in_group("doors"):
-		near_door = true
-		door = area
+		if not area.interact_disabled:
+			near_door = true
+			door = area
 	elif area.is_in_group("interactables"):
 		near_interactable = true
 		interactable = area
 
 func _on_area_2d_area_exited(area):
 	if area.is_in_group("doors"):
-		near_door = false
-		door = area
+		if not area.interact_disabled:
+			near_door = false
+			door = area
 	elif area.is_in_group("interactables"):
 		near_interactable = false
 		interactable = area
