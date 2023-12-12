@@ -12,14 +12,19 @@ func _ready():
 func _input(event):
 	if not Globals.using_notebook:
 		# Check for clicking on POI
-		MouseManager.poi_marker.hide()
 		var col = MouseManager.check_poi($Inspectable/POIRaycast, $Inspectable/Camera3D, 3)
 		if col != null:
 			if !Globals.clues_obtained[current_inspect.get_clue(col)]:
+				if not MouseManager.poi_marker.visible:
+					$sfxSpotPOI.play()
 				MouseManager.poi_marker.show()
 				if event is InputEventMouseButton:
 					if event.is_pressed():
 						Globals.notebook_ref.add_clue(current_inspect.get_clue(col))
+			else:
+				MouseManager.poi_marker.hide()
+		else:
+			MouseManager.poi_marker.hide()
 					
 					
 		if event is InputEventMouseButton:
