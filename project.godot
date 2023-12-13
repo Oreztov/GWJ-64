@@ -25,6 +25,7 @@ general/3d_panning_strength=0.2
 Globals="*res://scripts/helpers/globals.gd"
 MouseManager="*res://scenes/helpers/mouse_manager.tscn"
 Enlightenment="*res://scenes/UI/enlightenment.tscn"
+FileData="*res://scenes/helpers/file_data.tscn"
 
 [display]
 

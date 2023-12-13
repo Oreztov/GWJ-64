@@ -24,12 +24,22 @@ enum INSPECTABLES {Template, DinoPlush, Squirrel}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
-enum CLUES {Template, DinoOwner}
+enum CLUES {Template, DinoOwner, Knife, Bat, Rope, Poison, Stabbing, Bruises, Asphyxiation}
 var clues = {
 	CLUES.Template: "Template",
-	CLUES.DinoOwner: "Simey H."
+	CLUES.DinoOwner: "Simey H.",
+	CLUES.Knife: "Ritual Knife",
+	CLUES.Bat: "Baseball Bat",
+	CLUES.Rope: "Loose Rope",
+	CLUES.Poison: "Lethal Poison",
+	CLUES.Stabbing: "Stab Wounds",
+	CLUES.Bruises: "Bruise Marks",
+	CLUES.Asphyxiation: "Asphyxiation"
 }
 var clues_obtained = {}
+
+var answers = []
+var puzzle1 = [CLUES.Poison, CLUES.Asphyxiation]
 
 signal level_changed
 signal inspect_item
@@ -37,8 +47,7 @@ signal inspect_item
 func _ready():
 	# Get Inspectables
 	var inspecties = list_files_in_directory(inspectables_path)
-	for inspect in inspecties:
-		var file = load(inspectables_path + "/" + inspect)
+	for file in FileData.inspectables:
 		inspectables[file.instantiate().id] = file
 	# Set clues
 	for i in len(CLUES):

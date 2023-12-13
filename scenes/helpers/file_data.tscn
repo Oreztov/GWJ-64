@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbo3ht10ygy2t"]
+
+[ext_resource type="Script" path="res://scripts/helpers/file_data.gd" id="1_2gcxo"]
+[ext_resource type="PackedScene" uid="uid://subnwcnqckji" path="res://scenes/inspectables/dino_plush.tscn" id="2_l7im2"]
+[ext_resource type="PackedScene" uid="uid://dlyyirj0dffe6" path="res://scenes/inspectables/squirrel.tscn" id="3_74scj"]
+
+[node name="FileData" type="Node3D"]
+script = ExtResource("1_2gcxo")
+inspectables = Array[PackedScene]([ExtResource("2_l7im2"), ExtResource("3_74scj")])

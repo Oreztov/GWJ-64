@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://8nel01g4p2tq"]
+
+[ext_resource type="FontFile" uid="uid://cq0cpphi3m2it" path="res://fonts/playpen/static/PlaypenSans-SemiBold.ttf" id="1_85br6"]
+[ext_resource type="Script" path="res://scripts/UI/answer.gd" id="2_08mef"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fu0y5"]
+font = ExtResource("1_85br6")
+font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Answer" type="Label" groups=["answers"]]
+custom_minimum_size = Vector2(200, 0)
+size_flags_horizontal = 8
+mouse_filter = 0
+mouse_default_cursor_shape = 7
+label_settings = SubResource("LabelSettings_fu0y5")
+script = ExtResource("2_08mef")
+
+[node name="Panel" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
