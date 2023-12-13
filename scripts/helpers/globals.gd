@@ -1,13 +1,17 @@
 extends Node
 
-var camera_distance = 4 # Meters on the z axis
+var camera_distance = 2.5 # Meters on the z axis
 var player_pos = Vector2(0, 0)
 
 var using_notebook = false
 var notebook_ref = null
 
 # Name is floor (y), number is layer (z)
-enum LEVELS {GroundFloor1, GroundFloor2, GroundFloor3, Basement1, Basement2, Basement3, FirstFloor2, FirstFloor3}
+enum LEVELS {GroundFloor1, GroundFloor2, GroundFloor3, 
+Basement1, Basement2, Basement3, 
+FirstFloor2, FirstFloor3,
+Tutorial1, Tutorial2, Tutorial3
+}
 var levels = {}
 var current_level
 
@@ -16,7 +20,8 @@ DoorB1ToB2, DoorB2ToB1, DoorB2ToB3, DoorB3ToB2,
 DoorFF2ToFF3, DoorFF3ToFF2,
 StairsGF1ToB1, StairsB1ToGF1, StairsGF3ToFF3, StairsFF3ToGF3,
 HoleGF3ToB3, HoleB3ToGF3,
-DoorFF22ToFF3
+DoorFF22ToFF3,
+DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3
 }
 var doors = {}
 

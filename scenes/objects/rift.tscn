@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq0dx5jcehklh"]
+
+[ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="1_4ga4p"]
+[ext_resource type="Script" path="res://scripts/objects/rift.gd" id="2_4qgnq"]
+
+[sub_resource type="Gradient" id="Gradient_jgv3b"]
+colors = PackedColorArray(0.735221, 0.00138097, 0.865518, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4j7io"]
+gradient = SubResource("Gradient_jgv3b")
+height = 128
+fill_from = Vector2(0.423077, 0.222222)
+
+[node name="Rift" instance=ExtResource("1_4ga4p")]
+script = ExtResource("2_4qgnq")
+light_threshold = 50
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_4j7io")

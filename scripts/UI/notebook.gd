@@ -18,6 +18,7 @@ func _ready():
 	Globals.notebook_ref = self
 	image.copy_from(image_orig)
 	$Control/Notebook/Instructions.hide()
+	#$Control/DialogueBox.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

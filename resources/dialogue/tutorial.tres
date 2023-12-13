@@ -1,0 +1,102 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://nq5051shw24f"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_pb00g"]
+
+[resource]
+script = ExtResource("1_pb00g")
+starts = {
+"T1": &"0_1",
+"T2": &"0_2",
+"T3": &"0_3",
+"T4": &"0_4"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-140, 100),
+"start_id": "T1"
+},
+"0_2": {
+"link": &"1_3",
+"offset": Vector2(600, 80),
+"start_id": "T2"
+},
+"0_3": {
+"link": &"1_2",
+"offset": Vector2(1260, 80),
+"start_id": "T3"
+},
+"0_4": {
+"link": &"1_4",
+"offset": Vector2(2040, 80),
+"start_id": "T4"
+},
+"1_1": {
+"dialogue": "Hold [A] and [D] or [Left] and [Right] to move.
+Press [W] or [Up] to use doors and passageways.",
+"offset": Vector2(180, 80),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 275.503),
+"speaker": "Tutorial - Movement"
+},
+"1_2": {
+"dialogue": "Inspect the object using [E] or [Z].
+Rotate it by clicking and dragging.
+Collect clues by clicking on points of interest on the object.
+Open your notebook to view your clues.
+",
+"offset": Vector2(1660, 80),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": "Tutorial - Investigation"
+},
+"1_3": {
+"dialogue": "To pass to the next room, you must discover something which is not there.
+Press [E] or [Z] to interact with objects.
+Interact with the altar to increase your enlightenment.
+Once enlightened, you'll see the hidden rift.
+Pass through it before your enlightenment decays.",
+"offset": Vector2(860, 80),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": "Tutorial - Enlightenment"
+},
+"1_4": {
+"dialogue": "Talk to the cultist.
+A new objective is issued.
+Open your notebook, and drag and drop the correct clue into the report, according to what the guard told you.
+Talk to the guard once successful.",
+"offset": Vector2(2500, 80),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": "Tutorial - Reporting"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"
