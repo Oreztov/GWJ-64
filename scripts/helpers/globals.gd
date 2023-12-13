@@ -49,6 +49,10 @@ var puzzle1 = [CLUES.Poison, CLUES.Asphyxiation]
 signal level_changed
 signal inspect_item
 
+signal tutorial_2
+signal tutorial_3
+signal tutorial_4
+
 func _ready():
 	# Get Inspectables
 	var inspecties = list_files_in_directory(inspectables_path)

@@ -384,7 +384,6 @@ offset_bottom = 128.0
 grow_vertical = 2
 script = ExtResource("9_sa2rj")
 dialogue_data = ExtResource("13_k5d3m")
-start_id = "START"
 options_alignment = 1
 options_vertical = true
 options_position = 2

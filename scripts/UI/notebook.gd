@@ -18,7 +18,10 @@ func _ready():
 	Globals.notebook_ref = self
 	image.copy_from(image_orig)
 	$Control/Notebook/Instructions.hide()
-	#$Control/DialogueBox.start()
+	tutorial_1()
+	Globals.tutorial_2.connect(tutorial_2)
+	Globals.tutorial_3.connect(tutorial_3)
+	Globals.tutorial_4.connect(tutorial_4)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -124,4 +127,20 @@ func set_answer_text(text):
 	label.text = text
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "modulate", Color(1,1,1,0), 3)
+	
+func tutorial_1():
+	$Control/TutorialBox.start_id = "T1"
+	$Control/TutorialBox.start()
+	
+func tutorial_2():
+	$Control/TutorialBox.start_id = "T2"
+	$Control/TutorialBox.start()
+	
+func tutorial_3():
+	$Control/TutorialBox.start_id = "T3"
+	$Control/TutorialBox.start()
+
+func tutorial_4():
+	$Control/TutorialBox.start_id = "T4"
+	$Control/TutorialBox.start()
 	
