@@ -27,4 +27,5 @@ func update():
 	
 	var ratio = float(value) / float(max_value)
 	%Pattern.material.set_shader_parameter("alpha", ratio / 50)
-	$sfxEnlightenment.volume_db = value * 0.8 -80
+	var volume_tween = create_tween()
+	volume_tween.tween_property($sfxEnlightenment, "volume_db", linear_to_db(value/max_value), 100/1000)
