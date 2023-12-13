@@ -19,3 +19,6 @@ texture = SubResource("GradientTexture2D_p6fae")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_h1xx6")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = null
