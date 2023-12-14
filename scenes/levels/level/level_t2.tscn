@@ -29,7 +29,6 @@ door_self = 19
 door_connected = 20
 level_from = 9
 level_to = 10
-interact_disabled = true
 
 [node name="Altar" parent="." index="4" instance=ExtResource("3_1e6g2")]
 position = Vector2(672, 736)

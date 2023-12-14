@@ -18,10 +18,14 @@ func _ready():
 	Globals.notebook_ref = self
 	image.copy_from(image_orig)
 	$Control/Notebook/Instructions.hide()
-	tutorial_1()
+	Globals.open_dialogue.connect(open_dialogue)
+	
 	Globals.tutorial_2.connect(tutorial_2)
 	Globals.tutorial_3.connect(tutorial_3)
 	Globals.tutorial_4.connect(tutorial_4)
+	
+	tutorial_1()
+	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -110,16 +114,19 @@ func _on_clear_button_pressed():
 
 
 func _on_submit_button_pressed():
-	var qna = $Control/Report/Puzzle1.get_children()
-	var a = []
-	for node in qna:
-		if node.is_in_group("answers"):
-			a.append(node)
-	for answer in a:
-		if answer.clue != answer.answer:
-			set_answer_text("That's not quite right...") 
-			return
-	set_answer_text("Yes! That's it!") 
+	if Globals.active_puzzle != null:
+		var puzzle = $Control/Report.get_node(Globals.puzzles[Globals.active_puzzle][0])
+		var qna = puzzle.get_children()
+		var a = []
+		for node in qna:
+			if node.is_in_group("answers"):
+				a.append(node)
+		for answer in a:
+			if answer.clue != answer.answer:
+				set_answer_text("That's not quite right...") 
+				return
+		set_answer_text("Yes! That's it!")
+		complete_puzzle()
 	
 func set_answer_text(text):
 	var label = $Control/Report/AnswerLabel
@@ -127,6 +134,35 @@ func set_answer_text(text):
 	label.text = text
 	var tween = get_tree().create_tween()
 	tween.tween_property(label, "modulate", Color(1,1,1,0), 3)
+	
+func open_dialogue(dialogue = ""):
+	for d in FileData.dialogue:
+		var d_path = d.resource_path
+		var ds = d_path.split("/")
+		if dialogue == ds[len(ds)-1]:
+			$Control/DialogueBox.dialogue_data = d
+			$Control/DialogueBox.start()
+			Globals.current_level.player.input_enabled = false
+			
+func set_puzzle(puzzle: Globals.PUZZLES):
+	Globals.active_puzzle = puzzle
+	for node in $Control/Report.get_children():
+		if node.is_in_group("puzzles"):
+			node.hide()
+	$Control/Report.get_node(Globals.puzzles[Globals.active_puzzle][0]).show()
+	$Control/Report/SubmitButton.text = "SUBMIT"
+	$Control/Report/SubmitButton.disabled = false
+	
+func complete_puzzle():
+	Globals.puzzles_completed[Globals.active_puzzle] = true
+	for node in $Control/Report.get_children():
+		if node.is_in_group("puzzles"):
+			node.hide()
+	Globals.active_puzzle = null
+	Globals.puzzle_complete.emit()
+	$Control/Report/SubmitButton.text = "Nothing to report..."
+	$Control/Report/SubmitButton.disabled = true
+	
 	
 func tutorial_1():
 	$Control/TutorialBox.start_id = "T1"
@@ -144,3 +180,13 @@ func tutorial_4():
 	$Control/TutorialBox.start_id = "T4"
 	$Control/TutorialBox.start()
 	
+func _on_dialogue_box_dialogue_ended():
+	Globals.current_level.player.input_enabled = true
+
+func _on_dialogue_box_dialogue_signal(value):
+	match(value):
+		'puzzle_tutorial': 
+			set_puzzle(Globals.PUZZLES.PuzzleTutorial)
+			Globals.tutorial_4.emit()
+		'open_tutorial_gate':
+			FileData.open_tutorial_gate.emit()

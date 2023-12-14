@@ -5,13 +5,14 @@ var is_interactable = true
 
 func _ready():
 	super()
-	is_interactable = not interact_disabled
+	if interact_disabled:
+		is_interactable = false
 
 func _physics_process(delta):
 	if Enlightenment.value >= light_threshold:
-		interact_disabled = false
-		show()
-	else:
 		if is_interactable:
-			interact_disabled = true
+			interact_disabled = false
+			show()
+	else:
+		interact_disabled = true
 		hide()

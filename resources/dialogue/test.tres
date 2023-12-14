@@ -85,12 +85,17 @@ Wander off, now.",
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_1",
 "text": ""
 }
 },
 "size": Vector2(300, 332),
 "speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(2622.97, 64.8483),
+"signalValue": "puzzle_tutorial"
 }
 }
 variables = {}

@@ -50,6 +50,7 @@ Press [W] or [Up] to use doors and passageways.",
 Rotate it by clicking and dragging.
 Collect clues by clicking on points of interest on the object.
 Open your notebook to view your clues.
+Talk to the cultist.
 ",
 "offset": Vector2(1660, 80),
 "options": {
@@ -63,7 +64,7 @@ Open your notebook to view your clues.
 "speaker": "Tutorial - Investigation"
 },
 "1_3": {
-"dialogue": "To pass to the next room, you must discover something which is not there.
+"dialogue": "To pass to the next room, you must see something which isn't there.
 Press [E] or [Z] to interact with objects.
 Interact with the altar to increase your enlightenment.
 Once enlightened, you'll see the hidden rift.
@@ -80,10 +81,10 @@ Pass through it before your enlightenment decays.",
 "speaker": "Tutorial - Enlightenment"
 },
 "1_4": {
-"dialogue": "Talk to the cultist.
-A new objective is issued.
+"dialogue": "A new objective is issued.
 Open your notebook, and drag and drop the correct clue into the report, according to what the guard told you.
-Talk to the guard once successful.",
+Talk to the guard once successful.
+Move on.",
 "offset": Vector2(2500, 80),
 "options": {
 0: {

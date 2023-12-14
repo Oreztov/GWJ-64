@@ -1,0 +1,52 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cw7bwmqdrcqs1"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_jj5pt"]
+
+[resource]
+script = ExtResource("1_jj5pt")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(124, 49.9685),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "Hey, the code is 8654.",
+"offset": Vector2(520, -20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "Hmm.
+Well, pass on through.",
+"offset": Vector2(940, -40),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1400, -20),
+"signalValue": "open_tutorial_gate"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

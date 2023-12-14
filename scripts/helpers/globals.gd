@@ -29,7 +29,11 @@ enum INSPECTABLES {Template, DinoPlush, Squirrel}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
-enum CLUES {Template, DinoOwner, Knife, Bat, Rope, Poison, Stabbing, Bruises, Asphyxiation}
+enum CLUES {Template, DinoOwner, 
+Knife, Bat, Rope, Poison, 
+Stabbing, Bruises, Asphyxiation,
+Code1, Code2, Code3, Code4
+}
 var clues = {
 	CLUES.Template: "Template",
 	CLUES.DinoOwner: "Simey H.",
@@ -39,15 +43,30 @@ var clues = {
 	CLUES.Poison: "Lethal Poison",
 	CLUES.Stabbing: "Stab Wounds",
 	CLUES.Bruises: "Bruise Marks",
-	CLUES.Asphyxiation: "Asphyxiation"
+	CLUES.Asphyxiation: "Asphyxiation",
+	CLUES.Code1: "8654",
+	CLUES.Code2: "1902",
+	CLUES.Code3: "3591",
+	CLUES.Code4: "9276"
 }
 var clues_obtained = {}
 
+
+enum PUZZLES {PuzzleTutorial, Puzzle1}
+var puzzles = { # First value is string name of the puzzle node name in notebook
+	PUZZLES.PuzzleTutorial: ["PuzzleTutorial", CLUES.Code1],
+	PUZZLES.Puzzle1: ["Puzzle1", CLUES.Poison, CLUES.Asphyxiation]
+}
+var puzzles_completed = {}
+
+var active_puzzle = null
 var answers = []
-var puzzle1 = [CLUES.Poison, CLUES.Asphyxiation]
 
 signal level_changed
 signal inspect_item
+
+signal open_dialogue
+signal puzzle_complete
 
 signal tutorial_2
 signal tutorial_3
@@ -61,6 +80,9 @@ func _ready():
 	# Set clues
 	for i in len(CLUES):
 		clues_obtained[i] = false
+	# Set puzzles
+	for i in len(PUZZLES):
+		puzzles_completed[i] = false
 	
 func list_files_in_directory(path):
 	var files = []
