@@ -10,7 +10,6 @@ radius = 0.7
 [node name="DinoPlush" instance=ExtResource("1_whoh6")]
 id = 1
 title = "Dino Plushie"
-description = "A soft toy."
 clues = Array[int]([9, 10, 11, 12])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
