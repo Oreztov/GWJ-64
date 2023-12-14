@@ -19,7 +19,14 @@ position = Vector2(1120, 736)
 door_connected = 1
 level_to = 1
 
-[node name="Stairs" parent="Doors" index="1" instance=ExtResource("3_nso61")]
+[node name="Door2" parent="Doors" index="1" instance=ExtResource("2_hl3as")]
+position = Vector2(48, 736)
+door_self = 22
+door_connected = 21
+level_to = 10
+interact_disabled = true
+
+[node name="Stairs" parent="Doors" index="2" instance=ExtResource("3_nso61")]
 position = Vector2(224, 736)
 door_self = 8
 door_connected = 9

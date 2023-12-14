@@ -56,6 +56,8 @@ func _physics_process(delta):
 				interactable.inspect()
 		else:
 			$PromptInteract.hide()
+	else:
+		player_sprite.play("Idle")
 		
 	prev_pos = global_position
 	Globals.player_pos = position

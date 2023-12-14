@@ -18,6 +18,12 @@ func enter():
 	Globals.current_level = self
 	Globals.level_changed.emit()
 	$Timers/EnterDoorTimer.start()
+	match index:
+		Globals.LEVELS.Tutorial2:
+			Globals.tutorial_2.emit()
+		Globals.LEVELS.Tutorial3:
+			Globals.tutorial_3.emit()
+		
 	
 func exit():
 	player.set_physics_process(false)

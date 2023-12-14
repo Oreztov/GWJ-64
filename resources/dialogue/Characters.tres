@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CharacterList" load_steps=5 format=3 uid="uid://hugdv51spjtk"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/CharacterList.gd" id="1"]
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/Character.gd" id="2"]
+
+[sub_resource type="Resource" id="1"]
+script = ExtResource("2")
+name = "You"
+color = Color(1, 1, 1, 1)
+
+[sub_resource type="Resource" id="Resource_gv82m"]
+script = ExtResource("2")
+name = "Cultist"
+color = Color(1, 0, 0, 1)
+
+[resource]
+script = ExtResource("1")
+characters = Array[ExtResource("2")]([SubResource("1"), SubResource("Resource_gv82m")])

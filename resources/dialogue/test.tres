@@ -1,0 +1,104 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://6cgrn63c0mdq"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_hhc7m"]
+
+[resource]
+script = ExtResource("1_hhc7m")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-40, 100),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "Hey there. [color=red]Alumni?[/color]",
+"offset": Vector2(220, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "If you [wave]see,[/wave] you must know.",
+"offset": Vector2(640, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "Oh, I know. I'd like to be let in.",
+"offset": Vector2(1040, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(303.079, 332),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "Numbers.",
+"offset": Vector2(1420, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "Pardon? Oh... Uh, 9?",
+"offset": Vector2(1820, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "It does not have a 9, that's for sure.
+Wander off, now.",
+"offset": Vector2(2220, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(2622.97, 64.8483),
+"signalValue": "puzzle_tutorial"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

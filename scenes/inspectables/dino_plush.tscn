@@ -11,7 +11,7 @@ radius = 0.7
 id = 1
 title = "Dino Plushie"
 description = "A soft toy."
-clues = Array[int]([1])
+clues = Array[int]([9, 10, 11, 12])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
 
@@ -21,18 +21,67 @@ clues = Array[int]([1])
 transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647049, 0, 0.0647049, 0.241481, 0, 0, 0)
 
 [node name="Label3D" type="Label3D" parent="." index="2"]
-transform = Transform3D(0.998031, -0.0108914, 0.061768, 0.0627208, 0.173306, -0.982869, 6.25625e-09, 0.984808, 0.173648, 0.5, -0.814698, -0.5)
+transform = Transform3D(0.998031, -0.0108914, 0.061768, 0.0627208, 0.173306, -0.982869, 6.25625e-09, 0.984808, 0.173648, 0.493661, -0.825614, -0.482437)
 shaded = true
-text = "Owned by
-Simey H."
+text = "8654"
 font = ExtResource("3_q13qv")
 font_size = 52
 outline_size = 0
 
-[node name="OwnerText" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
+[node name="Label3D2" type="Label3D" parent="." index="3"]
+transform = Transform3D(0.349259, -0.937026, -4.12661e-08, 0.0597503, 0.0222708, 0.997965, -0.935119, -0.348548, 0.0637659, -0.0120823, 3.98258, -0.601535)
+shaded = true
+text = "1902"
+font = ExtResource("3_q13qv")
+font_size = 52
+outline_size = 0
+
+[node name="Label3D3" type="Label3D" parent="." index="4"]
+transform = Transform3D(-0.200009, -0.626296, 0.753492, -0.408272, 0.752359, 0.516981, -0.89068, -0.204229, -0.406178, 2.1057, 1.51108, -1.51987)
+shaded = true
+text = "3591"
+font = ExtResource("3_q13qv")
+font_size = 52
+outline_size = 0
+
+[node name="Label3D4" type="Label3D" parent="." index="5"]
+transform = Transform3D(-0.578492, 0.229812, -0.782644, 0.136601, 0.973235, 0.184807, 0.804168, -1.77636e-15, -0.594401, -1.01803, 1.51108, -1.66451)
+shaded = true
+text = "9276"
+font = ExtResource("3_q13qv")
+font_size = 52
+outline_size = 0
+
+[node name="Code1" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00633907, -0.0109165, 0.0175626)
 collision_layer = 2
 collision_mask = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/OwnerText" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Code1" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.5, -0.6)
+shape = SubResource("SphereShape3D_hn0g0")
+
+[node name="Code2" type="Area3D" parent="POIs" index="1" groups=["1", "POIs"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0469994, 3.80247, -0.385939)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Code2" index="0"]
+shape = SubResource("SphereShape3D_hn0g0")
+
+[node name="Code3" type="Area3D" parent="POIs" index="2" groups=["2", "POIs"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08502, 1.42562, -1.51516)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Code3" index="0"]
+shape = SubResource("SphereShape3D_hn0g0")
+
+[node name="Code4" type="Area3D" parent="POIs" index="3" groups=["3", "POIs"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.723189, 1.2886, -1.74196)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Code4" index="0"]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, 0, 0)
 shape = SubResource("SphereShape3D_hn0g0")

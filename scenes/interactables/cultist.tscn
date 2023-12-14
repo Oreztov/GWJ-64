@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://cans43no17mdi"]
+
+[ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_0kaga"]
+[ext_resource type="Script" path="res://scripts/cultist.gd" id="2_h1h1g"]
+
+[sub_resource type="Gradient" id="Gradient_axqcn"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vbsc4"]
+gradient = SubResource("Gradient_axqcn")
+width = 32
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5is4n"]
+size = Vector2(32, 64)
+
+[node name="Cultist" instance=ExtResource("1_0kaga")]
+script = ExtResource("2_h1h1g")
+await_puzzle = 0
+new_dialogue = ""
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_vbsc4")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_5is4n")

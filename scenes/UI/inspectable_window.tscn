@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cbxwkapqo0p1i"]
 
 [ext_resource type="Script" path="res://scripts/UI/inspectable_window.gd" id="1_5lgu4"]
-[ext_resource type="AudioStream" uid="uid://xlgp5c8dcl24" path="res://audio/sfx/PH_notebook_open.ogg" id="2_mdvlm"]
+[ext_resource type="AudioStream" uid="uid://b64xjhfrpiuko" path="res://audio/sfx/note_pen_click.ogg" id="2_qayae"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jalk5"]
 font_size = 48
@@ -31,7 +31,7 @@ layer = 5
 script = ExtResource("1_5lgu4")
 
 [node name="sfxSpotPOI" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_mdvlm")
+stream = ExtResource("2_qayae")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15

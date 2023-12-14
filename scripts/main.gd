@@ -16,7 +16,7 @@ func _ready():
 		Globals.levels[level.index] = level
 	
 	Globals.level_changed.connect(level_changed)
-	Globals.levels[Globals.LEVELS.GroundFloor1].enter()
+	Globals.levels[Globals.LEVELS.Tutorial1].enter()
 	
 	#set listener z offset
 	listener.global_position.z = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos).z + 0.1
