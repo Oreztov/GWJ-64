@@ -23,6 +23,7 @@ texture = ExtResource("2_bhpdt")
 centered = false
 
 [node name="Clue" type="Label" parent="."]
+custom_minimum_size = Vector2(100, 0)
 offset_right = 97.0
 offset_bottom = 56.0
 label_settings = SubResource("LabelSettings_e2yt6")

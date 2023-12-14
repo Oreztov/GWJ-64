@@ -190,3 +190,7 @@ func _on_dialogue_box_dialogue_signal(value):
 			Globals.tutorial_4.emit()
 		'open_tutorial_gate':
 			FileData.open_tutorial_gate.emit()
+
+
+func _on_dialogue_box_dialogue_proceeded(node_type):
+	$sfxDialogue.play()

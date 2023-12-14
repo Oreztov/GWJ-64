@@ -1,0 +1,23 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bl0htrjo4sife"]
+
+[ext_resource type="FontFile" uid="uid://yx0g4rs8r264" path="res://fonts/stint/StintUltraCondensed-Regular.ttf" id="1_2v48k"]
+[ext_resource type="StyleBox" uid="uid://cxn2hv12p5sdi" path="res://resources/themes/bottom_black_fadeout.tres" id="2_8d7pi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn171"]
+bg_color = Color(0, 0, 0, 0.392157)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_21ab0"]
+bg_color = Color(1, 1, 1, 0.392157)
+
+[resource]
+Button/font_sizes/font_size = 32
+Button/fonts/font = ExtResource("1_2v48k")
+Button/styles/focus = ExtResource("2_8d7pi")
+Button/styles/hover = ExtResource("2_8d7pi")
+Button/styles/normal = ExtResource("2_8d7pi")
+Button/styles/pressed = ExtResource("2_8d7pi")
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_2v48k")
+PanelContainer/styles/panel = ExtResource("2_8d7pi")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_yn171")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_21ab0")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6nfgobo68w7h"]
+[gd_scene load_steps=9 format=3 uid="uid://b6nfgobo68w7h"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_d5led"]
 [ext_resource type="Script" path="res://scripts/objects/gate.gd" id="2_2vtlm"]
+[ext_resource type="AudioStream" uid="uid://hfin5ew7254w" path="res://audio/sfx/gate_open.ogg" id="3_6vxyg"]
 
 [sub_resource type="Gradient" id="Gradient_5rra6"]
 
@@ -38,3 +39,6 @@ texture = SubResource("GradientTexture2D_cnnpm")
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2(32, 0)
+
+[node name="AudioStreamPlayer" parent="." index="3"]
+stream = ExtResource("3_6vxyg")

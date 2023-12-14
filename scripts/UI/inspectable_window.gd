@@ -47,8 +47,7 @@ func inspect_item(item):
 	var ins = inspectable.instantiate()
 	# Set inspectable
 	%InspectableModel.add_child(ins)
-	$VBoxContainer/Title.text = ins.title
-	$VBoxContainer/Description.text = ins.description
+	$VBoxContainer/Title.text = "Inspecting: " + ins.title
 	# Open menu
 	%InspectableModel.rotation = Vector3.ZERO
 	set_process_input(true)

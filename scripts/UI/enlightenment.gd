@@ -11,13 +11,13 @@ func _ready():
 	
 func _physics_process(delta):
 	value -= decay
+	value = clamp(value, min_value, max_value)
 	update()
 	
 func change_value(a):
 	#var tween = get_tree().create_tween()
 	#tween.tween_property(self, "value", value+a, 0.25)
 	value += a
-	value = clamp(value, min_value, max_value)
 	update()
 
 func update():
@@ -27,6 +27,12 @@ func update():
 	
 	var ratio = float(value) / float(max_value)
 	%Pattern.material.set_shader_parameter("alpha", ratio / 50)
+	%ENLIGHTENMENT.modulate.a = ratio + 0.25
 	if linear_to_db(value/max_value) > -80:
 		var volume_tween = create_tween()
 		volume_tween.tween_property($sfxEnlightenment, "volume_db", linear_to_db(value/max_value), 300/1000)
+
+
+func _on_menu_button_pressed():
+	get_tree().paused = !get_tree().paused
+	$Control/Paused.visible = !$Control/Paused.visible
