@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cioe1ahoxkipn"]
+
+[ext_resource type="PackedScene" uid="uid://jwaytvlry0eh" path="res://scenes/levels/background.tscn" id="1_4owif"]
+
+[node name="BackgroundViewport" type="SubViewport"]
+size = Vector2i(1024, 512)
+size_2d_override_stretch = true
+
+[node name="Background" parent="." instance=ExtResource("1_4owif")]

@@ -62,7 +62,7 @@ func close_menu():
 		model.queue_free()
 	# Close menu
 	set_process_input(false)
-	MouseManager.hide()
+	MouseManager.poi_marker.hide()
 	Globals.current_level.player.input_enabled = true
 	hide()
 	current_inspect = null

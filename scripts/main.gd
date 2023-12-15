@@ -18,7 +18,7 @@ func _ready():
 	Globals.level_changed.connect(level_changed)
 	
 	# Start game
-	Globals.levels[Globals.LEVELS.FirstFloor2].enter()
+	Globals.levels[Globals.LEVELS.Tutorial1].enter()
 	Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)
 	
 	#set listener z offset
@@ -26,6 +26,7 @@ func _ready():
 	
 func _process(delta):
 	update_camera()
+	$DirectionalLight3D.light_energy = float(Enlightenment.value) / float(Enlightenment.max_value) + 0.15
 
 func level_changed():
 	# Fade layers close to camera
