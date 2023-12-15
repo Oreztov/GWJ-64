@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=22 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -10,6 +10,9 @@
 [ext_resource type="Resource" uid="uid://bm5hbesuo45cy" path="res://game_settings/settings/audio/sfx_volume.tres" id="8_y3puv"]
 [ext_resource type="Resource" uid="uid://dvkdlnlw822k4" path="res://game_settings/settings/audio/ui_volume.tres" id="9_bmbed"]
 [ext_resource type="Resource" uid="uid://m4hq30r882ty" path="res://game_settings/settings/audio/music_volume.tres" id="10_da0qd"]
+[ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="10_fa3br"]
+[ext_resource type="Script" path="res://game_settings/components/_shared_scripts/binary_selection.gd" id="11_yqdiv"]
+[ext_resource type="Resource" uid="uid://c164lqh8exfl8" path="res://game_settings/settings/video/overlay_shader.tres" id="12_d3n4c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -261,6 +264,33 @@ setting = ExtResource("10_da0qd")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
+[node name="Category2" type="Label" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Video"
+
+[node name="HSeparator2" type="HSeparator" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Setting5" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting5"]
+layout_mode = 2
+text = "Enlightenment
+Overlay"
+
+[node name="Switch" parent="Control/Paused/Settings/Settings/Setting5" instance=ExtResource("10_fa3br")]
+layout_mode = 2
+size_flags_horizontal = 10
+script = ExtResource("11_yqdiv")
+setting = ExtResource("12_d3n4c")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Btn" parent="Control/Paused/Settings/Settings/Setting5/Switch" index="0"]
+layout_mode = 2
+
 [node name="Credits" type="PanelContainer" parent="Control/Paused"]
 layout_mode = 1
 anchors_preset = 11
@@ -297,7 +327,7 @@ text = "Programming, 3D, Game Design"
 [node name="Name2" type="Label" parent="Control/Paused/Credits/Credits"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 58
 text = "- Goob-dev -
 "
 
@@ -310,15 +340,16 @@ text = "2D Character & Environment Art"
 [node name="Name3" type="Label" parent="Control/Paused/Credits/Credits"]
 layout_mode = 2
 size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 64
-text = "- Joey K -
+theme_override_font_sizes/font_size = 56
+text = "- Joey Kloepfer-
 "
+horizontal_alignment = 1
 
 [node name="Credit3" type="Label" parent="Control/Paused/Credits/Credits"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
-text = "Sound Design & Music"
+text = "Technical Sound Design"
 
 [node name="Name4" type="Label" parent="Control/Paused/Credits/Credits"]
 custom_minimum_size = Vector2(200, 0)
@@ -349,3 +380,4 @@ autoplay = true
 [editable path="Control/Paused/Settings/Settings/Setting2/Slider"]
 [editable path="Control/Paused/Settings/Settings/Setting3/Slider"]
 [editable path="Control/Paused/Settings/Settings/Setting4/Slider"]
+[editable path="Control/Paused/Settings/Settings/Setting5/Switch"]

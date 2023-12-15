@@ -82,7 +82,8 @@ func _on_area_2d_area_exited(area):
 
 
 func _on_animated_player_sprite_frame_changed():
-	var frame = %AnimatedPlayerSprite.frame
-	if %AnimatedPlayerSprite.animation == "Walk":
-		if frame == 1 or frame == 5:
-			$sfxFootstep.play()
+	if input_enabled:
+		var frame = %AnimatedPlayerSprite.frame
+		if %AnimatedPlayerSprite.animation == "Walk":
+			if frame == 1 or frame == 5:
+				$sfxFootstep.play()

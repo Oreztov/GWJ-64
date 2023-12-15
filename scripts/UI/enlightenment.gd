@@ -35,6 +35,9 @@ func update():
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true
+	
+func set_overlay(value):
+	%Pattern.visible = value
 
 
 func _on_menu_button_pressed():

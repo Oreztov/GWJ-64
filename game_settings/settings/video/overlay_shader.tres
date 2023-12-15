@@ -1,0 +1,14 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://c164lqh8exfl8"]
+
+[ext_resource type="Script" path="res://game_settings/settings/video/overlay_shader.gd" id="1_0t0qw"]
+
+[resource]
+resource_name = "overlay_shader"
+script = ExtResource("1_0t0qw")
+current = true
+default = true
+name = "overlay_shader"
+category = "video"
+value_type = 1
+value_hint = 0
+value_hint_string = ""
