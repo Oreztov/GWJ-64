@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c30d13ejgxkxo"]
+[gd_scene load_steps=5 format=3 uid="uid://c30d13ejgxkxo"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_wd3lu"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hw52p"]
-[ext_resource type="PackedScene" uid="uid://dhiwroq6fyxi3" path="res://scenes/interactables/interactable_squirrel.tscn" id="3_wl417"]
+[ext_resource type="PackedScene" uid="uid://dfglw0xhram8h" path="res://scenes/interactables/interactable_medical_box.tscn" id="3_007j7"]
+[ext_resource type="PackedScene" uid="uid://wkpmad3vcocb" path="res://scenes/interactables/interactable_altar.tscn" id="4_t7k7r"]
 
 [node name="LevelFF2" instance=ExtResource("1_wd3lu")]
 index = 6
@@ -21,5 +22,8 @@ door_connected = 9
 level_from = 6
 level_to = 7
 
-[node name="Squirrel" parent="." index="4" instance=ExtResource("3_wl417")]
-position = Vector2(336, 432)
+[node name="MedicalBox" parent="." index="4" instance=ExtResource("3_007j7")]
+position = Vector2(304, 432)
+
+[node name="Altar" parent="." index="5" instance=ExtResource("4_t7k7r")]
+position = Vector2(608, 416)

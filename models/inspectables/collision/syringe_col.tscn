@@ -1,0 +1,43 @@
+[gd_scene load_steps=9 format=3 uid="uid://cixjcv51ob1em"]
+
+[ext_resource type="PackedScene" uid="uid://dvp8a8ssbssp2" path="res://models/inspectables/base/medical/syringe/Steampunk Syringe.fbx" id="1_307c8"]
+[ext_resource type="Texture2D" uid="uid://bm1fbloi8ji16" path="res://models/inspectables/base/medical/syringe/512/Steampunk Syringe_Steampunk Syringe_BaseColor.png" id="2_ma1ig"]
+[ext_resource type="Texture2D" uid="uid://mh5muo35u8nf" path="res://models/inspectables/base/medical/syringe/512/Steampunk Syringe_Steampunk Syringe_Metallic.png" id="3_uwtp5"]
+[ext_resource type="Texture2D" uid="uid://bvleyutrwghgs" path="res://models/inspectables/base/medical/syringe/512/Steampunk Syringe_Steampunk Syringe_Normal.png" id="4_50jv4"]
+[ext_resource type="Texture2D" uid="uid://d0a61vp81yceh" path="res://models/inspectables/base/medical/syringe/512/Steampunk Syringe_Steampunk Syringe_Roughness.png" id="5_88m68"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a0rk7"]
+albedo_color = Color(0, 1, 0, 1)
+albedo_texture = ExtResource("2_ma1ig")
+metallic = 1.0
+metallic_texture = ExtResource("3_uwtp5")
+roughness_texture = ExtResource("5_88m68")
+normal_enabled = true
+normal_texture = ExtResource("4_50jv4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ydqr"]
+albedo_texture = ExtResource("2_ma1ig")
+metallic = 1.0
+metallic_texture = ExtResource("3_uwtp5")
+roughness_texture = ExtResource("5_88m68")
+normal_enabled = true
+normal_texture = ExtResource("4_50jv4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4g7t8"]
+albedo_texture = ExtResource("2_ma1ig")
+metallic = 1.0
+metallic_texture = ExtResource("3_uwtp5")
+roughness_texture = ExtResource("5_88m68")
+normal_enabled = true
+normal_texture = ExtResource("4_50jv4")
+
+[node name="Root Scene" instance=ExtResource("1_307c8")]
+
+[node name="Inner Glass" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a0rk7")
+
+[node name="Outer Metal Casing and Needle" parent="RootNode" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8ydqr")
+
+[node name="Piston" parent="RootNode" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4g7t8")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://blrmieimcxxac"]
+
+[ext_resource type="PackedScene" uid="uid://bjdbdl20mce2f" path="res://scenes/inspectables/inspectable.tscn" id="1_58oti"]
+[ext_resource type="PackedScene" uid="uid://bx2qxp1mysyx7" path="res://models/inspectables/collision/bucket_col.tscn" id="2_10d04"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ppunx"]
+height = 1.0
+radius = 0.7
+
+[node name="Bucket" instance=ExtResource("1_58oti")]
+id = 4
+title = "Bloody Bucket"
+clues = Array[int]([2])
+
+[node name="Root Scene" parent="." index="1" instance=ExtResource("2_10d04")]
+
+[node name="Area3D" type="Area3D" parent="Root Scene" index="3" groups=["0", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Root Scene/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_ppunx")

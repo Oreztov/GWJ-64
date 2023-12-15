@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://ugaxldtgef0a"]
+
+[ext_resource type="PackedScene" uid="uid://bjdbdl20mce2f" path="res://scenes/inspectables/inspectable.tscn" id="1_3eudb"]
+[ext_resource type="PackedScene" uid="uid://ds4ku7bpewurv" path="res://models/inspectables/collision/medical_box_col.tscn" id="2_86e4a"]
+[ext_resource type="PackedScene" uid="uid://cixjcv51ob1em" path="res://models/inspectables/collision/syringe_col.tscn" id="3_uhuxs"]
+[ext_resource type="PackedScene" uid="uid://dwa64uvrmy10r" path="res://models/inspectables/base/medical/latex_gloves_fallen.glb" id="4_vi37w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trqlq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jllw3"]
+height = 0.9
+radius = 1.269
+
+[node name="Inspectable" instance=ExtResource("1_3eudb")]
+id = 6
+title = "Medical Box"
+clues = Array[int]([5, 4])
+
+[node name="Syringe" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Syringe" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.6, 0)
+shape = SubResource("BoxShape3D_trqlq")
+
+[node name="Gloves" type="Area3D" parent="POIs" index="1" groups=["1", "POIs"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0, 0)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Gloves" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.6, 0)
+shape = SubResource("CylinderShape3D_jllw3")
+
+[node name="Sketchfab_Scene" parent="." index="1" instance=ExtResource("2_86e4a")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="Syringe" parent="." index="2" instance=ExtResource("3_uhuxs")]
+transform = Transform3D(1.81262, -0.845237, 0, 0.845237, 1.81262, 0, 0, 0, 2, -1.8, 0.67, 0)
+
+[node name="Gloves" parent="." index="3" instance=ExtResource("4_vi37w")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0.1, 1.5)

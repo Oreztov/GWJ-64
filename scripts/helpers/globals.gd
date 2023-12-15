@@ -25,12 +25,12 @@ DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3
 }
 var doors = {}
 
-enum INSPECTABLES {Template, DinoPlush, Squirrel}
+enum INSPECTABLES {Template, DinoPlush, Squirrel, Body, Bucket, Case, MedicalBox}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
 enum CLUES {Template, DinoOwner, 
-Knife, Bat, Rope, Poison, 
+Knife, Bat, Gloves, Poison, 
 Stabbing, Bruises, Asphyxiation,
 Code1, Code2, Code3, Code4
 }
@@ -39,8 +39,8 @@ var clues = {
 	CLUES.DinoOwner: "Simey H.",
 	CLUES.Knife: "Ritual Knife",
 	CLUES.Bat: "Baseball Bat",
-	CLUES.Rope: "Loose Rope",
-	CLUES.Poison: "Lethal Poison",
+	CLUES.Gloves: "Medical Gloves",
+	CLUES.Poison: "Poison Syringe",
 	CLUES.Stabbing: "Stab Wounds",
 	CLUES.Bruises: "Bruise Marks",
 	CLUES.Asphyxiation: "Asphyxiation",

@@ -12,14 +12,10 @@ id = 1
 title = "Dino Plushie"
 clues = Array[int]([9, 10, 11, 12])
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
-
-[node name="dino plush2" parent="." index="1" instance=ExtResource("2_c1i0q")]
+[node name="dino plush2" parent="." index="0" instance=ExtResource("2_c1i0q")]
 transform = Transform3D(0.25, 0, 0, 0, 0.241481, -0.0647049, 0, 0.0647049, 0.241481, 0, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="." index="2"]
+[node name="Label3D" type="Label3D" parent="." index="1"]
 transform = Transform3D(0.998031, -0.0108914, 0.061768, 0.0627208, 0.173306, -0.982869, 6.25625e-09, 0.984808, 0.173648, 0.493661, -0.825614, -0.482437)
 shaded = true
 text = "8654"
@@ -27,7 +23,7 @@ font = ExtResource("3_q13qv")
 font_size = 52
 outline_size = 0
 
-[node name="Label3D2" type="Label3D" parent="." index="3"]
+[node name="Label3D2" type="Label3D" parent="." index="2"]
 transform = Transform3D(0.349259, -0.937026, -4.12661e-08, 0.0597503, 0.0222708, 0.997965, -0.935119, -0.348548, 0.0637659, -0.0120823, 3.98258, -0.601535)
 shaded = true
 text = "1902"
@@ -35,7 +31,7 @@ font = ExtResource("3_q13qv")
 font_size = 52
 outline_size = 0
 
-[node name="Label3D3" type="Label3D" parent="." index="4"]
+[node name="Label3D3" type="Label3D" parent="." index="3"]
 transform = Transform3D(-0.200009, -0.626296, 0.753492, -0.408272, 0.752359, 0.516981, -0.89068, -0.204229, -0.406178, 2.1057, 1.51108, -1.51987)
 shaded = true
 text = "3591"
@@ -43,7 +39,7 @@ font = ExtResource("3_q13qv")
 font_size = 52
 outline_size = 0
 
-[node name="Label3D4" type="Label3D" parent="." index="5"]
+[node name="Label3D4" type="Label3D" parent="." index="4"]
 transform = Transform3D(-0.578492, 0.229812, -0.782644, 0.136601, 0.973235, 0.184807, 0.804168, -1.77636e-15, -0.594401, -1.01803, 1.51108, -1.66451)
 shaded = true
 text = "9276"
