@@ -34,7 +34,7 @@ door_connected = 9
 level_to = 3
 
 [node name="Altar" parent="." index="4" instance=ExtResource("4_jc1sv")]
-position = Vector2(424, 736)
+position = Vector2(424, 768)
 
 [node name="EventArea" parent="." index="5" instance=ExtResource("5_cg6jk")]
 position = Vector2(48, 752)

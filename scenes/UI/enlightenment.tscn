@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=21 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -11,7 +11,6 @@
 [ext_resource type="Resource" uid="uid://dvkdlnlw822k4" path="res://game_settings/settings/audio/ui_volume.tres" id="9_bmbed"]
 [ext_resource type="Resource" uid="uid://m4hq30r882ty" path="res://game_settings/settings/audio/music_volume.tres" id="10_da0qd"]
 [ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="10_fa3br"]
-[ext_resource type="Script" path="res://game_settings/components/_shared_scripts/binary_selection.gd" id="11_yqdiv"]
 [ext_resource type="Resource" uid="uid://c164lqh8exfl8" path="res://game_settings/settings/video/overlay_shader.tres" id="12_d3n4c"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
@@ -283,13 +282,9 @@ Overlay"
 [node name="Switch" parent="Control/Paused/Settings/Settings/Setting5" instance=ExtResource("10_fa3br")]
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("11_yqdiv")
 setting = ExtResource("12_d3n4c")
 apply_on_change = true
 grab_focus_on_mouse_over = true
-
-[node name="Btn" parent="Control/Paused/Settings/Settings/Setting5/Switch" index="0"]
-layout_mode = 2
 
 [node name="Credits" type="PanelContainer" parent="Control/Paused"]
 layout_mode = 1
