@@ -18,7 +18,9 @@ func _ready():
 	Globals.notebook_ref = self
 	image.copy_from(image_orig)
 	$Control/Notebook/Instructions.hide()
+	
 	Globals.open_dialogue.connect(open_dialogue)
+	Globals.event.connect(catch_event)
 	
 	Globals.tutorial_2.connect(tutorial_2)
 	Globals.tutorial_3.connect(tutorial_3)
@@ -158,8 +160,9 @@ func complete_puzzle():
 	for node in $Control/Report.get_children():
 		if node.is_in_group("puzzles"):
 			node.hide()
+	Globals.puzzle_complete.emit(Globals.active_puzzle)
 	Globals.active_puzzle = null
-	Globals.puzzle_complete.emit()
+	
 	$Control/Report/SubmitButton.text = "Nothing to report..."
 	$Control/Report/SubmitButton.disabled = true
 	
@@ -188,9 +191,15 @@ func _on_dialogue_box_dialogue_signal(value):
 		'puzzle_tutorial': 
 			set_puzzle(Globals.PUZZLES.PuzzleTutorial)
 			Globals.tutorial_4.emit()
+			Enlightenment.set_objective(Globals.OBJECTIVES.TutorialReport)
 		'open_tutorial_gate':
 			FileData.open_tutorial_gate.emit()
 
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
 	$sfxDialogue.play()
+	
+func catch_event(event):
+	match event:
+		"tutorial_done":
+			$Control/TutorialBox.stop()

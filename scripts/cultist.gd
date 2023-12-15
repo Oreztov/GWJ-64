@@ -7,7 +7,7 @@ extends "res://scripts/interactable.gd"
 func _ready():
 	Globals.puzzle_complete.connect(update)
 		
-func update():
-	if Globals.puzzles_completed[await_puzzle]:
+func update(puzzle):
+	if await_puzzle == puzzle:
 		dialogue = new_dialogue
 

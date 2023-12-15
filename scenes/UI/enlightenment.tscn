@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=12 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -17,6 +17,24 @@ spacing_glyph = 35
 [sub_resource type="LabelSettings" id="LabelSettings_lf044"]
 font = SubResource("FontVariation_m5uru")
 font_size = 48
+
+[sub_resource type="Gradient" id="Gradient_n4c2d"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cv5nv"]
+gradient = SubResource("Gradient_n4c2d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wv24u"]
+particle_flag_disable_z = true
+spread = 0.0
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -500.0
+linear_accel_max = -500.0
+scale_min = 36.0
+scale_max = 36.0
+color_ramp = SubResource("GradientTexture1D_cv5nv")
 
 [node name="Enlightenment" type="CanvasLayer"]
 layer = 25
@@ -91,6 +109,15 @@ unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_tyi7d")
 text = "- Do the thing."
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control/VBoxContainer/Bar/PanelContainer/Objective"]
+unique_name_in_owner = true
+position = Vector2(0, 24)
+emitting = false
+amount = 4
+process_material = SubResource("ParticleProcessMaterial_wv24u")
+lifetime = 0.5
+one_shot = true
 
 [node name="MenuButton" type="Button" parent="Control/VBoxContainer/Bar"]
 z_index = 100

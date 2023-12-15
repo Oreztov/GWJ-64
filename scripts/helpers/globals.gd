@@ -59,6 +59,19 @@ var puzzles = { # First value is string name of the puzzle node name in notebook
 }
 var puzzles_completed = {}
 
+enum OBJECTIVES {Empty,
+TutorialStart, TutorialReport, TutorialEnd,
+MainFindBody, MainDeathReport
+}
+var objectives = {
+	OBJECTIVES.Empty: "",
+	OBJECTIVES.TutorialStart: "- Move into the hideout.",
+	OBJECTIVES.TutorialReport: "- Report the right code.",
+	OBJECTIVES.TutorialEnd: "- Enter the hideout.",
+	OBJECTIVES.MainFindBody: "- Find your father.",
+	OBJECTIVES.MainDeathReport: "- Report on the murder."
+}
+
 var active_puzzle = null
 var answers = []
 
@@ -67,6 +80,7 @@ signal inspect_item
 
 signal open_dialogue
 signal puzzle_complete
+signal event
 
 signal tutorial_2
 signal tutorial_3
@@ -83,6 +97,8 @@ func _ready():
 	# Set puzzles
 	for i in len(PUZZLES):
 		puzzles_completed[i] = false
+		
+	puzzle_complete.connect(puzz_done)
 	
 func list_files_in_directory(path):
 	var files = []
@@ -119,3 +135,9 @@ func cal_3d_pos(level: Level, pos_orig: Vector2):
 	
 	var pos_3d = sprite_corner_3d + Vector3(pos.x, pos.y, 0)
 	return pos_3d
+
+func puzz_done(puzzle):
+	match puzzle:
+		PUZZLES.PuzzleTutorial:
+			Enlightenment.set_objective(OBJECTIVES.TutorialEnd)
+			

@@ -16,7 +16,10 @@ func _ready():
 		Globals.levels[level.index] = level
 	
 	Globals.level_changed.connect(level_changed)
+	
+	# Start game
 	Globals.levels[Globals.LEVELS.Tutorial1].enter()
+	Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)
 	
 	#set listener z offset
 	listener.global_position.z = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos).z + 0.1
