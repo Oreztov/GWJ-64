@@ -28,10 +28,11 @@ func update():
 	var ratio = float(value) / float(max_value)
 	%Pattern.material.set_shader_parameter("alpha", ratio / 25)
 	%ENLIGHTENMENT.modulate.a = ratio + 0.25
-	if linear_to_db(value/max_value) > -80:
-		var volume_tween = create_tween()
-		volume_tween.tween_property($sfxEnlightenment, "volume_db", linear_to_db(value/max_value), 300/1000)
-		
+	if linear_to_db(value) > 0:
+		var volume_sfx = create_tween()
+		volume_sfx.tween_property($sfxEnlightenment, "volume_db", linear_to_db(value/max_value), 300/1000)
+		var volume_music = create_tween()
+		volume_music.tween_property($musicLight, "volume_db", linear_to_db(value/max_value*2), 300/1000)
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true
