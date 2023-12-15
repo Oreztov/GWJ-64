@@ -203,3 +203,5 @@ func catch_event(event):
 	match event:
 		"tutorial_done":
 			$Control/TutorialBox.stop()
+		"find_body":
+			set_puzzle(Globals.PUZZLES.Puzzle1)

@@ -15,9 +15,8 @@ func _physics_process(delta):
 	update()
 	
 func change_value(a):
-	#var tween = get_tree().create_tween()
-	#tween.tween_property(self, "value", value+a, 0.25)
-	value += a
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "value", value+a, 0.5)
 	update()
 
 func update():
@@ -26,7 +25,7 @@ func update():
 	%ProgressBar.max_value = max_value
 	
 	var ratio = float(value) / float(max_value)
-	%Pattern.material.set_shader_parameter("alpha", ratio / 50)
+	%Pattern.material.set_shader_parameter("alpha", ratio / 25)
 	%ENLIGHTENMENT.modulate.a = ratio + 0.25
 	if linear_to_db(value/max_value) > -80:
 		var volume_tween = create_tween()
