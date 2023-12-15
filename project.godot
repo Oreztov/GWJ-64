@@ -26,6 +26,7 @@ Globals="*res://scripts/helpers/globals.gd"
 MouseManager="*res://scenes/helpers/mouse_manager.tscn"
 Enlightenment="*res://scenes/UI/enlightenment.tscn"
 FileData="*res://scenes/helpers/file_data.tscn"
+GGS="*res://addons/ggs/classes/global/ggs.tscn"
 
 [display]
 
@@ -37,7 +38,7 @@ window/size/borderless=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg", "res://addons/godot_sfxr/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogue_nodes/plugin.cfg", "res://addons/ggs/plugin.cfg", "res://addons/godot_sfxr/plugin.cfg")
 
 [fmod]
 

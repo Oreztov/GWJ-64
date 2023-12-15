@@ -7,6 +7,7 @@ var min_value = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Control/Paused.hide()
 	update()
 	
 func _physics_process(delta):
@@ -34,8 +35,19 @@ func update():
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true
+	
+func set_overlay(value):
+	%Pattern.visible = value
 
 
 func _on_menu_button_pressed():
 	get_tree().paused = !get_tree().paused
 	$Control/Paused.visible = !$Control/Paused.visible
+
+
+func _on_button_quit_pressed():
+	get_tree().quit()
+
+
+func _on_button_resume_pressed():
+	_on_menu_button_pressed()

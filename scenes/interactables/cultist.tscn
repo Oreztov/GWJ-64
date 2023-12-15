@@ -23,3 +23,6 @@ texture = SubResource("GradientTexture2D_vbsc4")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_5is4n")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = null

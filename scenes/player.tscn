@@ -1,8 +1,25 @@
-[gd_scene load_steps=21 format=3 uid="uid://ouplnjyypmbk"]
+[gd_scene load_steps=39 format=3 uid="uid://ouplnjyypmbk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_butlc"]
 [ext_resource type="Texture2D" uid="uid://d2566tvvhboxl" path="res://sprites/characters/other_npc/cop_1_idle.png" id="2_e88h7"]
 [ext_resource type="Texture2D" uid="uid://r4kycpepsmn3" path="res://sprites/characters/other_npc/cop_1_walk.png" id="3_sf8cw"]
+[ext_resource type="AudioStream" uid="uid://cgcjf6f5espt1" path="res://audio/sfx/player_footstep/player_footstep_01.ogg" id="4_nn15n"]
+[ext_resource type="AudioStream" uid="uid://c37ortq24j0ts" path="res://audio/sfx/player_footstep/player_footstep_02.ogg" id="5_gq0bc"]
+[ext_resource type="AudioStream" uid="uid://du8c5pvjc1xka" path="res://audio/sfx/player_footstep/player_footstep_11.ogg" id="6_b3x3a"]
+[ext_resource type="AudioStream" uid="uid://bw75oqmejhx7w" path="res://audio/sfx/player_footstep/player_footstep_03.ogg" id="6_v6u0y"]
+[ext_resource type="AudioStream" uid="uid://c56w8ionsjd8x" path="res://audio/sfx/player_footstep/player_footstep_12.ogg" id="7_1yjv3"]
+[ext_resource type="AudioStream" uid="uid://bv8tfi6fqgbrw" path="res://audio/sfx/player_footstep/player_footstep_04.ogg" id="7_xkwso"]
+[ext_resource type="AudioStream" uid="uid://i2ihx8kv62s4" path="res://audio/sfx/player_footstep/player_footstep_05.ogg" id="8_3wpea"]
+[ext_resource type="AudioStream" uid="uid://cfj0nogvrkc88" path="res://audio/sfx/player_footstep/player_footstep_13.ogg" id="8_k85qj"]
+[ext_resource type="AudioStream" uid="uid://celqhavgbg6kf" path="res://audio/sfx/player_footstep/player_footstep_14.ogg" id="9_4ole6"]
+[ext_resource type="AudioStream" uid="uid://bwr5h32k2ky5x" path="res://audio/sfx/player_footstep/player_footstep_06.ogg" id="9_6kxdl"]
+[ext_resource type="AudioStream" uid="uid://c11fktcgf5k3c" path="res://audio/sfx/player_footstep/player_footstep_07.ogg" id="10_56cro"]
+[ext_resource type="AudioStream" uid="uid://b38owj0u0vl2d" path="res://audio/sfx/player_footstep/player_footstep_15.ogg" id="10_nls18"]
+[ext_resource type="AudioStream" uid="uid://d12w26ll4d5u1" path="res://audio/sfx/player_footstep/player_footstep_16.ogg" id="11_8jre2"]
+[ext_resource type="AudioStream" uid="uid://n7g484idygeo" path="res://audio/sfx/player_footstep/player_footstep_08.ogg" id="11_ii6ik"]
+[ext_resource type="AudioStream" uid="uid://snaknnepxshl" path="res://audio/sfx/player_footstep/player_footstep_17.ogg" id="12_qtwh6"]
+[ext_resource type="AudioStream" uid="uid://brrqxnn22ybjv" path="res://audio/sfx/player_footstep/player_footstep_09.ogg" id="12_r4s4f"]
+[ext_resource type="AudioStream" uid="uid://b2gf2cge6v2f" path="res://audio/sfx/player_footstep/player_footstep_10.ogg" id="13_2b618"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irm6i"]
 atlas = ExtResource("2_e88h7")
@@ -125,6 +142,43 @@ font_size = 32
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q4gpn"]
+streams_count = 17
+stream_0/stream = ExtResource("4_nn15n")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_gq0bc")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_v6u0y")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_xkwso")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("8_3wpea")
+stream_4/weight = 1.0
+stream_5/stream = ExtResource("9_6kxdl")
+stream_5/weight = 1.0
+stream_6/stream = ExtResource("10_56cro")
+stream_6/weight = 1.0
+stream_7/stream = ExtResource("11_ii6ik")
+stream_7/weight = 1.0
+stream_8/stream = ExtResource("12_r4s4f")
+stream_8/weight = 1.0
+stream_9/stream = ExtResource("13_2b618")
+stream_9/weight = 1.0
+stream_10/stream = ExtResource("6_b3x3a")
+stream_10/weight = 1.0
+stream_11/stream = ExtResource("7_1yjv3")
+stream_11/weight = 1.0
+stream_12/stream = ExtResource("8_k85qj")
+stream_12/weight = 1.0
+stream_13/stream = ExtResource("9_4ole6")
+stream_13/weight = 1.0
+stream_14/stream = ExtResource("10_nls18")
+stream_14/weight = 1.0
+stream_15/stream = ExtResource("11_8jre2")
+stream_15/weight = 1.0
+stream_16/stream = ExtResource("12_qtwh6")
+stream_16/weight = 1.0
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
 script = ExtResource("1_butlc")
@@ -135,7 +189,8 @@ position = Vector2(0, -4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nisve")
 animation = &"Walk"
-frame_progress = 0.588165
+frame = 6
+frame_progress = 0.911391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1spxi")
@@ -164,5 +219,10 @@ text = "[W]/[Up]"
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
 
+[node name="sfxFootstep" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_q4gpn")
+bus = &"sfx"
+
+[connection signal="frame_changed" from="AnimatedPlayerSprite" to="." method="_on_animated_player_sprite_frame_changed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
