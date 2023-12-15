@@ -154,7 +154,7 @@ bus = &"sfx"
 
 [node name="sfxDialogue" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_q30vj")
-bus = &"ui"
+bus = &"sfx"
 
 [node name="Control" type="Control" parent="."]
 texture_filter = 1

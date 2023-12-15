@@ -11,3 +11,6 @@ light_threshold = 50
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_iof1t")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+bus = &"sfx"

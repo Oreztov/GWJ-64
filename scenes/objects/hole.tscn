@@ -59,6 +59,7 @@ shape = SubResource("RectangleShape2D_r0msm")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_hisw0")
+bus = &"sfx"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 position = Vector2(0, -16)

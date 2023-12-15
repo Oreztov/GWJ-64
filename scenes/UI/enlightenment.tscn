@@ -369,16 +369,19 @@ stream = ExtResource("3_1aqfc")
 volume_db = -80.0
 pitch_scale = 0.57
 autoplay = true
+bus = &"sfx"
 
 [node name="musicMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_0smnc")
 volume_db = -6.0
 autoplay = true
+bus = &"music"
 
 [node name="musicLight" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_3qm6a")
 volume_db = -80.0
 autoplay = true
+bus = &"music"
 
 [connection signal="pressed" from="Control/VBoxContainer/Bar/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
