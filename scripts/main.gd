@@ -17,6 +17,8 @@ func _ready():
 	
 	Globals.level_changed.connect(level_changed)
 	
+	$Background/Sprite3D.texture.viewport_path = "Background/BackgroundViewport"
+	
 	# Start game
 	Globals.levels[Globals.LEVELS.Tutorial1].enter()
 	Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)

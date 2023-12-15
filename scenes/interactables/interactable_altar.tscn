@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wkpmad3vcocb"]
+[gd_scene load_steps=4 format=3 uid="uid://wkpmad3vcocb"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_auchm"]
-
-[sub_resource type="Gradient" id="Gradient_5myyx"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_p6fae"]
-gradient = SubResource("Gradient_5myyx")
+[ext_resource type="Texture2D" uid="uid://f5gg3w68yjx8" path="res://sprites/objects/Base altar sprite.png" id="2_rgvvj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h1xx6"]
 radius = 32.0
@@ -15,7 +10,8 @@ radius = 32.0
 enlighten = 100
 
 [node name="Sprite2D" parent="." index="0"]
-texture = SubResource("GradientTexture2D_p6fae")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_rgvvj")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CircleShape2D_h1xx6")

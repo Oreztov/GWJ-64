@@ -1,13 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://52gtfo0ucm4f"]
 
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="1_f7bru"]
-[ext_resource type="Texture2D" uid="uid://b2n7xb3belefw" path="res://sprites/objects/stairs_temp.png" id="2_w6y0b"]
+[ext_resource type="Texture2D" uid="uid://bi6hvke23pgj1" path="res://sprites/objects/Stairs.png" id="2_6u41s"]
 [ext_resource type="AudioStream" uid="uid://bspm35w2kim15" path="res://audio/sfx/PH_Stairs.ogg" id="3_e734h"]
 
 [node name="Stairs" instance=ExtResource("1_f7bru")]
 
 [node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_w6y0b")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_6u41s")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("3_e734h")

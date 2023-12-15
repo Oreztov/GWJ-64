@@ -26,4 +26,4 @@ level_to = 7
 position = Vector2(304, 432)
 
 [node name="Altar" parent="." index="5" instance=ExtResource("4_t7k7r")]
-position = Vector2(608, 416)
+position = Vector2(608, 448)

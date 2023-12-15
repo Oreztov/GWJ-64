@@ -31,4 +31,4 @@ level_from = 9
 level_to = 10
 
 [node name="Altar" parent="." index="4" instance=ExtResource("3_1e6g2")]
-position = Vector2(672, 736)
+position = Vector2(672, 768)
