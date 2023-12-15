@@ -79,3 +79,10 @@ func _on_area_2d_area_exited(area):
 	elif area.is_in_group("interactables"):
 		near_interactable = false
 		interactable = null
+
+
+func _on_animated_player_sprite_frame_changed():
+	var frame = %AnimatedPlayerSprite.frame
+	if %AnimatedPlayerSprite.animation == "Walk":
+		if frame == 0 or frame == 4:
+			print("step")

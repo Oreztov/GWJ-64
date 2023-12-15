@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=14 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -35,6 +35,13 @@ linear_accel_max = -500.0
 scale_min = 36.0
 scale_max = 36.0
 color_ramp = SubResource("GradientTexture1D_cv5nv")
+
+[sub_resource type="InputEventKey" id="InputEventKey_pd4gw"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_xsaq8"]
+events = [SubResource("InputEventKey_pd4gw")]
 
 [node name="Enlightenment" type="CanvasLayer"]
 layer = 25
@@ -125,10 +132,10 @@ custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 mouse_filter = 1
+shortcut = SubResource("Shortcut_xsaq8")
 text = "MENU"
 
 [node name="Paused" type="ColorRect" parent="Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,21 +145,61 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.392157)
 
-[node name="Label" type="Label" parent="Control/Paused"]
+[node name="Menu" type="VBoxContainer" parent="Control/Paused"]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 13
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -31.0
-offset_top = -21.0
-offset_right = 31.0
-offset_bottom = 21.0
+anchor_bottom = 1.0
+offset_left = -138.0
+offset_right = 138.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Control/Paused/Menu"]
+layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "PAUSED"
+
+[node name="ButtonResume" type="Button" parent="Control/Paused/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Resume"
+
+[node name="ButtonQuit" type="Button" parent="Control/Paused/Menu"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "Quit"
+
+[node name="Settings" type="VBoxContainer" parent="Control/Paused"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_right = 476.0
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Control/Paused/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "Settings"
+
+[node name="Category1" type="Label" parent="Control/Paused/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Audio"
+
+[node name="HSeparator" type="HSeparator" parent="Control/Paused/Settings"]
+layout_mode = 2
+
+[node name="Setting1" type="HBoxContainer" parent="Control/Paused/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Setting1"]
+layout_mode = 2
+text = "Master Volume"
 
 [node name="sfxEnlightenment" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1aqfc")
@@ -160,3 +207,5 @@ volume_db = -80.0
 autoplay = true
 
 [connection signal="pressed" from="Control/VBoxContainer/Bar/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Control/Paused/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="Control/Paused/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]

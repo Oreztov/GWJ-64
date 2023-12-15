@@ -135,7 +135,8 @@ position = Vector2(0, -4)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_nisve")
 animation = &"Walk"
-frame_progress = 0.588165
+frame = 6
+frame_progress = 0.911391
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_1spxi")
@@ -164,5 +165,6 @@ text = "[W]/[Up]"
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
 
+[connection signal="frame_changed" from="AnimatedPlayerSprite" to="." method="_on_animated_player_sprite_frame_changed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

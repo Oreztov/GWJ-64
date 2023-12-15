@@ -6,6 +6,33 @@
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tqwao"]
 blend_mode = 1
 
+[sub_resource type="Animation" id="Animation_38e1t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BG:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FG:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_jhrhy"]
 resource_name = "loop"
 length = 8.0
@@ -33,33 +60,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-0.018963, 0), Vector2(-0.151704, 0), Vector2(-0.512, 0), Vector2(-1.21363, 0), Vector2(-2.37037, 0), Vector2(-4.096, 0), Vector2(-6.5043, 0), Vector2(-9.70904, 0), Vector2(-13.824, 0), Vector2(-18.963, 0), Vector2(-25.2397, 0), Vector2(-32.768, 0), Vector2(-41.6616, 0), Vector2(-52.0344, 0), Vector2(-64, 0), Vector2(-77.6723, 0), Vector2(-93.165, 0), Vector2(-110.592, 0), Vector2(-130.067, 0), Vector2(-151.704, 0), Vector2(-175.616, 0), Vector2(-201.918, 0), Vector2(-230.722, 0), Vector2(-262.144, 0), Vector2(-296.296, 0), Vector2(-333.293, 0), Vector2(-373.248, 0), Vector2(-416.275, 0), Vector2(-462.488, 0), Vector2(-512, 0), Vector2(-561.512, 0), Vector2(-607.725, 0), Vector2(-650.752, 0), Vector2(-690.707, 0), Vector2(-727.704, 0), Vector2(-761.856, 0), Vector2(-793.278, 0), Vector2(-822.082, 0), Vector2(-848.384, 0), Vector2(-872.296, 0), Vector2(-893.933, 0), Vector2(-913.408, 0), Vector2(-930.835, 0), Vector2(-946.328, 0), Vector2(-960, 0), Vector2(-971.966, 0), Vector2(-982.338, 0), Vector2(-991.232, 0), Vector2(-998.76, 0), Vector2(-1005.04, 0), Vector2(-1010.18, 0), Vector2(-1014.29, 0), Vector2(-1017.5, 0), Vector2(-1019.9, 0), Vector2(-1021.63, 0), Vector2(-1022.79, 0), Vector2(-1023.49, 0), Vector2(-1023.85, 0), Vector2(-1023.98, 0), Vector2(-1024, 0), Vector2(-1023.98, 0), Vector2(-1023.85, 0), Vector2(-1023.49, 0), Vector2(-1022.79, 0), Vector2(-1021.63, 0), Vector2(-1019.9, 0), Vector2(-1017.5, 0), Vector2(-1014.29, 0), Vector2(-1010.18, 0), Vector2(-1005.04, 0), Vector2(-998.76, 0), Vector2(-991.232, 0), Vector2(-982.338, 0), Vector2(-971.966, 0), Vector2(-960, 0), Vector2(-946.328, 0), Vector2(-930.835, 0), Vector2(-913.408, 0), Vector2(-893.933, 0), Vector2(-872.296, 0), Vector2(-848.384, 0), Vector2(-822.082, 0), Vector2(-793.278, 0), Vector2(-761.856, 0), Vector2(-727.704, 0), Vector2(-690.707, 0), Vector2(-650.752, 0), Vector2(-607.725, 0), Vector2(-561.512, 0), Vector2(-512, 0), Vector2(-462.488, 0), Vector2(-416.275, 0), Vector2(-373.248, 0), Vector2(-333.293, 0), Vector2(-296.296, 0), Vector2(-262.144, 0), Vector2(-230.722, 0), Vector2(-201.918, 0), Vector2(-175.616, 0), Vector2(-151.704, 0), Vector2(-130.067, 0), Vector2(-110.592, 0), Vector2(-93.165, 0), Vector2(-77.6723, 0), Vector2(-64, 0), Vector2(-52.0344, 0), Vector2(-41.6616, 0), Vector2(-32.768, 0), Vector2(-25.2397, 0), Vector2(-18.963, 0), Vector2(-13.824, 0), Vector2(-9.70905, 0), Vector2(-6.50427, 0), Vector2(-4.09601, 0), Vector2(-2.37036, 0), Vector2(-1.21362, 0), Vector2(-0.512024, 0), Vector2(-0.151733, 0), Vector2(-0.0189819, 0), Vector2(0, 0), Vector2(-0.018963, 0), Vector2(-0.151704, 0), Vector2(-0.512, 0), Vector2(-1.21363, 0), Vector2(-2.37037, 0), Vector2(-4.096, 0), Vector2(-6.5043, 0), Vector2(-9.70904, 0), Vector2(-13.824, 0), Vector2(-18.963, 0), Vector2(-25.2397, 0), Vector2(-32.768, 0), Vector2(-41.6616, 0), Vector2(-52.0344, 0), Vector2(-64, 0), Vector2(-77.6723, 0), Vector2(-93.165, 0), Vector2(-110.592, 0), Vector2(-130.067, 0), Vector2(-151.704, 0), Vector2(-175.616, 0), Vector2(-201.918, 0), Vector2(-230.722, 0), Vector2(-262.144, 0), Vector2(-296.296, 0), Vector2(-333.293, 0), Vector2(-373.248, 0), Vector2(-416.275, 0), Vector2(-462.488, 0), Vector2(-512, 0), Vector2(-561.512, 0), Vector2(-607.725, 0), Vector2(-650.752, 0), Vector2(-690.707, 0), Vector2(-727.704, 0), Vector2(-761.856, 0), Vector2(-793.278, 0), Vector2(-822.082, 0), Vector2(-848.384, 0), Vector2(-872.296, 0), Vector2(-893.933, 0), Vector2(-913.408, 0), Vector2(-930.835, 0), Vector2(-946.328, 0), Vector2(-960, 0), Vector2(-971.966, 0), Vector2(-982.338, 0), Vector2(-991.232, 0), Vector2(-998.76, 0), Vector2(-1005.04, 0), Vector2(-1010.18, 0), Vector2(-1014.29, 0), Vector2(-1017.5, 0), Vector2(-1019.9, 0), Vector2(-1021.63, 0), Vector2(-1022.79, 0), Vector2(-1023.49, 0), Vector2(-1023.85, 0), Vector2(-1023.98, 0), Vector2(-1024, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_38e1t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("BG:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("FG:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_82q84"]
