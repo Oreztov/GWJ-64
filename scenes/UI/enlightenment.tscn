@@ -1,10 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=19 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
 [ext_resource type="AudioStream" uid="uid://8kbigbcg4oo8" path="res://audio/sfx/PH_Enlightenment_Loop.ogg" id="3_1aqfc"]
 [ext_resource type="FontFile" uid="uid://yx0g4rs8r264" path="res://fonts/stint/StintUltraCondensed-Regular.ttf" id="3_jywt3"]
 [ext_resource type="Theme" uid="uid://bumownh2r70d5" path="res://resources/themes/hud_theme.tres" id="4_tyi7d"]
+[ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="5_72edb"]
+[ext_resource type="Resource" uid="uid://wcmue6dxniqd" path="res://game_settings/settings/audio/master_volume.tres" id="7_6qu23"]
+[ext_resource type="Resource" uid="uid://bm5hbesuo45cy" path="res://game_settings/settings/audio/sfx_volume.tres" id="8_y3puv"]
+[ext_resource type="Resource" uid="uid://dvkdlnlw822k4" path="res://game_settings/settings/audio/ui_volume.tres" id="9_bmbed"]
+[ext_resource type="Resource" uid="uid://m4hq30r882ty" path="res://game_settings/settings/audio/music_volume.tres" id="10_da0qd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -145,7 +150,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.392157)
 
-[node name="Menu" type="VBoxContainer" parent="Control/Paused"]
+[node name="Menu" type="PanelContainer" parent="Control/Paused"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -155,51 +160,181 @@ offset_left = -138.0
 offset_right = 138.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Menu" type="VBoxContainer" parent="Control/Paused/Menu"]
+layout_mode = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="Control/Paused/Menu"]
+[node name="Title" type="Label" parent="Control/Paused/Menu/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "PAUSED"
 
-[node name="ButtonResume" type="Button" parent="Control/Paused/Menu"]
+[node name="ButtonResume" type="Button" parent="Control/Paused/Menu/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Resume"
 
-[node name="ButtonQuit" type="Button" parent="Control/Paused/Menu"]
+[node name="ButtonQuit" type="Button" parent="Control/Paused/Menu/Menu"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 72
 text = "Quit"
 
-[node name="Settings" type="VBoxContainer" parent="Control/Paused"]
+[node name="Settings" type="PanelContainer" parent="Control/Paused"]
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_left = 200.0
-offset_right = 476.0
+offset_right = 458.0
 grow_vertical = 2
+
+[node name="Settings" type="VBoxContainer" parent="Control/Paused/Settings"]
+layout_mode = 2
 alignment = 1
 
-[node name="Title" type="Label" parent="Control/Paused/Settings"]
+[node name="Title" type="Label" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 128
 text = "Settings"
 
-[node name="Category1" type="Label" parent="Control/Paused/Settings"]
+[node name="Category1" type="Label" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
 text = "Audio"
 
-[node name="HSeparator" type="HSeparator" parent="Control/Paused/Settings"]
+[node name="HSeparator" type="HSeparator" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
 
-[node name="Setting1" type="HBoxContainer" parent="Control/Paused/Settings"]
+[node name="Setting1" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/Paused/Settings/Setting1"]
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting1"]
 layout_mode = 2
 text = "Master Volume"
+
+[node name="Slider" parent="Control/Paused/Settings/Settings/Setting1" instance=ExtResource("5_72edb")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = ExtResource("7_6qu23")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting2" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting2"]
+layout_mode = 2
+text = "SFX Volume"
+
+[node name="Slider" parent="Control/Paused/Settings/Settings/Setting2" instance=ExtResource("5_72edb")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = ExtResource("8_y3puv")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting3" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting3"]
+layout_mode = 2
+text = "UI Volume"
+
+[node name="Slider" parent="Control/Paused/Settings/Settings/Setting3" instance=ExtResource("5_72edb")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = ExtResource("9_bmbed")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting4" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting4"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="Slider" parent="Control/Paused/Settings/Settings/Setting4" instance=ExtResource("5_72edb")]
+layout_mode = 2
+size_flags_horizontal = 10
+setting = ExtResource("10_da0qd")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Credits" type="PanelContainer" parent="Control/Paused"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -458.0
+offset_right = -200.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Credits" type="VBoxContainer" parent="Control/Paused/Credits"]
+layout_mode = 2
+alignment = 1
+
+[node name="Title" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 128
+text = "Credits"
+
+[node name="Name" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "- Oreztov -
+"
+
+[node name="Credit" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Programming, 3D, Game Design"
+
+[node name="Name2" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "- Goob-dev -
+"
+
+[node name="Credit2" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "2D Character & Environment Art"
+
+[node name="Name3" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 64
+text = "- Joey K -
+"
+
+[node name="Credit3" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Sound Design & Music"
+
+[node name="Name4" type="Label" parent="Control/Paused/Credits/Credits"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 56
+text = "- Andersson Radford -
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credit4" type="Label" parent="Control/Paused/Credits/Credits"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
+text = "Writing & Design"
 
 [node name="sfxEnlightenment" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1aqfc")
@@ -207,5 +342,10 @@ volume_db = -80.0
 autoplay = true
 
 [connection signal="pressed" from="Control/VBoxContainer/Bar/MenuButton" to="." method="_on_menu_button_pressed"]
-[connection signal="pressed" from="Control/Paused/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
-[connection signal="pressed" from="Control/Paused/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]
+[connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]
+
+[editable path="Control/Paused/Settings/Settings/Setting1/Slider"]
+[editable path="Control/Paused/Settings/Settings/Setting2/Slider"]
+[editable path="Control/Paused/Settings/Settings/Setting3/Slider"]
+[editable path="Control/Paused/Settings/Settings/Setting4/Slider"]

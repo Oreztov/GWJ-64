@@ -63,7 +63,7 @@ func _get_comp_list() -> Array[Dictionary]:
 ### Component Instantiation
 
 func _on_List_item_activated(item_index: int) -> void:
-	var EI: EditorInterface = ggsUtils.get_editor_interface()
+	var EI = EditorInterface
 	var ES: EditorSelection = EI.get_selection()
 	var selected_nodes: Array[Node] = ES.get_selected_nodes()
 	

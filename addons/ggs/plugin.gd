@@ -23,7 +23,7 @@ func _exit_tree() -> void:
 
 func _add_editor_interface_singleton() -> void:
 	if not Engine.has_singleton("ggsEI"):
-		Engine.register_singleton("ggsEI", get_editor_interface())
+		Engine.register_singleton("ggsEI", EditorInterface)
 
 
 func _remove_editor_interface_singleton() -> void:
