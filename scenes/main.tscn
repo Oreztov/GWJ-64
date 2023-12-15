@@ -18,13 +18,13 @@
 [ext_resource type="PackedScene" uid="uid://cioe1ahoxkipn" path="res://scenes/levels/background_viewport.tscn" id="16_wxjo5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ql46r"]
-viewport_path = NodePath("LevelViewports/LevelT1Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qdkmj"]
-viewport_path = NodePath("LevelViewports/LevelT2Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ypeen"]
-viewport_path = NodePath("LevelViewports/LevelT3Viewport")
+viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
 viewport_path = NodePath(".")
@@ -51,7 +51,7 @@ viewport_path = NodePath(".")
 viewport_path = NodePath(".")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_u1rsu"]
-viewport_path = NodePath("Background/BackgroundViewport")
+viewport_path = NodePath(".")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wfqjp")

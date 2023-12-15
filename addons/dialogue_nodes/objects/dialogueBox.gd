@@ -448,7 +448,6 @@ func get_variable(text : String):
 ## $DialogueBox.variables["COIN"] += 10
 ## [/codeblock]
 func set_variable(var_name: String, type: int, value, operator = 0):
-
 	# Set datatype of value
 	match type:
 		TYPE_STRING:
