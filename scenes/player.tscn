@@ -1,8 +1,13 @@
-[gd_scene load_steps=21 format=3 uid="uid://ouplnjyypmbk"]
+[gd_scene load_steps=27 format=3 uid="uid://ouplnjyypmbk"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_butlc"]
 [ext_resource type="Texture2D" uid="uid://d2566tvvhboxl" path="res://sprites/characters/other_npc/cop_1_idle.png" id="2_e88h7"]
 [ext_resource type="Texture2D" uid="uid://r4kycpepsmn3" path="res://sprites/characters/other_npc/cop_1_walk.png" id="3_sf8cw"]
+[ext_resource type="AudioStream" uid="uid://cgcjf6f5espt1" path="res://audio/sfx/player_footstep/player_footstep_01.ogg" id="4_nn15n"]
+[ext_resource type="AudioStream" uid="uid://c37ortq24j0ts" path="res://audio/sfx/player_footstep/player_footstep_02.ogg" id="5_gq0bc"]
+[ext_resource type="AudioStream" uid="uid://bw75oqmejhx7w" path="res://audio/sfx/player_footstep/player_footstep_03.ogg" id="6_v6u0y"]
+[ext_resource type="AudioStream" uid="uid://bv8tfi6fqgbrw" path="res://audio/sfx/player_footstep/player_footstep_04.ogg" id="7_xkwso"]
+[ext_resource type="AudioStream" uid="uid://i2ihx8kv62s4" path="res://audio/sfx/player_footstep/player_footstep_05.ogg" id="8_3wpea"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_irm6i"]
 atlas = ExtResource("2_e88h7")
@@ -125,6 +130,20 @@ font_size = 32
 outline_size = 7
 outline_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q4gpn"]
+streams_count = 6
+stream_0/stream = ExtResource("4_nn15n")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("5_gq0bc")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("6_v6u0y")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("7_xkwso")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("8_3wpea")
+stream_4/weight = 1.0
+stream_5/weight = 1.0
+
 [node name="Player" type="CharacterBody2D" groups=["players"]]
 z_index = 1
 script = ExtResource("1_butlc")
@@ -164,6 +183,9 @@ offset_bottom = 8.0
 text = "[W]/[Up]"
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
+
+[node name="sfxFootstep" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_q4gpn")
 
 [connection signal="frame_changed" from="AnimatedPlayerSprite" to="." method="_on_animated_player_sprite_frame_changed"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
