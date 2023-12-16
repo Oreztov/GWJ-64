@@ -14,6 +14,6 @@ dest_files=["res://.godot/imported/music_light_loop.ogg-a41b5d803d2b5ff2a3f21e6a
 
 loop=true
 loop_offset=0.0
-bpm=0.0
+bpm=70.0
 beat_count=0
 bar_beats=4

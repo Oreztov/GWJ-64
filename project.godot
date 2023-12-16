@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 general/2d_panning_strength=0.2
 general/3d_panning_strength=0.2
+driver/output_latency=50
 
 [autoload]
 
