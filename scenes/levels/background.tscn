@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://jwaytvlry0eh"]
+[gd_scene load_steps=11 format=3 uid="uid://jwaytvlry0eh"]
 
-[ext_resource type="Texture2D" uid="uid://cep7ixg4p3ele" path="res://sprites/Wispy_Sky-Night_03-1024x512.png" id="1_nnqbh"]
-[ext_resource type="Texture2D" uid="uid://i1oxoglhshfh" path="res://sprites/Wispy_Sky-Night_04-1024x512.png" id="2_fadpv"]
+[ext_resource type="Texture2D" uid="uid://cep7ixg4p3ele" path="res://sprites/background/Wispy_Sky-Night_03-1024x512.png" id="1_qop0u"]
+[ext_resource type="Texture2D" uid="uid://cin0a8c85cwhu" path="res://sprites/background/2.png" id="2_re45o"]
+[ext_resource type="Texture2D" uid="uid://ix15n3evorox" path="res://sprites/background/3.png" id="3_dyees"]
+[ext_resource type="Texture2D" uid="uid://cxaepd6w0iftt" path="res://sprites/background/4.png" id="4_qcdvv"]
+[ext_resource type="Texture2D" uid="uid://cxwt6gsq8mq3y" path="res://sprites/background/5.png" id="5_1aqnn"]
+[ext_resource type="Texture2D" uid="uid://i1oxoglhshfh" path="res://sprites/background/Wispy_Sky-Night_04-1024x512.png" id="6_4eitu"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_tqwao"]
 blend_mode = 1
@@ -74,28 +78,56 @@ _data = {
 
 [node name="WispySky-night03-1024x512" type="Sprite2D" parent="BG"]
 modulate = Color(0.168627, 0.168627, 0.168627, 1)
-texture = ExtResource("1_nnqbh")
+texture = ExtResource("1_qop0u")
 centered = false
 
 [node name="WispySky-night03-1024x513" type="Sprite2D" parent="BG"]
 modulate = Color(0.168627, 0.168627, 0.168627, 1)
 position = Vector2(1024, 0)
-texture = ExtResource("1_nnqbh")
+texture = ExtResource("1_qop0u")
 centered = false
+
+[node name="City" type="Node2D" parent="."]
+position = Vector2(-74, 90)
+
+[node name="2" type="Sprite2D" parent="City"]
+visible = false
+modulate = Color(1, 1, 1, 0.372549)
+position = Vector2(576, 261)
+scale = Vector2(2, 2)
+texture = ExtResource("2_re45o")
+
+[node name="3" type="Sprite2D" parent="City"]
+modulate = Color(1, 1, 1, 0.0901961)
+position = Vector2(576, 261)
+scale = Vector2(2, 2)
+texture = ExtResource("3_dyees")
+
+[node name="4" type="Sprite2D" parent="City"]
+modulate = Color(1, 1, 1, 0.227451)
+position = Vector2(576, 261)
+scale = Vector2(2, 2)
+texture = ExtResource("4_qcdvv")
+
+[node name="5" type="Sprite2D" parent="City"]
+modulate = Color(1, 1, 1, 0.372549)
+position = Vector2(596, 212)
+scale = Vector2(2, 2)
+texture = ExtResource("5_1aqnn")
 
 [node name="FG" type="Node2D" parent="."]
 
 [node name="WispySky-night04-1024x512" type="Sprite2D" parent="FG"]
 modulate = Color(1, 1, 1, 0.345098)
 material = SubResource("CanvasItemMaterial_tqwao")
-texture = ExtResource("2_fadpv")
+texture = ExtResource("6_4eitu")
 centered = false
 
 [node name="WispySky-night04-1024x513" type="Sprite2D" parent="FG"]
 modulate = Color(1, 1, 1, 0.345098)
 material = SubResource("CanvasItemMaterial_tqwao")
 position = Vector2(1024, 0)
-texture = ExtResource("2_fadpv")
+texture = ExtResource("6_4eitu")
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

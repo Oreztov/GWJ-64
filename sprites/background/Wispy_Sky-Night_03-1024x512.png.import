@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i1oxoglhshfh"
-path="res://.godot/imported/Wispy_Sky-Night_04-1024x512.png-6536e309c9a3d66685f274bd6c999ad5.ctex"
+uid="uid://cep7ixg4p3ele"
+path="res://.godot/imported/Wispy_Sky-Night_03-1024x512.png-a3757deebd7f9bff5041595bb4d897fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Wispy_Sky-Night_04-1024x512.png"
-dest_files=["res://.godot/imported/Wispy_Sky-Night_04-1024x512.png-6536e309c9a3d66685f274bd6c999ad5.ctex"]
+source_file="res://sprites/background/Wispy_Sky-Night_03-1024x512.png"
+dest_files=["res://.godot/imported/Wispy_Sky-Night_03-1024x512.png-a3757deebd7f9bff5041595bb4d897fc.ctex"]
 
 [params]
 

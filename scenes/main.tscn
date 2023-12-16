@@ -196,7 +196,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)
 current = true
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Camera3D"]
-current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D"]
 light_energy = 2.0
@@ -226,5 +225,5 @@ attenuation_filter_db = -3.0
 [node name="BackgroundViewport" parent="Background" instance=ExtResource("16_wxjo5")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -22)
 mesh = SubResource("PlaneMesh_ifuht")

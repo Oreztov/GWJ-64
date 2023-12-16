@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://blfb8c6uu6m32"]
+[gd_scene load_steps=7 format=3 uid="uid://blfb8c6uu6m32"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_djrl1"]
 [ext_resource type="PackedScene" uid="uid://dq0dx5jcehklh" path="res://scenes/objects/rift.tscn" id="2_5atir"]
+[ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="3_1t5uy"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="3_25y2k"]
 [ext_resource type="PackedScene" uid="uid://wkpmad3vcocb" path="res://scenes/interactables/interactable_altar.tscn" id="4_2d1rg"]
+[ext_resource type="Texture2D" uid="uid://fiqdxbxviyt6" path="res://sprites/tiles/door_plank.png" id="6_q161q"]
 
 [node name="LevelR1" instance=ExtResource("1_djrl1")]
 index = 11
@@ -22,9 +24,21 @@ door_connected = 23
 level_from = 11
 level_to = 3
 
+[node name="Door" parent="Doors" index="1" instance=ExtResource("3_1t5uy")]
+position = Vector2(112, 352)
+door_self = 25
+door_connected = 25
+level_from = 11
+level_to = 11
+interact_disabled = true
+
 [node name="Cultist" parent="." index="4" instance=ExtResource("3_25y2k")]
 position = Vector2(352, 360)
 dialogue = "not_bruise.tres"
 
 [node name="Altar" parent="." index="5" instance=ExtResource("4_2d1rg")]
 position = Vector2(240, 384)
+
+[node name="DoorPlank" type="Sprite2D" parent="." index="6"]
+position = Vector2(112, 352)
+texture = ExtResource("6_q161q")

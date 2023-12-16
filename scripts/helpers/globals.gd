@@ -23,7 +23,8 @@ StairsGF1ToB1, StairsB1ToGF1, StairsGF3ToFF3, StairsFF3ToGF3,
 HoleGF3ToB3, HoleB3ToGF3,
 DoorFF22ToFF3,
 DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3,
-RiftB1ToR1, RiftR1ToB1
+RiftB1ToR1, RiftR1ToB1,
+Decor
 }
 var doors = {}
 
