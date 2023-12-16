@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcjsrn21ysjka"]
+
+[ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_mfpeq"]
+
+[sub_resource type="Gradient" id="Gradient_e7p6v"]
+colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iixmt"]
+gradient = SubResource("Gradient_e7p6v")
+width = 32
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7v0l"]
+radius = 16.0
+height = 64.0
+
+[node name="InteractableCart" instance=ExtResource("1_mfpeq")]
+inspectable = 5
+context = "Inspect..."
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_iixmt")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("CapsuleShape2D_k7v0l")

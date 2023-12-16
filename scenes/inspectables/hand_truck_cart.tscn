@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://7akjprrjhfgk"]
+
+[ext_resource type="PackedScene" uid="uid://bjdbdl20mce2f" path="res://scenes/inspectables/inspectable.tscn" id="1_wuc3v"]
+[ext_resource type="PackedScene" uid="uid://c10ljj41ew2gj" path="res://models/inspectables/collision/hand_truck_cart_col.tscn" id="2_mad3p"]
+[ext_resource type="PackedScene" uid="uid://cmov84y1u6sqm" path="res://models/inspectables/base/cart/bat/Baseball Bat.fbx" id="3_u5jep"]
+[ext_resource type="PackedScene" uid="uid://cb2ljj7osisud" path="res://models/inspectables/collision/crowbar.tscn" id="4_iefyr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_adprn"]
+radius = 0.1
+height = 1.53577
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_n5v3s"]
+radius = 0.118115
+height = 1.58571
+
+[node name="Inspectable" instance=ExtResource("1_wuc3v")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)
+id = 5
+title = "Hand Truck"
+clues = Array[int]([3, 13])
+
+[node name="POIs" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Bat" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Bat" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.960919, 0.276828, 0, -0.276828, 0.960919, -0.314112, -0.451685, 0.195962)
+shape = SubResource("CapsuleShape3D_adprn")
+
+[node name="Crowbar" type="Area3D" parent="POIs" index="1" groups=["1", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Crowbar" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.109404, 0.539928, -0.297332)
+shape = SubResource("CapsuleShape3D_n5v3s")
+
+[node name="HandTruckCart" parent="." index="1" instance=ExtResource("2_mad3p")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 1, 0)
+
+[node name="Baseball" parent="." index="2" instance=ExtResource("3_u5jep")]
+transform = Transform3D(1.5, 0, 0, 0, 1.43446, 0.438558, 0, -0.438558, 1.43446, -0.3, -0.175, 0.4)
+
+[node name="Crowbar" parent="." index="3" instance=ExtResource("4_iefyr")]
+transform = Transform3D(-1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0.1, 1.615, -0.3)

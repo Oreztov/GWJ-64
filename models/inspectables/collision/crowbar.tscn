@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb2ljj7osisud"]
+
+[ext_resource type="PackedScene" uid="uid://cfjlcx7cuwnox" path="res://models/inspectables/base/cart/crowbar/Crowbar.fbx" id="1_k4hdi"]
+[ext_resource type="Texture2D" uid="uid://btgvgtcol8l2h" path="res://models/inspectables/base/cart/crowbar/Crowbar_Crowbar_BaseColor.png" id="2_h3223"]
+[ext_resource type="Texture2D" uid="uid://g2qatpiyhgpq" path="res://models/inspectables/base/cart/crowbar/Crowbar_Crowbar_Metallic.png" id="3_1x4a6"]
+[ext_resource type="Texture2D" uid="uid://c2cth6tujtk4x" path="res://models/inspectables/base/cart/crowbar/Crowbar_Crowbar_Normal.png" id="4_ihoso"]
+[ext_resource type="Texture2D" uid="uid://bppa8nq43es1v" path="res://models/inspectables/base/cart/crowbar/Crowbar_Crowbar_Roughness.png" id="5_bm00a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yk57h"]
+albedo_texture = ExtResource("2_h3223")
+metallic = 1.0
+metallic_texture = ExtResource("3_1x4a6")
+roughness_texture = ExtResource("5_bm00a")
+normal_enabled = true
+normal_texture = ExtResource("4_ihoso")
+
+[node name="Crowbar" instance=ExtResource("1_k4hdi")]
+
+[node name="Crowbar" parent="RootNode" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yk57h")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dbo3ht10ygy2t"]
+[gd_scene load_steps=10 format=3 uid="uid://dbo3ht10ygy2t"]
 
 [ext_resource type="Script" path="res://scripts/helpers/file_data.gd" id="1_2gcxo"]
 [ext_resource type="PackedScene" uid="uid://subnwcnqckji" path="res://scenes/inspectables/dino_plush.tscn" id="2_l7im2"]
@@ -7,9 +7,10 @@
 [ext_resource type="Resource" uid="uid://6cgrn63c0mdq" path="res://resources/dialogue/test.tres" id="4_lphd7"]
 [ext_resource type="PackedScene" uid="uid://ugaxldtgef0a" path="res://scenes/inspectables/medical_box.tscn" id="5_fafvi"]
 [ext_resource type="Resource" uid="uid://cw7bwmqdrcqs1" path="res://resources/dialogue/cultist_pass_tutorial.tres" id="5_x0wmg"]
+[ext_resource type="PackedScene" uid="uid://7akjprrjhfgk" path="res://scenes/inspectables/hand_truck_cart.tscn" id="6_ug6q3"]
 [ext_resource type="Resource" uid="uid://cpf836acxoamg" path="res://resources/dialogue/not_knife.tres" id="8_aqgvm"]
 
 [node name="FileData" type="Node3D"]
 script = ExtResource("1_2gcxo")
-inspectables = Array[PackedScene]([ExtResource("2_l7im2"), ExtResource("3_74scj"), ExtResource("4_2evch"), ExtResource("5_fafvi")])
+inspectables = Array[PackedScene]([ExtResource("2_l7im2"), ExtResource("3_74scj"), ExtResource("4_2evch"), ExtResource("5_fafvi"), ExtResource("6_ug6q3")])
 dialogue = Array[Resource("res://addons/dialogue_nodes/objects/DialogueData.gd")]([ExtResource("4_lphd7"), ExtResource("5_x0wmg"), ExtResource("8_aqgvm")])

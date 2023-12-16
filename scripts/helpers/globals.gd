@@ -25,14 +25,15 @@ DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3
 }
 var doors = {}
 
-enum INSPECTABLES {Template, DinoPlush, Squirrel, Body, Bucket, Case, MedicalBox}
+enum INSPECTABLES {Template, DinoPlush, Squirrel, Body, Bucket, Cart, MedicalBox}
 var inspectables = {}
 var inspectables_path = "res://scenes/inspectables"
 
 enum CLUES {Template, DinoOwner, 
 Knife, Bat, Gloves, Poison, 
 Stabbing, Bruises, Asphyxiation,
-Code1, Code2, Code3, Code4
+Code1, Code2, Code3, Code4,
+Crowbar
 }
 var clues = {
 	CLUES.Template: "Template",
@@ -47,7 +48,8 @@ var clues = {
 	CLUES.Code1: "8654",
 	CLUES.Code2: "1902",
 	CLUES.Code3: "3591",
-	CLUES.Code4: "9276"
+	CLUES.Code4: "9276",
+	CLUES.Crowbar: "Crowbar"
 }
 var clues_obtained = {}
 

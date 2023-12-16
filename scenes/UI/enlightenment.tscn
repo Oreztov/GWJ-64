@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=34 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://dm1av7skxvp1j" path="res://game_settings/components/input_btn/input_btn.tscn" id="12_2kfky"]
 [ext_resource type="Resource" uid="uid://c164lqh8exfl8" path="res://game_settings/settings/video/overlay_shader.tres" id="12_d3n4c"]
 [ext_resource type="AudioStream" uid="uid://bys83xdy0thmm" path="res://audio/music/music_main_loop.ogg" id="13_0smnc"]
-[ext_resource type="Script" path="res://game_settings/components/input_btn/input_btn.gd" id="13_q5ltg"]
 [ext_resource type="AudioStream" uid="uid://c7phxpn42m7mk" path="res://audio/music/music_light_loop.ogg" id="14_3qm6a"]
 [ext_resource type="Resource" uid="uid://cv8xs1rexd0uv" path="res://game_settings/settings/input/left_1.tres" id="14_xy0b6"]
 [ext_resource type="Resource" uid="uid://coob3wjwvowno" path="res://game_settings/settings/input/left_2.tres" id="15_6q4l1"]
@@ -307,7 +306,6 @@ text = "Move Left"
 [node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting6" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("13_q5ltg")
 ICW = NodePath("../../../../../../InputConfirmWindow")
 accept_mouse = true
 accept_axis = true
@@ -315,30 +313,15 @@ setting = ExtResource("14_xy0b6")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
-[node name="Btn" parent="Control/Paused/Settings/Settings/Setting6/InputBtn" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text_overrun_behavior = 3
-clip_text = true
-icon_alignment = 1
-
 [node name="InputBtn2" parent="Control/Paused/Settings/Settings/Setting6" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("13_q5ltg")
 ICW = NodePath("../../../../../../InputConfirmWindow")
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("15_6q4l1")
 apply_on_change = true
 grab_focus_on_mouse_over = true
-
-[node name="Btn" parent="Control/Paused/Settings/Settings/Setting6/InputBtn2" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text_overrun_behavior = 3
-clip_text = true
-icon_alignment = 1
 
 [node name="Setting7" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
@@ -435,19 +418,11 @@ text = "Open Notebook"
 [node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting10" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
 layout_mode = 2
 size_flags_horizontal = 10
-script = ExtResource("13_q5ltg")
 ICW = NodePath("../../../../../../InputConfirmWindow")
 accept_mouse = true
 setting = ExtResource("21_kt3ka")
 apply_on_change = true
 grab_focus_on_mouse_over = true
-
-[node name="Btn" parent="Control/Paused/Settings/Settings/Setting10/InputBtn" index="0"]
-custom_minimum_size = Vector2(100, 0)
-layout_mode = 2
-text_overrun_behavior = 3
-clip_text = true
-icon_alignment = 1
 
 [node name="Setting11" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
