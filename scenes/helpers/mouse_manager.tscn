@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bc2fe8j17blgy"]
+[gd_scene load_steps=6 format=3 uid="uid://bc2fe8j17blgy"]
 
 [ext_resource type="Script" path="res://scripts/helpers/mouse_manager.gd" id="1_874kr"]
 [ext_resource type="Texture2D" uid="uid://dwr2i01p0q4m2" path="res://sprites/UI/poi.png" id="2_bhpdt"]
 [ext_resource type="FontFile" uid="uid://bckuh15tthdx0" path="res://fonts/playpen/static/PlaypenSans-Regular.ttf" id="3_ka4yq"]
+[ext_resource type="AudioStream" uid="uid://dltvd844kb2cl" path="res://audio/sfx/note_clue_write.ogg" id="4_46fp6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e2yt6"]
 font = ExtResource("3_ka4yq")
@@ -28,3 +29,7 @@ offset_right = 97.0
 offset_bottom = 56.0
 label_settings = SubResource("LabelSettings_e2yt6")
 horizontal_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_46fp6")
+bus = &"sfx"

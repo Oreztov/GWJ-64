@@ -44,6 +44,7 @@ func pickup_clue(new_clue: Globals.CLUES):
 func drop_clue():
 	if answer != null:
 		answer.update_clue(clue)
+		$AudioStreamPlayer.play()
 	clue = null
 	clue_text.text = ""
 	dragging_clue = false
