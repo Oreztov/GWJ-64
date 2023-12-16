@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwh4oen10hodp"]
+[gd_scene load_steps=6 format=3 uid="uid://dwh4oen10hodp"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_sg63i"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_w2uij"]
 [ext_resource type="PackedScene" uid="uid://wkpmad3vcocb" path="res://scenes/interactables/interactable_altar.tscn" id="3_1e6g2"]
 [ext_resource type="PackedScene" uid="uid://dq0dx5jcehklh" path="res://scenes/objects/rift.tscn" id="3_4plqy"]
+[ext_resource type="Texture2D" uid="uid://fiqdxbxviyt6" path="res://sprites/tiles/door_plank.png" id="5_yp66e"]
 
 [node name="LevelT2" instance=ExtResource("1_sg63i")]
 index = 9
@@ -32,3 +33,7 @@ level_to = 10
 
 [node name="Altar" parent="." index="4" instance=ExtResource("3_1e6g2")]
 position = Vector2(672, 768)
+
+[node name="DoorPlank" type="Sprite2D" parent="." index="5"]
+position = Vector2(216, 736)
+texture = ExtResource("5_yp66e")

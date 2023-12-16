@@ -1,0 +1,62 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://cpf836acxoamg"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_pd3hy"]
+
+[resource]
+script = ExtResource("1_pd3hy")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_3",
+"offset": Vector2(20, 0),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "Tell me about this ritual.",
+"offset": Vector2(560, -40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "Firstly, the body must stay whole.
+It must not be pierced before death, for otherwise the soul may escape.
+Only after death may we make incisions in order to harness energy which is used to enlighten.",
+"offset": Vector2(980, -40),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "What is it?
+I am quite busy finishing the ritual.",
+"offset": Vector2(220, -40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_1",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

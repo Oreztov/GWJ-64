@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://yyesj7gytrq5"]
+[gd_scene load_steps=7 format=3 uid="uid://yyesj7gytrq5"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_v6uhf"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hl3as"]
 [ext_resource type="PackedScene" uid="uid://52gtfo0ucm4f" path="res://scenes/objects/stairs.tscn" id="3_nso61"]
-[ext_resource type="PackedScene" uid="uid://wkpmad3vcocb" path="res://scenes/interactables/interactable_altar.tscn" id="4_jc1sv"]
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="5_cg6jk"]
+[ext_resource type="Texture2D" uid="uid://c48ph12wh7578" path="res://sprites/tiles/arrow_down.png" id="5_jwwnv"]
+[ext_resource type="Texture2D" uid="uid://fiqdxbxviyt6" path="res://sprites/tiles/door_plank.png" id="6_3c7dm"]
 
 [node name="LevelGF1" instance=ExtResource("1_v6uhf")]
 
@@ -33,10 +34,15 @@ door_self = 8
 door_connected = 9
 level_to = 3
 
-[node name="Altar" parent="." index="4" instance=ExtResource("4_jc1sv")]
-position = Vector2(424, 768)
-
-[node name="EventArea" parent="." index="5" instance=ExtResource("5_cg6jk")]
+[node name="EventArea" parent="." index="4" instance=ExtResource("5_cg6jk")]
 position = Vector2(48, 752)
 set_obj = 4
 event = "tutorial_done"
+
+[node name="ArrowDown" type="Sprite2D" parent="." index="5"]
+position = Vector2(200, 736)
+texture = ExtResource("5_jwwnv")
+
+[node name="DoorPlank" type="Sprite2D" parent="." index="6"]
+position = Vector2(48, 736)
+texture = ExtResource("6_3c7dm")

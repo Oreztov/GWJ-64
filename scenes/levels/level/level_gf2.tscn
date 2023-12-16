@@ -34,4 +34,4 @@ set_obj = 5
 event = "find_body"
 
 [node name="InteractableBucket" parent="." index="6" instance=ExtResource("5_31sj2")]
-position = Vector2(2608, 752)
+position = Vector2(2608, 760)

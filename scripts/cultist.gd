@@ -16,6 +16,7 @@ func dialogue_done():
 	$AnimatedSprite2D.play("idle")
 		
 func update(puzzle):
-	if await_puzzle == puzzle:
-		dialogue = new_dialogue
+	if new_dialogue != "":
+		if await_puzzle == puzzle:
+			dialogue = new_dialogue
 

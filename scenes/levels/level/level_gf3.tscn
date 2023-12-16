@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhlk2y3themde"]
+[gd_scene load_steps=6 format=3 uid="uid://dhlk2y3themde"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_5jvog"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_du6wf"]
 [ext_resource type="PackedScene" uid="uid://52gtfo0ucm4f" path="res://scenes/objects/stairs.tscn" id="3_nr5f6"]
 [ext_resource type="PackedScene" uid="uid://qwqi0w1iwaj5" path="res://scenes/objects/hole.tscn" id="4_y3glw"]
+[ext_resource type="Texture2D" uid="uid://dautbf6i7mtnl" path="res://sprites/tiles/arrow_up.png" id="5_8mkjb"]
 
 [node name="LevelGF3" instance=ExtResource("1_5jvog")]
 index = 2
@@ -35,3 +36,7 @@ door_self = 14
 door_connected = 15
 level_from = 2
 level_to = 5
+
+[node name="ArrowUp" type="Sprite2D" parent="." index="4"]
+position = Vector2(1584, 736)
+texture = ExtResource("5_8mkjb")
