@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://bbxrsgynevb2a"]
+
+[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_6ejos"]
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_l1o81"]
+device = -1
+button_index = 1
+
+[sub_resource type="InputEventMouseButton" id="InputEventMouseButton_8agst"]
+device = -1
+button_index = 1
+
+[resource]
+resource_name = "skip_dialogue"
+script = ExtResource("1_6ejos")
+action = "skip_dialogue"
+event_index = 0
+type = 2
+default_as_event = SubResource("InputEventMouseButton_8agst")
+current_as_event = SubResource("InputEventMouseButton_l1o81")
+current = [2, 1]
+default = [2, 1]
+name = "skip_dialogue"
+category = "input"
+value_type = 28
+value_hint = 0
+value_hint_string = ""

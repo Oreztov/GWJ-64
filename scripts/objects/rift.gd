@@ -12,7 +12,7 @@ func _physics_process(delta):
 	if Enlightenment.value >= light_threshold:
 		if is_interactable:
 			interact_disabled = false
-			show()
+			$Sprite2D.show()
 	else:
 		interact_disabled = true
-		hide()
+		$Sprite2D.hide()

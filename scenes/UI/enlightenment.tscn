@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=35 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -25,6 +25,7 @@
 [ext_resource type="Resource" uid="uid://nbx3rlmjxrit" path="res://game_settings/settings/input/interact_2.tres" id="20_elf12"]
 [ext_resource type="Resource" uid="uid://7pi5ug2ndd5r" path="res://game_settings/settings/input/notebook_open.tres" id="21_kt3ka"]
 [ext_resource type="Resource" uid="uid://bbv0nnucb51ta" path="res://game_settings/settings/input/notebook_close.tres" id="22_ki0sl"]
+[ext_resource type="Resource" uid="uid://bbxrsgynevb2a" path="res://game_settings/settings/input/skip_dialogue.tres" id="22_vdbqo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -307,6 +308,7 @@ text = "Move Left"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("14_xy0b6")
@@ -317,6 +319,7 @@ grab_focus_on_mouse_over = true
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("15_6q4l1")
@@ -335,6 +338,7 @@ text = "Move Right"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("15_f2vtf")
@@ -345,6 +349,7 @@ grab_focus_on_mouse_over = true
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("16_2od28")
@@ -363,6 +368,7 @@ text = "Use Passage"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("17_2en88")
@@ -373,6 +379,7 @@ grab_focus_on_mouse_over = true
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("18_bhbbr")
@@ -391,6 +398,7 @@ text = "Interact"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("19_xx3am")
@@ -401,6 +409,7 @@ grab_focus_on_mouse_over = true
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
 accept_axis = true
 setting = ExtResource("20_elf12")
@@ -419,7 +428,9 @@ text = "Open Notebook"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
+accept_axis = true
 setting = ExtResource("21_kt3ka")
 apply_on_change = true
 grab_focus_on_mouse_over = true
@@ -436,8 +447,29 @@ text = "Close Notebook"
 layout_mode = 2
 size_flags_horizontal = 10
 ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
 accept_mouse = true
+accept_axis = true
 setting = ExtResource("22_ki0sl")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting12" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting12"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Skip Dialogue"
+
+[node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting12" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_modifiers = true
+accept_mouse = true
+accept_axis = true
+setting = ExtResource("22_vdbqo")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
@@ -557,3 +589,4 @@ process_mode = 3
 [editable path="Control/Paused/Settings/Settings/Setting9/InputBtn2"]
 [editable path="Control/Paused/Settings/Settings/Setting10/InputBtn"]
 [editable path="Control/Paused/Settings/Settings/Setting11/InputBtn"]
+[editable path="Control/Paused/Settings/Settings/Setting12/InputBtn"]
