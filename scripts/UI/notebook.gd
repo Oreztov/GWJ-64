@@ -3,6 +3,8 @@ extends CanvasLayer
 var on_notebook = false
 var on_clue = null
 
+var open = false
+
 @onready var notebook = $Control/Notebook
 @onready var image_orig = preload("res://sprites/UI/notebook_temp.png")
 @onready var image = Image.new()
@@ -48,6 +50,12 @@ func _process(delta):
 	else:
 		Globals.using_notebook = false
 
+func _input(event):
+	if event.is_action_pressed("notebook_open"):
+		_on_open_button_pressed()
+	elif event.is_action_pressed("notebook_close"):
+		_on_close_button_pressed()
+
 func paint():
 	var coordsi = get_coords()
 	image.set_pixelv(coordsi, draw_color)
@@ -87,19 +95,23 @@ func add_clue(clue: Globals.CLUES):
 		$sfxNoteWrite.play()
 
 func _on_open_button_pressed():
-	$AnimationPlayer.play("move_in")
-	$Control/Notebook/OpenButton.hide()
-	$Control/Notebook/CloseButton.show()
-	$Control/Notebook/Instructions.show()
-	$sfxNoteOpen.play()
+	if not open:
+		open = true
+		$AnimationPlayer.play("move_in")
+		$Control/Notebook/OpenButton.hide()
+		$Control/Notebook/CloseButton.show()
+		$Control/Notebook/Instructions.show()
+		$sfxNoteOpen.play()
 
 
 func _on_close_button_pressed():
-	$AnimationPlayer.play("move_out")
-	$Control/Notebook/OpenButton.show()
-	$Control/Notebook/CloseButton.hide()
-	$Control/Notebook/Instructions.hide()
-	$sfxNoteClose.play()
+	if open:
+		open = false
+		$AnimationPlayer.play("move_out")
+		$Control/Notebook/OpenButton.show()
+		$Control/Notebook/CloseButton.hide()
+		$Control/Notebook/Instructions.hide()
+		$sfxNoteClose.play()
 
 
 func _on_reference_rect_mouse_entered():
@@ -206,3 +218,5 @@ func catch_event(event):
 			$Control/TutorialBox.stop()
 		"find_body":
 			set_puzzle(Globals.PUZZLES.Puzzle1)
+			
+
