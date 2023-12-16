@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfjsf6ycsxnm6"]
+[gd_scene load_steps=7 format=3 uid="uid://dfjsf6ycsxnm6"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_ky7cb"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_cg2bt"]
 [ext_resource type="PackedScene" uid="uid://52gtfo0ucm4f" path="res://scenes/objects/stairs.tscn" id="3_v2fgg"]
 [ext_resource type="Texture2D" uid="uid://dautbf6i7mtnl" path="res://sprites/tiles/arrow_up.png" id="4_ho0y2"]
+[ext_resource type="PackedScene" uid="uid://dq0dx5jcehklh" path="res://scenes/objects/rift.tscn" id="4_mjkfo"]
+[ext_resource type="PackedScene" uid="uid://bcjsrn21ysjka" path="res://scenes/interactables/interactable_cart.tscn" id="5_r7yqx"]
 
 [node name="LevelB1" instance=ExtResource("1_ky7cb")]
 index = 3
@@ -28,6 +30,17 @@ door_self = 9
 door_connected = 8
 level_from = 3
 
+[node name="Rift" parent="Doors" index="2" instance=ExtResource("4_mjkfo")]
+position = Vector2(96, 432)
+scale = Vector2(-1, 1)
+door_self = 23
+door_connected = 24
+level_from = 3
+level_to = 11
+
 [node name="ArrowUp" type="Sprite2D" parent="." index="4"]
 position = Vector2(248, 416)
 texture = ExtResource("4_ho0y2")
+
+[node name="InteractableCart" parent="." index="5" instance=ExtResource("5_r7yqx")]
+position = Vector2(560, 424)

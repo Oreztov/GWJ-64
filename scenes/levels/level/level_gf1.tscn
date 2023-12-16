@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://yyesj7gytrq5"]
+[gd_scene load_steps=7 format=3 uid="uid://yyesj7gytrq5"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_v6uhf"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hl3as"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="5_cg6jk"]
 [ext_resource type="Texture2D" uid="uid://c48ph12wh7578" path="res://sprites/tiles/arrow_down.png" id="5_jwwnv"]
 [ext_resource type="Texture2D" uid="uid://fiqdxbxviyt6" path="res://sprites/tiles/door_plank.png" id="6_3c7dm"]
-[ext_resource type="PackedScene" uid="uid://bcjsrn21ysjka" path="res://scenes/interactables/interactable_cart.tscn" id="7_a0qjl"]
 
 [node name="LevelGF1" instance=ExtResource("1_v6uhf")]
 
@@ -47,6 +46,3 @@ texture = ExtResource("5_jwwnv")
 [node name="DoorPlank" type="Sprite2D" parent="." index="6"]
 position = Vector2(48, 736)
 texture = ExtResource("6_3c7dm")
-
-[node name="InteractableCart" parent="." index="7" instance=ExtResource("7_a0qjl")]
-position = Vector2(1256, 736)

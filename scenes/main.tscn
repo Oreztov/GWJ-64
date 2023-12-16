@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=34 format=3 uid="uid://dis7f3jvigpvf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
 [ext_resource type="PackedScene" uid="uid://bfya5g58c4ai6" path="res://scenes/levels/viewport/level_b1_viewport.tscn" id="2_fso20"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ka55yjl260pn" path="res://scenes/levels/viewport/level_t2_viewport.tscn" id="11_setef"]
 [ext_resource type="PackedScene" uid="uid://oulcuxm1wpvj" path="res://scenes/levels/viewport/level_t1_viewport.tscn" id="12_bmnqp"]
 [ext_resource type="PackedScene" uid="uid://c745has42rj64" path="res://scenes/sfxEmitters/sfx_rift_ambience.tscn" id="13_7gjmk"]
+[ext_resource type="PackedScene" uid="uid://k81ec0b1ghn7" path="res://scenes/levels/viewport/level_r1_viewport.tscn" id="13_jv7uq"]
 [ext_resource type="PackedScene" uid="uid://cioe1ahoxkipn" path="res://scenes/levels/background_viewport.tscn" id="16_wxjo5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ql46r"]
@@ -50,6 +51,9 @@ viewport_path = NodePath("LevelViewports/LevelB2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_odu4d"]
 viewport_path = NodePath("LevelViewports/LevelB3Viewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wqayx"]
+viewport_path = NodePath("LevelViewports/LevelR1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_l6ljf"]
 viewport_path = NodePath("Background/BackgroundViewport")
@@ -90,6 +94,8 @@ script = ExtResource("1_wfqjp")
 [node name="LevelT2Viewport" parent="LevelViewports" instance=ExtResource("11_setef")]
 
 [node name="LevelT1Viewport" parent="LevelViewports" instance=ExtResource("12_bmnqp")]
+
+[node name="LevelR1Viewport" parent="LevelViewports" instance=ExtResource("13_jv7uq")]
 
 [node name="LevelSprites" type="Node3D" parent="."]
 
@@ -158,6 +164,9 @@ alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_3srau")
 
+[node name="sfxRiftAmbience" parent="LevelSprites/LevelB1" instance=ExtResource("13_7gjmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6584, 0.38211, 0)
+
 [node name="LevelB2" type="Sprite3D" parent="LevelSprites"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.5, -1.5)
 shaded = true
@@ -171,6 +180,16 @@ shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_odu4d")
+
+[node name="LevelR1" type="Sprite3D" parent="LevelSprites"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -4.8, -1.1)
+shaded = true
+alpha_cut = 2
+texture_filter = 0
+texture = SubResource("ViewportTexture_wqayx")
+
+[node name="sfxRiftAmbience" parent="LevelSprites/LevelR1" instance=ExtResource("13_7gjmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0584, 0.58211, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 10)

@@ -10,7 +10,8 @@ var notebook_ref = null
 enum LEVELS {GroundFloor1, GroundFloor2, GroundFloor3, 
 Basement1, Basement2, Basement3, 
 FirstFloor2, FirstFloor3,
-Tutorial1, Tutorial2, Tutorial3
+Tutorial1, Tutorial2, Tutorial3,
+Rift1
 }
 var levels = {}
 var current_level
@@ -21,7 +22,8 @@ DoorFF2ToFF3, DoorFF3ToFF2,
 StairsGF1ToB1, StairsB1ToGF1, StairsGF3ToFF3, StairsFF3ToGF3,
 HoleGF3ToB3, HoleB3ToGF3,
 DoorFF22ToFF3,
-DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3
+DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3,
+RiftB1ToR1, RiftR1ToB1
 }
 var doors = {}
 
@@ -63,7 +65,8 @@ var puzzles_completed = {}
 
 enum OBJECTIVES {Empty,
 TutorialStart, TutorialReport, TutorialEnd,
-MainFindBody, MainDeathReport
+MainFindBody, MainDeathReport,
+GoToEnding, EnterEnding
 }
 var objectives = {
 	OBJECTIVES.Empty: "",
@@ -71,7 +74,9 @@ var objectives = {
 	OBJECTIVES.TutorialReport: "- Report the right code.",
 	OBJECTIVES.TutorialEnd: "- Enter the hideout.",
 	OBJECTIVES.MainFindBody: "- Find your father.",
-	OBJECTIVES.MainDeathReport: "- Report on the murder."
+	OBJECTIVES.MainDeathReport: "- Report on the murder.",
+	OBJECTIVES.GoToEnding: "- Talk to the guard on the first floor.",
+	OBJECTIVES.EnterEnding: "- Proceed into the chamber."
 }
 
 var active_puzzle = null
@@ -143,4 +148,6 @@ func puzz_done(puzzle):
 	match puzzle:
 		PUZZLES.PuzzleTutorial:
 			Enlightenment.set_objective(OBJECTIVES.TutorialEnd)
+		PUZZLES.Puzzle1:
+			Enlightenment.set_objective(OBJECTIVES.GoToEnding)
 			

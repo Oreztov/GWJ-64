@@ -1,0 +1,65 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://v76lxs6nx2sn"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_8yaey"]
+
+[resource]
+script = ExtResource("1_8yaey")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(304.954, -59.2359),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "You are radiant, showing passive enlightenment.
+The ones who rule claim you ready.",
+"offset": Vector2(540, -100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Which means...",
+"offset": Vector2(920, -80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "You shall pass.",
+"offset": Vector2(1300, -120),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1734.74, -43.3426),
+"signalValue": "open_ending_gate"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

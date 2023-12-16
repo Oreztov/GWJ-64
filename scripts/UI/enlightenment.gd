@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var value = 0
-@export var decay = 0.1
+@export var decay = 0.15
 var max_value = 100
 var min_value = 0
 

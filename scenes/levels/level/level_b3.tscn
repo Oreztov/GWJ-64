@@ -38,3 +38,7 @@ position = Vector2(776, 448)
 [node name="Cultist" parent="." index="5" instance=ExtResource("5_jj1w8")]
 position = Vector2(864, 424)
 dialogue = "not_knife.tres"
+
+[node name="Cultist2" parent="." index="6" instance=ExtResource("5_jj1w8")]
+position = Vector2(1456, 424)
+dialogue = "not_gloves.tres"

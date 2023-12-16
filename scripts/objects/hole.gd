@@ -13,9 +13,11 @@ func _physics_process(delta):
 		$GPUParticles2D.process_material.gravity.y = 98
 		$GPUParticles2D.process_material.scale_min = 6
 		$GPUParticles2D.process_material.scale_max = 6
+		modulate.a = 1
 	else:
 		interact_disabled = true
 		$GPUParticles2D.process_material.gravity.y = 33
 		$GPUParticles2D.process_material.scale_min = 3
 		$GPUParticles2D.process_material.scale_max = 3
+		modulate.a = 0.5
 		

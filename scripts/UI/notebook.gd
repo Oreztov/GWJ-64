@@ -207,6 +207,9 @@ func _on_dialogue_box_dialogue_signal(value):
 			Enlightenment.set_objective(Globals.OBJECTIVES.TutorialReport)
 		'open_tutorial_gate':
 			FileData.open_tutorial_gate.emit()
+		'open_ending_gate':
+			FileData.open_ending_gate.emit()
+			Enlightenment.set_objective(Globals.OBJECTIVES.EnterEnding)
 
 
 func _on_dialogue_box_dialogue_proceeded(node_type):

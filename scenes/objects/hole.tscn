@@ -13,11 +13,11 @@ fill_from = Vector2(0.504587, 0.591743)
 fill_to = Vector2(0.486239, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r0msm"]
-size = Vector2(64, 40)
+size = Vector2(128, 64)
 
 [sub_resource type="Gradient" id="Gradient_n562m"]
-offsets = PackedFloat32Array(0.196721, 0.909836, 0.97541)
-colors = PackedColorArray(1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0)
+offsets = PackedFloat32Array(0, 0.698225, 0.97541)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_2qwww"]
 gradient = SubResource("Gradient_n562m")
@@ -32,7 +32,7 @@ curve_y = SubResource("Curve_8ou6q")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wyu6b"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(16, 1, 1)
+emission_box_extents = Vector3(48, 1, 1)
 direction = Vector3(0, -1, 0)
 spread = 10.0
 initial_velocity_min = 50.0
@@ -43,6 +43,7 @@ directional_velocity_curve = SubResource("CurveXYZTexture_08bst")
 gravity = Vector3(0, 33, 0)
 scale_min = 3.0
 scale_max = 3.0
+color = Color(1, 0.788235, 0.992157, 1)
 color_ramp = SubResource("GradientTexture1D_2qwww")
 
 [node name="Hole" instance=ExtResource("1_aymgr")]
@@ -54,7 +55,6 @@ context = "Fall Through..."
 texture = SubResource("GradientTexture2D_66vqj")
 
 [node name="CollisionShape2D" parent="." index="1"]
-position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_r0msm")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
@@ -62,5 +62,6 @@ stream = null
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 position = Vector2(0, -16)
+amount = 16
 process_material = SubResource("ParticleProcessMaterial_wyu6b")
 lifetime = 1.5

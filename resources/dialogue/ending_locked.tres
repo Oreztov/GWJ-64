@@ -1,0 +1,61 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://bfmwecnx3bpow"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_3utfl"]
+
+[resource]
+script = ExtResource("1_3utfl")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(132.69, 78.4466),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "You cannot pass beyond this point.
+The ones who rule claim you not ready yet.",
+"offset": Vector2(360, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Oh, you bet I'll be ready.
+I'll find out about everything here, and then I'll find out what's in there.",
+"offset": Vector2(840, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "And so it shall be.",
+"offset": Vector2(1260, 60),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"
