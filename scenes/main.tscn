@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dis7f3jvigpvf"]
+[gd_scene load_steps=32 format=3 uid="uid://dis7f3jvigpvf"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_wfqjp"]
 [ext_resource type="PackedScene" uid="uid://bfya5g58c4ai6" path="res://scenes/levels/viewport/level_b1_viewport.tscn" id="2_fso20"]
@@ -19,40 +19,50 @@
 [ext_resource type="PackedScene" uid="uid://cioe1ahoxkipn" path="res://scenes/levels/background_viewport.tscn" id="16_wxjo5"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ql46r"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelT1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_qdkmj"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelT2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ypeen"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelT3Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xgqec"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelGF1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nlti1"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelGF2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_pk3kh"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelGF3Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_fq5m2"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelFF3Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_vf3x4"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelFF2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_3srau"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelB1Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_lg4tq"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelB2Viewport")
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_odu4d"]
-viewport_path = NodePath(".")
+viewport_path = NodePath("LevelViewports/LevelB3Viewport")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_u1rsu"]
-viewport_path = NodePath(".")
+[sub_resource type="ViewportTexture" id="ViewportTexture_l6ljf"]
+viewport_path = NodePath("Background/BackgroundViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gr58"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_l6ljf")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ifuht"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_5gr58")
+size = Vector2(128, 64)
+orientation = 2
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_wfqjp")
@@ -196,6 +206,6 @@ attenuation_filter_db = -3.0
 
 [node name="BackgroundViewport" parent="Background" instance=ExtResource("16_wxjo5")]
 
-[node name="Sprite3D" type="Sprite3D" parent="Background"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -9)
-texture = SubResource("ViewportTexture_u1rsu")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22)
+mesh = SubResource("PlaneMesh_ifuht")

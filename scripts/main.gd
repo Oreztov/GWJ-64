@@ -17,7 +17,7 @@ func _ready():
 	
 	Globals.level_changed.connect(level_changed)
 	
-	$Background/Sprite3D.texture.viewport_path = "Background/BackgroundViewport"
+	$Background/MeshInstance3D.mesh.material.get_texture(StandardMaterial3D.TEXTURE_ALBEDO).viewport_path = "Background/BackgroundViewport"
 	
 	# Start game
 	Globals.levels[Globals.LEVELS.Tutorial1].enter()

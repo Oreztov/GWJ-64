@@ -1,0 +1,88 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://dr8g0ddqu41cw"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_gher0"]
+
+[resource]
+script = ExtResource("1_gher0")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(388, 37.7529),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "I've made a huge mistake.",
+"offset": Vector2(720, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 298.942),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "What are you referring to?",
+"offset": Vector2(1140, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "I was in charge of getting the body here, for the [color=red]ritual[/color].
+But I've made a severe lapse in my judgement.
+And tried to cart the dead body over in a hand truck full of tools.
+I think I've bruised the body doing that, and I'm going to be punished for it.",
+"offset": Vector2(1560, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "...Jesus Christ.",
+"offset": Vector2(2000, 0),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "Do not say that name around here, unless you're looking to be punished as well.",
+"offset": Vector2(2440, 0),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

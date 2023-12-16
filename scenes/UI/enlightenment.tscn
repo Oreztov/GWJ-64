@@ -505,7 +505,9 @@ text = "- Oreztov -
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
-text = "Programming, 3D, Game Design"
+text = "Programming, 3D, Game Design,
+Dialogue Writing"
+horizontal_alignment = 1
 
 [node name="Name2" type="Label" parent="Control/Paused/Credits/Credits"]
 layout_mode = 2
@@ -548,7 +550,7 @@ autowrap_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
-text = "Writing & Design"
+text = "Narrative Writing & Design"
 
 [node name="sfxEnlightenment" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_1aqfc")

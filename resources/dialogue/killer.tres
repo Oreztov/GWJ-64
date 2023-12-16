@@ -1,0 +1,99 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://c7rr6uq5gyeob"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ovj5f"]
+
+[resource]
+script = ExtResource("1_ovj5f")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(77.2896, 139.342),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "Were you involved in this killing?",
+"offset": Vector2(360, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "I am the one who separates souls from their bodies.",
+"offset": Vector2(740, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "I... Why? How?",
+"offset": Vector2(1120, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "My work is displayed on the body. I need not explain.",
+"offset": Vector2(1500, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "You disgust me.",
+"offset": Vector2(1920, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "You are the one who inquired.
+And besides, it is simply a preparation procedure for the [color=red]ritual[/color].",
+"offset": Vector2(2300, 60),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

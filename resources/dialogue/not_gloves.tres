@@ -1,0 +1,75 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://clr5d7nqo2olp"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_301sa"]
+
+[resource]
+script = ExtResource("1_301sa")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(100, 120),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "You there, strange intruder!
+Have you seen my white gloves?",
+"offset": Vector2(400, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Perhaps. Why?",
+"offset": Vector2(800, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "I need them for the [color=red]ritual[/color].
+And they cannot have and must not lay hands on the body. Kept pure.
+So not knowing where they are and were, complicates my situation.",
+"offset": Vector2(1220, 20),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "I'll keep that in mind.",
+"offset": Vector2(1620, 20),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

@@ -1,0 +1,117 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://10d4dkiw2j2g"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_ad3om"]
+
+[resource]
+script = ExtResource("1_ad3om")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(280, 140),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "What are you doing here?",
+"offset": Vector2(560, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_2": {
+"dialogue": "Researching the [color=red]ritual[/color].",
+"offset": Vector2(940, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "Hmm.
+Well, do us all a favor, and keep away from medical syringes.
+Don't touch a thing.",
+"offset": Vector2(1300, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_4": {
+"dialogue": "And why is that?",
+"offset": Vector2(1680, 80),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_5": {
+"dialogue": "Well, you see, they may cause side effects...
+...such as clogging your lungs.
+Causing asphyxiation.",
+"offset": Vector2(2060, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_6",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_6": {
+"dialogue": "Ouch.
+Thanks for letting me know.",
+"offset": Vector2(2480, 60),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_7": {
+"dialogue": "Just doing my duty.
+After all, we don't want anyone to be killed, who isn't meant to be sacrificed.",
+"offset": Vector2(2860, 20),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"
