@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://ccurpemel51jp"]
+[gd_scene load_steps=27 format=3 uid="uid://ccurpemel51jp"]
 
 [ext_resource type="Script" path="res://scripts/UI/notebook.gd" id="1_4y1t5"]
 [ext_resource type="AudioStream" uid="uid://dga2463f3sps2" path="res://audio/sfx/notebook_open.ogg" id="2_kg2y8"]
+[ext_resource type="AudioStream" uid="uid://cpx0r2nr5ye78" path="res://audio/music/music_puzzle_stinger.ogg" id="2_v2dh5"]
 [ext_resource type="AudioStream" uid="uid://c8ikum24leehm" path="res://audio/sfx/notebook_close.ogg" id="3_u0jc2"]
 [ext_resource type="Texture2D" uid="uid://jfcsaeukwdt7" path="res://sprites/UI/report.png" id="4_75lwv"]
 [ext_resource type="AudioStream" uid="uid://dltvd844kb2cl" path="res://audio/sfx/note_clue_write.ogg" id="4_b8m67"]
@@ -140,6 +141,9 @@ _data = {
 layer = 15
 script = ExtResource("1_4y1t5")
 
+[node name="musicPuzzleSolve" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v2dh5")
+
 [node name="sfxNoteOpen" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_kg2y8")
 bus = &"sfx"
@@ -175,10 +179,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 1357.5
-offset_top = 1000.0
-offset_right = 1920.0
-offset_bottom = 2000.0
+offset_left = -562.5
+offset_top = 460.0
+offset_bottom = 1460.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2
@@ -271,9 +274,10 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = 1300.0
-offset_right = 406.67
-offset_bottom = 1550.0
+offset_left = -1920.0
+offset_top = 760.0
+offset_right = -1513.33
+offset_bottom = 1010.0
 grow_horizontal = 0
 grow_vertical = 2
 mouse_filter = 2

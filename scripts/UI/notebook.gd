@@ -129,7 +129,7 @@ func _on_submit_button_pressed():
 				return
 		set_answer_text("Yes! That's it!")
 		complete_puzzle()
-	
+		$musicPuzzleSolve.play()
 func set_answer_text(text):
 	var label = $Control/Report/AnswerLabel
 	label.modulate = Color(1,1,1,1)
