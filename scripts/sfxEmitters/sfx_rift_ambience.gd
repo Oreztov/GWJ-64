@@ -3,8 +3,10 @@ extends Node3D
 
 func _physics_process(delta):
 	if Enlightenment.value >= light_threshold:
-		var volume_rift_amb = create_tween()
-		volume_rift_amb.tween_property($AudioStreamPlayer3D, "volume_db", 0, 0.5)
+		if $AudioStreamPlayer3D.volume_db != 0:
+			var volume_rift_amb = create_tween()
+			volume_rift_amb.tween_property($AudioStreamPlayer3D, "volume_db", 0, 0.5)
 	else:
-		var volume_rift_amb = create_tween()
-		volume_rift_amb.tween_property($AudioStreamPlayer3D, "volume_db", -80, 0.5)
+		if $AudioStreamPlayer3D.volume_db != -80:
+			var volume_rift_amb = create_tween()
+			volume_rift_amb.tween_property($AudioStreamPlayer3D, "volume_db", -80, 0.5)
