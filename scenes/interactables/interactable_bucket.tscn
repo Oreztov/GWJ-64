@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dtws5muri4x81"]
+[gd_scene load_steps=5 format=3 uid="uid://dtws5muri4x81"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_kbbj3"]
+[ext_resource type="AudioStream" uid="uid://ct1gdu0upsbfw" path="res://audio/sfx/inspect_blood_bucket.ogg" id="2_54bvw"]
 
 [sub_resource type="Gradient" id="Gradient_j7213"]
 
@@ -15,3 +16,6 @@ inspectable = 4
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_xdeu5")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_54bvw")
