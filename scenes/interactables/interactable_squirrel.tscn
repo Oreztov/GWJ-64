@@ -19,3 +19,6 @@ context = "Inspect..."
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_ny2v2")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+bus = &"reverb"

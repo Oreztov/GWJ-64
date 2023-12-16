@@ -178,6 +178,8 @@ position = Vector2(48, 112)
 
 [node name="AudioStreamPlayer" parent="." index="4"]
 stream = ExtResource("3_6vxyg")
+bus = &"reverb"
 
 [node name="sfxButton" type="AudioStreamPlayer" parent="." index="5"]
 stream = ExtResource("7_j72c3")
+bus = &"reverb"

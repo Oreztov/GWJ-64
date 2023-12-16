@@ -14,3 +14,4 @@ texture = ExtResource("2_vyf8u")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_54bvw")
+bus = &"reverb"

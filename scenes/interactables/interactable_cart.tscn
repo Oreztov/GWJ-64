@@ -26,3 +26,4 @@ shape = SubResource("CapsuleShape2D_k7v0l")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_uaqrr")
+bus = &"reverb"
