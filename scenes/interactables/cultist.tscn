@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cans43no17mdi"]
+[gd_scene load_steps=18 format=3 uid="uid://cans43no17mdi"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_0kaga"]
 [ext_resource type="Script" path="res://scripts/cultist.gd" id="2_h1h1g"]
+[ext_resource type="Texture2D" uid="uid://dj0clgokv4mwi" path="res://sprites/characters/cultists/Cultist 1/Cult 1 idle.png" id="3_54ql2"]
+[ext_resource type="Texture2D" uid="uid://ci2jyvymjtf4n" path="res://sprites/characters/cultists/Cultist 1/Cult 1 interaction.png" id="4_8x2nk"]
 
 [sub_resource type="Gradient" id="Gradient_axqcn"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
@@ -13,12 +15,90 @@ width = 32
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5is4n"]
 size = Vector2(32, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6yml6"]
+atlas = ExtResource("3_54ql2")
+region = Rect2(6, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbcel"]
+atlas = ExtResource("3_54ql2")
+region = Rect2(6, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pis3v"]
+atlas = ExtResource("3_54ql2")
+region = Rect2(6, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvswt"]
+atlas = ExtResource("3_54ql2")
+region = Rect2(6, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqrxo"]
+atlas = ExtResource("4_8x2nk")
+region = Rect2(6, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mlrs4"]
+atlas = ExtResource("4_8x2nk")
+region = Rect2(6, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysv8c"]
+atlas = ExtResource("4_8x2nk")
+region = Rect2(6, 96, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qiu56"]
+atlas = ExtResource("4_8x2nk")
+region = Rect2(6, 144, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2i1b7"]
+atlas = ExtResource("4_8x2nk")
+region = Rect2(6, 192, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0lnxt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6yml6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sbcel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pis3v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvswt")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqrxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mlrs4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysv8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qiu56")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2i1b7")
+}],
+"loop": true,
+"name": &"interact",
+"speed": 5.0
+}]
+
 [node name="Cultist" instance=ExtResource("1_0kaga")]
+texture_filter = 1
 script = ExtResource("2_h1h1g")
 await_puzzle = 0
 new_dialogue = ""
 
 [node name="Sprite2D" parent="." index="0"]
+visible = false
 texture = SubResource("GradientTexture2D_vbsc4")
 
 [node name="CollisionShape2D" parent="." index="1"]
@@ -26,4 +106,11 @@ shape = SubResource("RectangleShape2D_5is4n")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = null
-bus = &"sfx"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="3"]
+position = Vector2(0, -4)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_0lnxt")
+animation = &"idle"
+autoplay = "idle"
+flip_h = true

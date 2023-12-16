@@ -1,6 +1,6 @@
 extends Node
 
-var camera_distance = 2.5 # Meters on the z axis
+var camera_distance = 2 # Meters on the z axis
 var player_pos = Vector2(0, 0)
 
 var using_notebook = false
@@ -79,6 +79,7 @@ signal level_changed
 signal inspect_item
 
 signal open_dialogue
+signal close_dialogue
 signal puzzle_complete
 signal event
 

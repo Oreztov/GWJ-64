@@ -30,11 +30,11 @@ func update():
 	%ENLIGHTENMENT.modulate.a = ratio + 0.25
 	if linear_to_db(value) > 0:
 		var volume_sfx = create_tween()
-		volume_sfx.tween_property($sfxEnlightenment, "volume_db", linear_to_db(value/max_value), 300/1000)
+		volume_sfx.tween_property($sfxEnlightenment, "volume_db", linear_to_db(ratio), 300/1000)
 		var volume_light_music = create_tween()
-		volume_light_music.tween_property($musicLight, "volume_db", linear_to_db(value/max_value), 300/1000)
+		volume_light_music.tween_property($musicLight, "volume_db", linear_to_db(ratio), 300/1000)
 		var volume_main_music = create_tween()
-		volume_main_music.tween_property($musicMain, "volume_db", linear_to_db(-1*value/max_value+1), 300/1000)
+		volume_main_music.tween_property($musicMain, "volume_db", linear_to_db(-1*ratio+1), 300/1000)
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true

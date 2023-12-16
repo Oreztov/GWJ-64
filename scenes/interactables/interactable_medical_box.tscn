@@ -1,22 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfglw0xhram8h"]
+[gd_scene load_steps=4 format=3 uid="uid://dfglw0xhram8h"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_q6uxj"]
+[ext_resource type="Texture2D" uid="uid://d3sa02w6etj8c" path="res://sprites/objects/Interactable Sprites/Medkit here image.png" id="2_1bf05"]
 [ext_resource type="AudioStream" uid="uid://po0ng4lkc6fs" path="res://audio/sfx/inspect_medbox.ogg" id="2_vsrxn"]
-
-[sub_resource type="Gradient" id="Gradient_ll6gg"]
-offsets = PackedFloat32Array(0.00995025, 1)
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0wm8n"]
-gradient = SubResource("Gradient_ll6gg")
-width = 32
-height = 32
 
 [node name="MedicalBox" instance=ExtResource("1_q6uxj")]
 inspectable = 6
 
 [node name="Sprite2D" parent="." index="0"]
-texture = SubResource("GradientTexture2D_0wm8n")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1bf05")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
 stream = ExtResource("2_vsrxn")

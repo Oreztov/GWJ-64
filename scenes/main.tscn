@@ -84,14 +84,14 @@ script = ExtResource("1_wfqjp")
 [node name="LevelSprites" type="Node3D" parent="."]
 
 [node name="LevelT1" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5, 0, 0)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_ql46r")
 
 [node name="LevelT2" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, 1.5)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -114,28 +114,28 @@ texture_filter = 0
 texture = SubResource("ViewportTexture_xgqec")
 
 [node name="LevelGF2" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1, 0, -1.5)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_nlti1")
 
 [node name="LevelGF3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -3)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_pk3kh")
 
 [node name="LevelFF3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.55, 3, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.55, 3, -3)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_fq5m2")
 
 [node name="LevelFF2" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.45, 3, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.45, 3, -1.5)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
@@ -149,14 +149,14 @@ texture_filter = 0
 texture = SubResource("ViewportTexture_3srau")
 
 [node name="LevelB2" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.5, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -4.5, -1.5)
 shaded = true
 alpha_cut = 2
 texture_filter = 0
 texture = SubResource("ViewportTexture_lg4tq")
 
 [node name="LevelB3" type="Sprite3D" parent="LevelSprites"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.89, -4.5, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.89, -4.5, -3)
 shaded = true
 alpha_cut = 2
 texture_filter = 0

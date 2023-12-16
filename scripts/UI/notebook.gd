@@ -185,6 +185,7 @@ func tutorial_4():
 	
 func _on_dialogue_box_dialogue_ended():
 	Globals.current_level.player.input_enabled = true
+	Globals.close_dialogue.emit()
 
 func _on_dialogue_box_dialogue_signal(value):
 	match(value):

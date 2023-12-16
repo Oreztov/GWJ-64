@@ -6,6 +6,14 @@ extends "res://scripts/interactable.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Globals.puzzle_complete.connect(update)
+	Globals.close_dialogue.connect(dialogue_done)
+	
+func inspect():
+	super()
+	$AnimatedSprite2D.play("interact")
+
+func dialogue_done():
+	$AnimatedSprite2D.play("idle")
 		
 func update(puzzle):
 	if await_puzzle == puzzle:
