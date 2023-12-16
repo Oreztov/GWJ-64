@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dfglw0xhram8h"]
+[gd_scene load_steps=5 format=3 uid="uid://dfglw0xhram8h"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_q6uxj"]
+[ext_resource type="AudioStream" uid="uid://po0ng4lkc6fs" path="res://audio/sfx/inspect_medbox.ogg" id="2_vsrxn"]
 
 [sub_resource type="Gradient" id="Gradient_ll6gg"]
 offsets = PackedFloat32Array(0.00995025, 1)
@@ -16,3 +17,6 @@ inspectable = 6
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_0wm8n")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_vsrxn")
