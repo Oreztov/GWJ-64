@@ -8,6 +8,7 @@ radius = 32.0
 
 [node name="Altar" instance=ExtResource("1_auchm")]
 enlighten = 100
+context = "Use Altar..."
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.25, 0.25)

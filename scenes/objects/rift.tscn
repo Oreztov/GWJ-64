@@ -8,6 +8,7 @@
 [node name="Rift" instance=ExtResource("1_4ga4p")]
 script = ExtResource("2_4qgnq")
 light_threshold = 50
+context = "Enter Rift..."
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.25, 0.25)

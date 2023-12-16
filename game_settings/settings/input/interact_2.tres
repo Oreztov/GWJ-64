@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://nbx3rlmjxrit"]
+
+[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_adqt0"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_yxl1f"]
+device = -1
+physical_keycode = 90
+unicode = 122
+
+[sub_resource type="InputEventKey" id="InputEventKey_hvp3f"]
+device = -1
+physical_keycode = 90
+unicode = 122
+
+[resource]
+resource_name = "interact_2"
+script = ExtResource("1_adqt0")
+action = "interact"
+event_index = 1
+type = 1
+default_as_event = SubResource("InputEventKey_hvp3f")
+current_as_event = SubResource("InputEventKey_yxl1f")
+current = [1, 90]
+default = [1, 90]
+name = "interact_2"
+category = "input"
+value_type = 28
+value_hint = 0
+value_hint_string = ""

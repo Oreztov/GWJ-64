@@ -96,6 +96,7 @@ texture_filter = 1
 script = ExtResource("2_h1h1g")
 await_puzzle = 0
 new_dialogue = ""
+context = "Talk..."
 
 [node name="Sprite2D" parent="." index="0"]
 visible = false

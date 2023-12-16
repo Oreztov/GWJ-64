@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=33 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -8,12 +8,22 @@
 [ext_resource type="PackedScene" uid="uid://ds06mwhee8ygm" path="res://game_settings/components/slider/slider.tscn" id="5_72edb"]
 [ext_resource type="Resource" uid="uid://wcmue6dxniqd" path="res://game_settings/settings/audio/master_volume.tres" id="7_6qu23"]
 [ext_resource type="Resource" uid="uid://bm5hbesuo45cy" path="res://game_settings/settings/audio/sfx_volume.tres" id="8_y3puv"]
-[ext_resource type="Resource" uid="uid://dvkdlnlw822k4" path="res://game_settings/settings/audio/ui_volume.tres" id="9_bmbed"]
 [ext_resource type="Resource" uid="uid://m4hq30r882ty" path="res://game_settings/settings/audio/music_volume.tres" id="10_da0qd"]
 [ext_resource type="PackedScene" uid="uid://cha8xesfthpfk" path="res://game_settings/components/switch/switch.tscn" id="10_fa3br"]
+[ext_resource type="PackedScene" uid="uid://dm1av7skxvp1j" path="res://game_settings/components/input_btn/input_btn.tscn" id="12_2kfky"]
 [ext_resource type="Resource" uid="uid://c164lqh8exfl8" path="res://game_settings/settings/video/overlay_shader.tres" id="12_d3n4c"]
 [ext_resource type="AudioStream" uid="uid://bys83xdy0thmm" path="res://audio/music/music_main_loop.ogg" id="13_0smnc"]
+[ext_resource type="Script" path="res://game_settings/components/input_btn/input_btn.gd" id="13_q5ltg"]
 [ext_resource type="AudioStream" uid="uid://c7phxpn42m7mk" path="res://audio/music/music_light_loop.ogg" id="14_3qm6a"]
+[ext_resource type="Resource" uid="uid://cv8xs1rexd0uv" path="res://game_settings/settings/input/left_1.tres" id="14_xy0b6"]
+[ext_resource type="Resource" uid="uid://coob3wjwvowno" path="res://game_settings/settings/input/left_2.tres" id="15_6q4l1"]
+[ext_resource type="Resource" uid="uid://bv041vinrdur0" path="res://game_settings/settings/input/right_1.tres" id="15_f2vtf"]
+[ext_resource type="Resource" uid="uid://8vp8mh2e3y6p" path="res://game_settings/settings/input/right_2.tres" id="16_2od28"]
+[ext_resource type="Resource" uid="uid://v1qij0ocnlgi" path="res://game_settings/settings/input/door_1.tres" id="17_2en88"]
+[ext_resource type="Resource" uid="uid://cgwoqu55u72ax" path="res://game_settings/settings/input/door_2.tres" id="18_bhbbr"]
+[ext_resource type="PackedScene" uid="uid://b1btmq8y3gexs" path="res://game_settings/components/_misc_components/input_confirm_window/input_confirm_window.tscn" id="19_o5ypy"]
+[ext_resource type="Resource" uid="uid://dcy0nb035fdfl" path="res://game_settings/settings/input/interact_1.tres" id="19_xx3am"]
+[ext_resource type="Resource" uid="uid://nbx3rlmjxrit" path="res://game_settings/settings/input/interact_2.tres" id="20_elf12"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -239,20 +249,6 @@ setting = ExtResource("8_y3puv")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
-[node name="Setting3" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting3"]
-layout_mode = 2
-text = "UI Volume"
-
-[node name="Slider" parent="Control/Paused/Settings/Settings/Setting3" instance=ExtResource("5_72edb")]
-layout_mode = 2
-size_flags_horizontal = 10
-setting = ExtResource("9_bmbed")
-apply_on_change = true
-grab_focus_on_mouse_over = true
-
 [node name="Setting4" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
 layout_mode = 2
 
@@ -287,6 +283,134 @@ Overlay"
 layout_mode = 2
 size_flags_horizontal = 10
 setting = ExtResource("12_d3n4c")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Category3" type="Label" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Input"
+
+[node name="HSeparator3" type="HSeparator" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Setting6" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Left"
+
+[node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting6" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+script = ExtResource("13_q5ltg")
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("14_xy0b6")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Btn" parent="Control/Paused/Settings/Settings/Setting6/InputBtn" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+
+[node name="InputBtn2" parent="Control/Paused/Settings/Settings/Setting6" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+script = ExtResource("13_q5ltg")
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("15_6q4l1")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Btn" parent="Control/Paused/Settings/Settings/Setting6/InputBtn2" index="0"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text_overrun_behavior = 3
+clip_text = true
+icon_alignment = 1
+
+[node name="Setting7" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting7"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Move Right"
+
+[node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting7" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("15_f2vtf")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="InputBtn2" parent="Control/Paused/Settings/Settings/Setting7" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("16_2od28")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting8" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting8"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Use Passage"
+
+[node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting8" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("17_2en88")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="InputBtn2" parent="Control/Paused/Settings/Settings/Setting8" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("18_bhbbr")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="Setting9" type="HBoxContainer" parent="Control/Paused/Settings/Settings"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Paused/Settings/Settings/Setting9"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Interact"
+
+[node name="InputBtn" parent="Control/Paused/Settings/Settings/Setting9" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("19_xx3am")
+apply_on_change = true
+grab_focus_on_mouse_over = true
+
+[node name="InputBtn2" parent="Control/Paused/Settings/Settings/Setting9" node_paths=PackedStringArray("ICW") instance=ExtResource("12_2kfky")]
+layout_mode = 2
+size_flags_horizontal = 10
+ICW = NodePath("../../../../../../InputConfirmWindow")
+accept_axis = true
+setting = ExtResource("20_elf12")
 apply_on_change = true
 grab_focus_on_mouse_over = true
 
@@ -385,12 +509,22 @@ volume_db = -80.0
 autoplay = true
 bus = &"music"
 
+[node name="InputConfirmWindow" parent="." instance=ExtResource("19_o5ypy")]
+process_mode = 3
+
 [connection signal="pressed" from="Control/VBoxContainer/Bar/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
 [connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonQuit" to="." method="_on_button_quit_pressed"]
 
 [editable path="Control/Paused/Settings/Settings/Setting1/Slider"]
 [editable path="Control/Paused/Settings/Settings/Setting2/Slider"]
-[editable path="Control/Paused/Settings/Settings/Setting3/Slider"]
 [editable path="Control/Paused/Settings/Settings/Setting4/Slider"]
 [editable path="Control/Paused/Settings/Settings/Setting5/Switch"]
+[editable path="Control/Paused/Settings/Settings/Setting6/InputBtn"]
+[editable path="Control/Paused/Settings/Settings/Setting6/InputBtn2"]
+[editable path="Control/Paused/Settings/Settings/Setting7/InputBtn"]
+[editable path="Control/Paused/Settings/Settings/Setting7/InputBtn2"]
+[editable path="Control/Paused/Settings/Settings/Setting8/InputBtn"]
+[editable path="Control/Paused/Settings/Settings/Setting8/InputBtn2"]
+[editable path="Control/Paused/Settings/Settings/Setting9/InputBtn"]
+[editable path="Control/Paused/Settings/Settings/Setting9/InputBtn2"]

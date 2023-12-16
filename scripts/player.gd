@@ -44,6 +44,7 @@ func _physics_process(delta):
 		
 		# Use Doors
 		if near_door and door != null:
+			$PromptDoor.text = door.context
 			$PromptDoor.show()
 			if Input.is_action_just_pressed("use_door"):
 				door.use_door()
@@ -51,6 +52,7 @@ func _physics_process(delta):
 			$PromptDoor.hide()
 		# Use Interactables
 		if near_interactable and interactable != null:
+			$PromptInteract.text = interactable.context
 			$PromptInteract.show()
 			if Input.is_action_just_pressed("interact"):
 				interactable.inspect()

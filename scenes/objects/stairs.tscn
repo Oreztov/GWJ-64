@@ -5,6 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://bspm35w2kim15" path="res://audio/sfx/PH_Stairs.ogg" id="3_e734h"]
 
 [node name="Stairs" instance=ExtResource("1_f7bru")]
+context = "Use Stairs..."
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.25, 0.25)

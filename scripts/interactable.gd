@@ -5,6 +5,8 @@ extends Area2D
 @export var single_use = false
 @export var dialogue = ""
 @export var await_signal = ""
+@export var context = "Interact..."
+
 var used = false
 
 # Called when the node enters the scene tree for the first time.

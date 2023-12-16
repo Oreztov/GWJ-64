@@ -205,17 +205,17 @@ offset_left = -88.0
 offset_top = 16.0
 offset_right = 94.0
 offset_bottom = 104.0
-text = "[E]/[Z]"
+text = "Interact..."
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
 
 [node name="PromptDoor" type="Label" parent="."]
 custom_minimum_size = Vector2(500, 0)
 offset_left = -248.0
-offset_top = -80.0
+offset_top = -72.0
 offset_right = 252.0
-offset_bottom = 8.0
-text = "[W]/[Up]"
+offset_bottom = 16.0
+text = "Use Passage..."
 label_settings = SubResource("LabelSettings_iyj1h")
 horizontal_alignment = 1
 

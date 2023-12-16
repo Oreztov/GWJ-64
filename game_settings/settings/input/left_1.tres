@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="ggsInputSetting" load_steps=4 format=3 uid="uid://cv8xs1rexd0uv"]
+
+[ext_resource type="Script" path="res://game_settings/templates/input.gd" id="1_3m1dm"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_dpikh"]
+physical_keycode = 65
+
+[sub_resource type="InputEventKey" id="InputEventKey_5wfkb"]
+device = -1
+physical_keycode = 65
+unicode = 97
+
+[resource]
+resource_name = "left_1"
+script = ExtResource("1_3m1dm")
+action = "move_left"
+event_index = 0
+type = 1
+default_as_event = SubResource("InputEventKey_5wfkb")
+current_as_event = SubResource("InputEventKey_dpikh")
+current = [1, 65]
+default = [1, 65]
+name = "left_1"
+category = "input"
+value_type = 28
+value_hint = 0
+value_hint_string = ""

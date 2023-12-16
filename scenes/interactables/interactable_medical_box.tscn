@@ -6,6 +6,7 @@
 
 [node name="MedicalBox" instance=ExtResource("1_q6uxj")]
 inspectable = 6
+context = "Inspect..."
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.5, 0.5)

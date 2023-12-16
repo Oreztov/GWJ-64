@@ -48,6 +48,7 @@ color_ramp = SubResource("GradientTexture1D_2qwww")
 [node name="Hole" instance=ExtResource("1_aymgr")]
 script = ExtResource("2_gffft")
 light_threshold = 50
+context = "Fall Through..."
 
 [node name="Sprite2D" parent="." index="0"]
 texture = SubResource("GradientTexture2D_66vqj")

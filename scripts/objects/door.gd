@@ -8,6 +8,8 @@ extends Area2D
 
 @export var interact_disabled = false
 
+@export var context = "Enter Door..."
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

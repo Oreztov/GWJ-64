@@ -149,6 +149,7 @@ height = 128
 [node name="Gate" instance=ExtResource("1_d5led")]
 script = ExtResource("2_2vtlm")
 single_use = true
+context = "Open Gate..."
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
 position = Vector2(0, 24)
