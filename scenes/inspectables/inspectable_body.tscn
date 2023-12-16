@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dftxag8j1opeo"]
+
+[ext_resource type="PackedScene" uid="uid://bjdbdl20mce2f" path="res://scenes/inspectables/inspectable.tscn" id="1_mfst4"]
+[ext_resource type="PackedScene" uid="uid://bybdvfvloec3m" path="res://models/inspectables/collision/body_col.tscn" id="2_7gm7c"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_oic4h"]
+radius = 0.626555
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xwlf2"]
+radius = 0.971334
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jx03f"]
+radius = 0.969607
+
+[node name="Inspectable" instance=ExtResource("1_mfst4")]
+id = 3
+title = "Dead Body"
+clues = Array[int]([6, 7, 8])
+
+[node name="Stab" type="Area3D" parent="POIs" index="0" groups=["0", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Stab" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.390753, 1.21807, 0.851701)
+shape = SubResource("SphereShape3D_oic4h")
+
+[node name="Bruise" type="Area3D" parent="POIs" index="1" groups=["1", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Bruise" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9627, 1.85632, -0.732062)
+shape = SubResource("SphereShape3D_xwlf2")
+
+[node name="Asphyx" type="Area3D" parent="POIs" index="2" groups=["2", "POIs"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="POIs/Asphyx" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02736, 1.65383, 0.31033)
+shape = SubResource("SphereShape3D_jx03f")
+
+[node name="body" parent="." index="1" instance=ExtResource("2_7gm7c")]
+transform = Transform3D(-1.31134e-07, -3, 0, -1.31134e-07, 5.73206e-15, -3, 3, -1.31134e-07, -1.31134e-07, 0, 1.66311, 0)

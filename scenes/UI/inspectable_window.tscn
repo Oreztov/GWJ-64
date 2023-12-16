@@ -80,7 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, -2)
 
 [node name="POIRaycast" type="RayCast3D" parent="SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
-target_position = Vector3(0, 0, -1000)
+target_position = Vector3(0, 0, -250)
 collision_mask = 2
 hit_back_faces = false
 collide_with_areas = true

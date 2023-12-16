@@ -20,7 +20,7 @@ func _ready():
 	$Background/Sprite3D.texture.viewport_path = "Background/BackgroundViewport"
 	
 	# Start game
-	Globals.levels[Globals.LEVELS.GroundFloor1].enter()
+	Globals.levels[Globals.LEVELS.Tutorial1].enter()
 	Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)
 	
 	#set listener z offset

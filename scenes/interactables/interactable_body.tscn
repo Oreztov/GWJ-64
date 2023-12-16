@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4nt6uwkefulp"]
+
+[ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_hiak7"]
+
+[sub_resource type="Gradient" id="Gradient_dpeuu"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fynad"]
+gradient = SubResource("Gradient_dpeuu")
+height = 32
+fill_from = Vector2(0.0150943, 0.483019)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4id7x"]
+size = Vector2(64, 32)
+
+[node name="Interactable" instance=ExtResource("1_hiak7")]
+inspectable = 3
+context = "Inspect..."
+
+[node name="Sprite2D" parent="." index="0"]
+texture = SubResource("GradientTexture2D_fynad")
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource("RectangleShape2D_4id7x")

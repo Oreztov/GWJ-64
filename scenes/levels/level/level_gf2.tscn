@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_ig6rn"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_43r3r"]
-[ext_resource type="PackedScene" uid="uid://o3fn1dkq2v8x" path="res://scenes/interactables/interactable_dino_plush.tscn" id="3_8dl6a"]
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="4_uss5u"]
 [ext_resource type="PackedScene" uid="uid://dtws5muri4x81" path="res://scenes/interactables/interactable_bucket.tscn" id="5_31sj2"]
+[ext_resource type="PackedScene" uid="uid://b4nt6uwkefulp" path="res://scenes/interactables/interactable_body.tscn" id="5_rxh4f"]
 
 [node name="LevelGF2" instance=ExtResource("1_ig6rn")]
 index = 1
@@ -25,13 +25,14 @@ door_connected = 3
 level_from = 1
 level_to = 2
 
-[node name="DinoPlush" parent="." index="4" instance=ExtResource("3_8dl6a")]
+[node name="EventArea" parent="." index="4" instance=ExtResource("4_uss5u")]
 position = Vector2(1312, 752)
-
-[node name="EventArea" parent="." index="5" instance=ExtResource("4_uss5u")]
-position = Vector2(1312, 752)
+scale = Vector2(1.5, 1.5)
 set_obj = 5
 event = "find_body"
 
-[node name="InteractableBucket" parent="." index="6" instance=ExtResource("5_31sj2")]
+[node name="InteractableBucket" parent="." index="5" instance=ExtResource("5_31sj2")]
 position = Vector2(2608, 760)
+
+[node name="Body" parent="." index="6" instance=ExtResource("5_rxh4f")]
+position = Vector2(1312, 768)
