@@ -11,7 +11,7 @@ enum LEVELS {GroundFloor1, GroundFloor2, GroundFloor3,
 Basement1, Basement2, Basement3, 
 FirstFloor2, FirstFloor3,
 Tutorial1, Tutorial2, Tutorial3,
-Rift1
+Rift1, Rift2
 }
 var levels = {}
 var current_level = null
@@ -24,7 +24,8 @@ HoleGF3ToB3, HoleB3ToGF3,
 DoorFF22ToFF3,
 DoorT1ToT2, DoorT2ToT1, RiftT2ToT3, RiftT3ToT2, DoorT3ToGF1, DoorGF1ToT3,
 RiftB1ToR1, RiftR1ToB1,
-Decor
+Decor,
+RiftGF2ToR2, RiftR2ToGF2
 }
 var doors = {}
 
@@ -74,7 +75,7 @@ var objectives = {
 	OBJECTIVES.TutorialStart: "- Move into the hideout.",
 	OBJECTIVES.TutorialReport: "- Report the right code.",
 	OBJECTIVES.TutorialEnd: "- Enter the hideout.",
-	OBJECTIVES.MainFindBody: "- Find your father.",
+	OBJECTIVES.MainFindBody: "- Find the missing person.",
 	OBJECTIVES.MainDeathReport: "- Report on the murder.",
 	OBJECTIVES.GoToEnding: "- Talk to the guard on the first floor.",
 	OBJECTIVES.EnterEnding: "- Proceed into the chamber."

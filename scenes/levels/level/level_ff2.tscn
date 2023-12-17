@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c30d13ejgxkxo"]
+[gd_scene load_steps=6 format=3 uid="uid://c30d13ejgxkxo"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_wd3lu"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hw52p"]
-[ext_resource type="PackedScene" uid="uid://dfglw0xhram8h" path="res://scenes/interactables/interactable_medical_box.tscn" id="3_007j7"]
 [ext_resource type="PackedScene" uid="uid://b6nfgobo68w7h" path="res://scenes/objects/gate.tscn" id="4_3ow3y"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="5_sok2w"]
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="6_s6v8n"]
@@ -18,7 +17,7 @@ layer_1/tile_data = PackedInt32Array(0, 2, 2, 65536, 2, 2, 131072, 2, 2, 196608,
 position = Vector2(488, 376)
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource("2_hw52p")]
-position = Vector2(992, 416)
+position = Vector2(848, 416)
 door_self = 16
 door_connected = 9
 level_from = 6
@@ -31,20 +30,21 @@ door_connected = 25
 level_from = 6
 level_to = 7
 
-[node name="MedicalBox" parent="." index="4" instance=ExtResource("3_007j7")]
-position = Vector2(696, 440)
-
-[node name="Gate" parent="." index="5" instance=ExtResource("4_3ow3y")]
+[node name="Gate" parent="." index="4" instance=ExtResource("4_3ow3y")]
 position = Vector2(272, 344)
 scale = Vector2(-1, 1)
 await_signal = "open_ending_gate"
 
-[node name="Cultist" parent="." index="6" instance=ExtResource("5_sok2w")]
+[node name="Cultist" parent="." index="5" instance=ExtResource("5_sok2w")]
 position = Vector2(352, 424)
 scale = Vector2(-1, 1)
 await_puzzle = 1
 new_dialogue = "ending_unlocked.tres"
 dialogue = "ending_locked.tres"
+
+[node name="Cultist2" parent="." index="6" instance=ExtResource("5_sok2w")]
+position = Vector2(1040, 416)
+dialogue = "syringe.tres"
 
 [node name="EventArea" parent="." index="7" instance=ExtResource("6_s6v8n")]
 position = Vector2(128, 416)

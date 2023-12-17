@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://v7oackurubqe"]
+[gd_scene load_steps=9 format=3 uid="uid://v7oackurubqe"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_ig6rn"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_43r3r"]
+[ext_resource type="PackedScene" uid="uid://dq0dx5jcehklh" path="res://scenes/objects/rift.tscn" id="3_01ds7"]
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="4_uss5u"]
 [ext_resource type="PackedScene" uid="uid://dtws5muri4x81" path="res://scenes/interactables/interactable_bucket.tscn" id="5_31sj2"]
 [ext_resource type="PackedScene" uid="uid://b4nt6uwkefulp" path="res://scenes/interactables/interactable_body.tscn" id="5_rxh4f"]
@@ -27,20 +28,28 @@ door_connected = 3
 level_from = 1
 level_to = 2
 
+[node name="Rift" parent="Doors" index="2" instance=ExtResource("3_01ds7")]
+position = Vector2(1936, 744)
+scale = Vector2(-1, 1)
+door_self = 26
+door_connected = 27
+level_from = 1
+level_to = 12
+
 [node name="EventArea" parent="." index="4" instance=ExtResource("4_uss5u")]
-position = Vector2(1312, 752)
+position = Vector2(1168, 752)
 scale = Vector2(1.5, 1.5)
 set_obj = 5
 event = "find_body"
 
-[node name="InteractableBucket" parent="." index="5" instance=ExtResource("5_31sj2")]
+[node name="Body" parent="." index="5" instance=ExtResource("5_rxh4f")]
+position = Vector2(1168, 768)
+
+[node name="InteractableBucket" parent="." index="6" instance=ExtResource("5_31sj2")]
 position = Vector2(2544, 760)
 
-[node name="Body" parent="." index="6" instance=ExtResource("5_rxh4f")]
-position = Vector2(1312, 768)
-
 [node name="Cultist" parent="." index="7" instance=ExtResource("6_hyb2d")]
-position = Vector2(1896, 744)
+position = Vector2(1488, 744)
 dialogue = "killer.tres"
 
 [node name="Broom" type="Sprite2D" parent="." index="8"]

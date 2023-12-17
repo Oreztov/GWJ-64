@@ -45,8 +45,7 @@ position = Vector2(912, 664)
 await_signal = "open_tutorial_gate"
 
 [node name="DinoPlush" parent="." index="6" instance=ExtResource("6_ogkmd")]
-z_index = 1
-position = Vector2(240, 748)
+position = Vector2(232, 760)
 
 [node name="Window2" type="Sprite2D" parent="." index="7"]
 position = Vector2(272, 672)
@@ -61,7 +60,7 @@ position = Vector2(1248, 760)
 texture = ExtResource("8_4xk3y")
 
 [node name="PlankTable" type="Sprite2D" parent="." index="10"]
-position = Vector2(240, 768)
+position = Vector2(208, 768)
 texture = ExtResource("9_av3ry")
 
 [node name="Bottles" type="Sprite2D" parent="." index="11"]
