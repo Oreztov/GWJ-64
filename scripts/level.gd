@@ -1,7 +1,7 @@
 class_name Level extends Node2D
 
 @export var index: Globals.LEVELS
-# Will be set once instantiated from main
+# Will be set once dinstantiated from main
 var sprite: Sprite3D = null
 var viewport: SubViewport = null
 
