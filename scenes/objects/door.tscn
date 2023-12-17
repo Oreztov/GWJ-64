@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/objects/door.gd" id="1_b8adj"]
 [ext_resource type="Texture2D" uid="uid://cmc0o8526vr2g" path="res://sprites/objects/Door_image.png" id="2_7v5vy"]
-[ext_resource type="AudioStream" uid="uid://22nwptxa1pxx" path="res://audio/sfx/PH_Door.ogg" id="3_k1s5u"]
+[ext_resource type="AudioStream" uid="uid://fsqoymrcruv0" path="res://audio/sfx/door_enter.ogg" id="3_r1h7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_acsco"]
 size = Vector2(32, 64)
@@ -17,6 +17,5 @@ texture = ExtResource("2_7v5vy")
 shape = SubResource("RectangleShape2D_acsco")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_k1s5u")
-pitch_scale = 0.75
+stream = ExtResource("3_r1h7g")
 bus = &"reverb"
