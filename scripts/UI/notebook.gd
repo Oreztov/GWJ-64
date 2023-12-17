@@ -6,7 +6,7 @@ var on_clue = null
 var open = false
 
 @onready var notebook = $Control/Notebook
-@onready var image_orig = preload("res://sprites/UI/notebook_temp.png")
+@onready var image_orig = preload("res://sprites/UI/Notebook image.png")
 @onready var image = Image.new()
 
 var draw_color = Color.BLACK

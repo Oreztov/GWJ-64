@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfjsf6ycsxnm6"]
+[gd_scene load_steps=8 format=3 uid="uid://dfjsf6ycsxnm6"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_ky7cb"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_cg2bt"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dautbf6i7mtnl" path="res://sprites/tiles/arrow_up.png" id="4_ho0y2"]
 [ext_resource type="PackedScene" uid="uid://dq0dx5jcehklh" path="res://scenes/objects/rift.tscn" id="4_mjkfo"]
 [ext_resource type="PackedScene" uid="uid://bcjsrn21ysjka" path="res://scenes/interactables/interactable_cart.tscn" id="5_r7yqx"]
+[ext_resource type="Texture2D" uid="uid://ggjncmfwraue" path="res://sprites/objects/Props/Window 1.png" id="7_r5tsq"]
 
 [node name="LevelB1" instance=ExtResource("1_ky7cb")]
 index = 3
@@ -44,3 +45,23 @@ texture = ExtResource("4_ho0y2")
 
 [node name="InteractableCart" parent="." index="5" instance=ExtResource("5_r7yqx")]
 position = Vector2(560, 424)
+
+[node name="Window1" type="Sprite2D" parent="." index="6"]
+position = Vector2(288, 360)
+texture = ExtResource("7_r5tsq")
+
+[node name="Window2" type="Sprite2D" parent="." index="7"]
+position = Vector2(80, 360)
+texture = ExtResource("7_r5tsq")
+
+[node name="Window3" type="Sprite2D" parent="." index="8"]
+position = Vector2(544, 360)
+texture = ExtResource("7_r5tsq")
+
+[node name="Window4" type="Sprite2D" parent="." index="9"]
+position = Vector2(792, 360)
+texture = ExtResource("7_r5tsq")
+
+[node name="Window5" type="Sprite2D" parent="." index="10"]
+position = Vector2(1056, 360)
+texture = ExtResource("7_r5tsq")

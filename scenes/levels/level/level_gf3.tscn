@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhlk2y3themde"]
+[gd_scene load_steps=7 format=3 uid="uid://dhlk2y3themde"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_5jvog"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_du6wf"]
 [ext_resource type="PackedScene" uid="uid://52gtfo0ucm4f" path="res://scenes/objects/stairs.tscn" id="3_nr5f6"]
 [ext_resource type="PackedScene" uid="uid://qwqi0w1iwaj5" path="res://scenes/objects/hole.tscn" id="4_y3glw"]
 [ext_resource type="Texture2D" uid="uid://dautbf6i7mtnl" path="res://sprites/tiles/arrow_up.png" id="5_8mkjb"]
+[ext_resource type="Texture2D" uid="uid://2h5v1odmi4oy" path="res://sprites/objects/Props/Window 2.png" id="6_2rxcq"]
 
 [node name="LevelGF3" instance=ExtResource("1_5jvog")]
 index = 2
@@ -40,3 +41,23 @@ level_to = 5
 [node name="ArrowUp" type="Sprite2D" parent="." index="4"]
 position = Vector2(1584, 736)
 texture = ExtResource("5_8mkjb")
+
+[node name="Window2" type="Sprite2D" parent="." index="5"]
+position = Vector2(112, 672)
+texture = ExtResource("6_2rxcq")
+
+[node name="Window3" type="Sprite2D" parent="." index="6"]
+position = Vector2(464, 672)
+texture = ExtResource("6_2rxcq")
+
+[node name="Window4" type="Sprite2D" parent="." index="7"]
+position = Vector2(912, 664)
+texture = ExtResource("6_2rxcq")
+
+[node name="Window5" type="Sprite2D" parent="." index="8"]
+position = Vector2(1264, 672)
+texture = ExtResource("6_2rxcq")
+
+[node name="Window6" type="Sprite2D" parent="." index="9"]
+position = Vector2(1712, 672)
+texture = ExtResource("6_2rxcq")
