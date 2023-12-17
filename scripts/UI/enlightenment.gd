@@ -41,7 +41,7 @@ func update():
 		if linear_to_db(value) > 50:
 			volume_sfx.tween_property($sfxEnlightenment, "volume_db", 1, 300/1000)
 			volume_light_music.tween_property($musicLight, "volume_db", 1, 300/1000)
-			volume_main_music.tween_property($musidddcMain, "volume_db", 0, 300/1000)
+			volume_main_music.tween_property($musicMain, "volume_db", 0, 300/1000)
 			volume_ambience.tween_property($streetAmbience, "volume_db", 0, 300/1000)
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
