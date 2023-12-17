@@ -37,7 +37,7 @@ Thank you for playing!",
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_1",
 "text": ""
 }
 },
@@ -102,7 +102,7 @@ Thank you for playing!",
 "options": {
 0: {
 "condition": {},
-"link": "END",
+"link": &"3_1",
 "text": ""
 }
 },
@@ -236,6 +236,11 @@ But I'll never be the same, will I?",
 },
 "size": Vector2(300, 332),
 "speaker": 0
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(4100, 400),
+"signalValue": "game_over"
 }
 }
 variables = {}

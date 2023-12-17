@@ -219,6 +219,8 @@ func _on_dialogue_box_dialogue_signal(value):
 		'open_ending_gate':
 			FileData.open_ending_gate.emit()
 			Enlightenment.set_objective(Globals.OBJECTIVES.EnterEnding)
+		'game_over':
+			get_tree().quit()
 
 
 func _on_dialogue_box_dialogue_proceeded(node_type):
@@ -230,5 +232,9 @@ func catch_event(event):
 			$Control/TutorialBox.stop()
 		"find_body":
 			set_puzzle(Globals.PUZZLES.Puzzle1)
+		'game_done':
+			$Control/Black.show()
+			Enlightenment.set_objective(Globals.OBJECTIVES.Empty)
+			open_dialogue("outro.tres")
 			
 

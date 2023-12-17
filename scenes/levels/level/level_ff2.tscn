@@ -47,4 +47,5 @@ new_dialogue = "ending_unlocked.tres"
 dialogue = "ending_locked.tres"
 
 [node name="EventArea" parent="." index="7" instance=ExtResource("6_s6v8n")]
-position = Vector2(-104, 128)
+position = Vector2(128, 416)
+event = "game_done"
