@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://miabarn1h1i6"]
+
+[ext_resource type="Script" path="res://scenes/helpers/flourescent_light_manager.gd" id="1_ebfbc"]
+
+[node name="FlourescentLightManager" type="Node" groups=["Light manager"]]
+script = ExtResource("1_ebfbc")
+
+[node name="Timer" type="Timer" parent="."]

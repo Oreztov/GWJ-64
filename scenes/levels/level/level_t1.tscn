@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8vms3mtbopth"]
+[gd_scene load_steps=10 format=3 uid="uid://b8vms3mtbopth"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_l2iu0"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_7b2qo"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://s56yenths54u" path="res://sprites/objects/Props/Plank table.png" id="6_8xig2"]
 [ext_resource type="Texture2D" uid="uid://d2b3ff7f0173q" path="res://sprites/objects/Props/Bottles.png" id="7_er2vo"]
 [ext_resource type="Texture2D" uid="uid://b0q1vlib8snw7" path="res://sprites/objects/Props/Broom.png" id="8_5vb4s"]
+[ext_resource type="PackedScene" uid="uid://c6f1li1vv2cq4" path="res://scenes/objects/flourescent_light.tscn" id="9_gh4r8"]
 
 [node name="LevelT1" instance=ExtResource("1_l2iu0")]
 index = 8
@@ -68,3 +69,6 @@ texture = ExtResource("7_er2vo")
 [node name="Broom" type="Sprite2D" parent="." index="11"]
 position = Vector2(32, 760)
 texture = ExtResource("8_5vb4s")
+
+[node name="FlourescentLight" parent="." index="12" instance=ExtResource("9_gh4r8")]
+position = Vector2(219, 531)

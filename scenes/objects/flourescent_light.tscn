@@ -1,0 +1,98 @@
+[gd_scene load_steps=15 format=3 uid="uid://c6f1li1vv2cq4"]
+
+[ext_resource type="Script" path="res://scripts/objects/flourescent_light.gd" id="1_c6gqv"]
+[ext_resource type="Texture2D" uid="uid://b2ymylwrbn57q" path="res://sprites/objects/Props/Flourescent light/Light flicker animation.png" id="2_stk46"]
+[ext_resource type="Texture2D" uid="uid://bjc70caxe2qbs" path="res://sprites/objects/Props/Flourescent light/Dim light.png" id="3_lqnns"]
+[ext_resource type="Texture2D" uid="uid://chhnj10dsnw61" path="res://sprites/objects/Props/Flourescent light/Lit Light.png" id="4_bv76o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ol1s"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 0, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyi6r"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 144, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdqan"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 288, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ip6ql"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 432, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_343so"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 576, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_33n3j"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 720, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rri8i"]
+atlas = ExtResource("2_stk46")
+region = Rect2(0, 864, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w274"]
+atlas = ExtResource("3_lqnns")
+region = Rect2(0, 0, 64, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5cvn"]
+atlas = ExtResource("4_bv76o")
+region = Rect2(0, 0, 64, 144)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppfvd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ol1s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyi6r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdqan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ip6ql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_343so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_33n3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rri8i")
+}],
+"loop": false,
+"name": &"FLICKER",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w274")
+}],
+"loop": true,
+"name": &"OFF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5cvn")
+}],
+"loop": true,
+"name": &"ON",
+"speed": 5.0
+}]
+
+[node name="FlourescentLight" type="Node2D" groups=["Lights"]]
+script = ExtResource("1_c6gqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ppfvd")
+animation = &"FLICKER"
+frame = 6
+frame_progress = 1.0
+
+[node name="Timer" type="Timer" parent="."]
