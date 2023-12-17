@@ -144,6 +144,7 @@ script = ExtResource("1_4y1t5")
 
 [node name="musicPuzzleSolve" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_v2dh5")
+volume_db = -3.0
 bus = &"sfx"
 
 [node name="sfxNoteOpen" type="AudioStreamPlayer" parent="."]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4nt6uwkefulp"]
+[gd_scene load_steps=6 format=3 uid="uid://b4nt6uwkefulp"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_hiak7"]
+[ext_resource type="AudioStream" uid="uid://c4pvakkm8tf52" path="res://audio/sfx/inspect_body.ogg" id="2_kxsm3"]
 
 [sub_resource type="Gradient" id="Gradient_dpeuu"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
@@ -22,3 +23,6 @@ texture = SubResource("GradientTexture2D_fynad")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("RectangleShape2D_4id7x")
+
+[node name="AudioStreamPlayer" parent="." index="2"]
+stream = ExtResource("2_kxsm3")

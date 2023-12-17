@@ -576,6 +576,7 @@ process_mode = 3
 
 [node name="musicNewObjective" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("27_6fdyk")
+volume_db = -6.0
 bus = &"sfx"
 
 [node name="streetAmbience" type="AudioStreamPlayer" parent="."]
