@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://qwqi0w1iwaj5"]
+[gd_scene load_steps=12 format=3 uid="uid://qwqi0w1iwaj5"]
 
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="1_aymgr"]
 [ext_resource type="Script" path="res://scripts/objects/hole.gd" id="2_gffft"]
+[ext_resource type="AudioStream" uid="uid://dxhuj35rp7b3j" path="res://audio/sfx/hole_enter.ogg" id="3_a1roo"]
 
 [sub_resource type="Gradient" id="Gradient_a67c2"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0.301961)
@@ -58,7 +59,7 @@ texture = SubResource("GradientTexture2D_66vqj")
 shape = SubResource("RectangleShape2D_r0msm")
 
 [node name="AudioStreamPlayer" parent="." index="2"]
-stream = null
+stream = ExtResource("3_a1roo")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." index="3"]
 position = Vector2(0, -16)
