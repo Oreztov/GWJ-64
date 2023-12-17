@@ -23,12 +23,11 @@ func _ready():
 	
 	Globals.open_dialogue.connect(open_dialogue)
 	Globals.event.connect(catch_event)
+	Globals.enter_game.connect(intro_dialogue)
 	
 	Globals.tutorial_2.connect(tutorial_2)
 	Globals.tutorial_3.connect(tutorial_3)
 	Globals.tutorial_4.connect(tutorial_4)
-	
-	tutorial_1()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -156,7 +155,11 @@ func open_dialogue(dialogue = ""):
 		if dialogue == ds[len(ds)-1]:
 			$Control/DialogueBox.dialogue_data = d
 			$Control/DialogueBox.start()
-			Globals.current_level.player.input_enabled = false
+			if Globals.current_level != null:
+				Globals.current_level.player.input_enabled = false
+			
+func intro_dialogue():
+	open_dialogue("intro.tres")
 			
 func set_puzzle(puzzle: Globals.PUZZLES):
 	Globals.active_puzzle = puzzle
@@ -201,6 +204,12 @@ func _on_dialogue_box_dialogue_ended():
 
 func _on_dialogue_box_dialogue_signal(value):
 	match(value):
+		'intro_done':
+			Globals.levels[Globals.LEVELS.Tutorial1].enter()
+			Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)
+			Globals.intro_done.emit()
+			$Control/Black.hide()
+			tutorial_1()
 		'puzzle_tutorial': 
 			set_puzzle(Globals.PUZZLES.PuzzleTutorial)
 			Globals.tutorial_4.emit()

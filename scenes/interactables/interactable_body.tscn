@@ -1,27 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4nt6uwkefulp"]
+[gd_scene load_steps=5 format=3 uid="uid://b4nt6uwkefulp"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_hiak7"]
+[ext_resource type="Texture2D" uid="uid://b0175ptxfmok8" path="res://sprites/objects/Interactable Sprites/Dead body.png" id="2_4i1qp"]
 [ext_resource type="AudioStream" uid="uid://c4pvakkm8tf52" path="res://audio/sfx/inspect_body.ogg" id="2_kxsm3"]
 
-[sub_resource type="Gradient" id="Gradient_dpeuu"]
-colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fynad"]
-gradient = SubResource("Gradient_dpeuu")
-height = 32
-fill_from = Vector2(0.0150943, 0.483019)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4id7x"]
-size = Vector2(64, 32)
+size = Vector2(51, 25)
 
 [node name="Interactable" instance=ExtResource("1_hiak7")]
 inspectable = 3
 context = "Inspect..."
 
 [node name="Sprite2D" parent="." index="0"]
-texture = SubResource("GradientTexture2D_fynad")
+texture = ExtResource("2_4i1qp")
 
 [node name="CollisionShape2D" parent="." index="1"]
+position = Vector2(1.5, 3.5)
 shape = SubResource("RectangleShape2D_4id7x")
 
 [node name="AudioStreamPlayer" parent="." index="2"]

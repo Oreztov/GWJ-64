@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbo3ht10ygy2t"]
+[gd_scene load_steps=19 format=3 uid="uid://dbo3ht10ygy2t"]
 
 [ext_resource type="Script" path="res://scripts/helpers/file_data.gd" id="1_2gcxo"]
 [ext_resource type="PackedScene" uid="uid://subnwcnqckji" path="res://scenes/inspectables/dino_plush.tscn" id="2_l7im2"]
@@ -16,8 +16,10 @@
 [ext_resource type="Resource" uid="uid://c7rr6uq5gyeob" path="res://resources/dialogue/killer.tres" id="14_lvwur"]
 [ext_resource type="Resource" uid="uid://bfmwecnx3bpow" path="res://resources/dialogue/ending_locked.tres" id="15_om3mg"]
 [ext_resource type="Resource" uid="uid://v76lxs6nx2sn" path="res://resources/dialogue/ending_unlocked.tres" id="16_n8e0h"]
+[ext_resource type="Resource" uid="uid://crhmls5bl6ndr" path="res://resources/dialogue/intro.tres" id="17_jel5p"]
+[ext_resource type="Resource" uid="uid://b20v4bxny8lmy" path="res://resources/dialogue/outro.tres" id="18_hq60t"]
 
 [node name="FileData" type="Node3D"]
 script = ExtResource("1_2gcxo")
 inspectables = Array[PackedScene]([ExtResource("2_l7im2"), ExtResource("3_74scj"), ExtResource("4_2evch"), ExtResource("5_fafvi"), ExtResource("6_ug6q3"), ExtResource("7_caxyl")])
-dialogue = Array[Resource("res://addons/dialogue_nodes/objects/DialogueData.gd")]([ExtResource("4_lphd7"), ExtResource("5_x0wmg"), ExtResource("8_aqgvm"), ExtResource("11_2dh2i"), ExtResource("12_pon0l"), ExtResource("13_nv2gw"), ExtResource("14_lvwur"), ExtResource("15_om3mg"), ExtResource("16_n8e0h")])
+dialogue = Array[Resource("res://addons/dialogue_nodes/objects/DialogueData.gd")]([ExtResource("4_lphd7"), ExtResource("5_x0wmg"), ExtResource("8_aqgvm"), ExtResource("11_2dh2i"), ExtResource("12_pon0l"), ExtResource("13_nv2gw"), ExtResource("14_lvwur"), ExtResource("15_om3mg"), ExtResource("16_n8e0h"), ExtResource("17_jel5p"), ExtResource("18_hq60t")])

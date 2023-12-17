@@ -138,7 +138,6 @@ mouse_filter = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("4_tyi7d")
-text = "- Do the thing."
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Control/VBoxContainer/Bar/PanelContainer/Objective"]
 unique_name_in_owner = true

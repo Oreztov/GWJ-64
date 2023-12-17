@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8vms3mtbopth"]
+[gd_scene load_steps=9 format=3 uid="uid://b8vms3mtbopth"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_l2iu0"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_7b2qo"]
 [ext_resource type="Texture2D" uid="uid://fiqdxbxviyt6" path="res://sprites/tiles/door_plank.png" id="3_3ufq7"]
+[ext_resource type="Texture2D" uid="uid://2h5v1odmi4oy" path="res://sprites/objects/Props/Window 2.png" id="4_x7owm"]
+[ext_resource type="Texture2D" uid="uid://esmt1ht2xtco" path="res://sprites/objects/Props/Chair.png" id="5_5ebu0"]
+[ext_resource type="Texture2D" uid="uid://s56yenths54u" path="res://sprites/objects/Props/Plank table.png" id="6_8xig2"]
+[ext_resource type="Texture2D" uid="uid://d2b3ff7f0173q" path="res://sprites/objects/Props/Bottles.png" id="7_er2vo"]
+[ext_resource type="Texture2D" uid="uid://b0q1vlib8snw7" path="res://sprites/objects/Props/Broom.png" id="8_5vb4s"]
 
 [node name="LevelT1" instance=ExtResource("1_l2iu0")]
 index = 8
@@ -35,3 +40,31 @@ interact_disabled = true
 [node name="DoorPlank" type="Sprite2D" parent="." index="4"]
 position = Vector2(176, 736)
 texture = ExtResource("3_3ufq7")
+
+[node name="Window2" type="Sprite2D" parent="." index="5"]
+position = Vector2(400, 672)
+texture = ExtResource("4_x7owm")
+
+[node name="Window3" type="Sprite2D" parent="." index="6"]
+position = Vector2(720, 672)
+texture = ExtResource("4_x7owm")
+
+[node name="Window4" type="Sprite2D" parent="." index="7"]
+position = Vector2(1136, 672)
+texture = ExtResource("4_x7owm")
+
+[node name="Chair" type="Sprite2D" parent="." index="8"]
+position = Vector2(1215, 763.5)
+texture = ExtResource("5_5ebu0")
+
+[node name="PlankTable" type="Sprite2D" parent="." index="9"]
+position = Vector2(1207, 771.5)
+texture = ExtResource("6_8xig2")
+
+[node name="Bottles" type="Sprite2D" parent="." index="10"]
+position = Vector2(624, 768)
+texture = ExtResource("7_er2vo")
+
+[node name="Broom" type="Sprite2D" parent="." index="11"]
+position = Vector2(32, 760)
+texture = ExtResource("8_5vb4s")

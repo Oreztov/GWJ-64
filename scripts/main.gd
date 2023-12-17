@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var camera = $Camera3D
 @onready var listener = $Camera3D/AudioListener3D
+var game_started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,15 +21,17 @@ func _ready():
 	$Background/MeshInstance3D.mesh.material.get_texture(StandardMaterial3D.TEXTURE_ALBEDO).viewport_path = "Background/BackgroundViewport"
 	
 	# Start game
-	Globals.levels[Globals.LEVELS.Tutorial1].enter()
-	Enlightenment.set_objective(Globals.OBJECTIVES.TutorialStart)
+	Globals.enter_game.emit()
+	Globals.intro_done.connect(start_game)
 	
-	#set listener z offset
-	listener.global_position.z = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos).z + 0.1
+	
+func start_game():
+	game_started = true
 	
 func _process(delta):
-	update_camera()
-	$DirectionalLight3D.light_energy = float(Enlightenment.value) / float(Enlightenment.max_value) + 0.15
+	if game_started:
+		update_camera()
+		$DirectionalLight3D.light_energy = float(Enlightenment.value) / float(Enlightenment.max_value) + 0.15
 
 func level_changed():
 	# Fade layers close to camera
@@ -46,5 +49,5 @@ func update_camera():
 	level_changed()
 	camera.global_position = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos)
 	camera.global_position.z += Globals.camera_distance
-	
+	listener.global_position.z = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos).z + 0.1
 	#listener.global_position = Globals.cal_3d_pos(Globals.current_level, Globals.player_pos)

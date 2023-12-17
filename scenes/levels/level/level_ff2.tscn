@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c30d13ejgxkxo"]
+[gd_scene load_steps=7 format=3 uid="uid://c30d13ejgxkxo"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_wd3lu"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hw52p"]
 [ext_resource type="PackedScene" uid="uid://dfglw0xhram8h" path="res://scenes/interactables/interactable_medical_box.tscn" id="3_007j7"]
 [ext_resource type="PackedScene" uid="uid://b6nfgobo68w7h" path="res://scenes/objects/gate.tscn" id="4_3ow3y"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="5_sok2w"]
+[ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="6_s6v8n"]
 
 [node name="LevelFF2" instance=ExtResource("1_wd3lu")]
 index = 6
@@ -23,6 +24,13 @@ door_connected = 9
 level_from = 6
 level_to = 7
 
+[node name="Door2" parent="Doors" index="1" instance=ExtResource("2_hw52p")]
+position = Vector2(112, 416)
+door_self = 25
+door_connected = 25
+level_from = 6
+level_to = 7
+
 [node name="MedicalBox" parent="." index="4" instance=ExtResource("3_007j7")]
 position = Vector2(696, 440)
 
@@ -37,3 +45,6 @@ scale = Vector2(-1, 1)
 await_puzzle = 1
 new_dialogue = "ending_unlocked.tres"
 dialogue = "ending_locked.tres"
+
+[node name="EventArea" parent="." index="7" instance=ExtResource("6_s6v8n")]
+position = Vector2(-104, 128)

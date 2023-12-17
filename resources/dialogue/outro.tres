@@ -1,0 +1,244 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://b20v4bxny8lmy"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_570oo"]
+
+[resource]
+script = ExtResource("1_570oo")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(62.7328, 183.313),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "Oh god, where am I now?",
+"offset": Vector2(380, 140),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_10": {
+"dialogue": "You escaped the hideout with your life.
+You managed to solve the case, and left a trail of dead bodies behind in the ensuing fight.
+You go home, restless and scared, yet hopeful for the day after.
+
+
+Thank you for playing!",
+"offset": Vector2(3600, 520),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": "THE END"
+},
+"1_11": {
+"dialogue": "It's fate, as decided by the ones who rule!
+And now, you shall complete your journey, and fulfill ours in the process.
+Let the ritual begin, and enlightenment be transferred into our souls!",
+"offset": Vector2(2420, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_12",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_12": {
+"dialogue": "[wave]I see... everything![/wave]
+And I feel...
+...
+...
+free...
+So free, unchained...",
+"offset": Vector2(2800, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_13",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_13": {
+"dialogue": "And freed, you shall be...
+",
+"offset": Vector2(3140, 100),
+"options": {
+0: {
+"condition": {},
+"link": &"1_14",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_14": {
+"dialogue": "You accepted the [color=red]Alumni[/color]'s ritual and saw enlightenment.
+With the soul higher and body separated, and with the cult having fulfilled their goals,
+you and the entire cult disappear, never to be seen again.
+
+
+Thank you for playing!",
+"offset": Vector2(3600, 100),
+"options": {
+0: {
+"condition": {},
+"link": "END",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": "THE END"
+},
+"1_2": {
+"dialogue": "You're nearly there.
+It's time for you to [wave]see[/wave] everything!",
+"offset": Vector2(780, 160),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_3": {
+"dialogue": "I... I [wave]see[/wave]!
+It's all so bright!
+The case... It's so clear to me now...
+But my mind...
+I can't comprehend it all!
+It's overwhelming!
+",
+"offset": Vector2(1160, 180),
+"options": {
+0: {
+"condition": {},
+"link": &"1_4",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_4": {
+"dialogue": "Let your mind be freed from your body, for then you will become truly enlightened.",
+"offset": Vector2(1580, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_5",
+"text": "Submit to the Ritual!"
+},
+1: {
+"condition": {},
+"link": &"1_6",
+"text": "Resist the cultists!"
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_5": {
+"dialogue": "I...
+I can't resist this...
+It's just, natural to me...
+This energy, it belongs to me, in soul!",
+"offset": Vector2(2000, 120),
+"options": {
+0: {
+"condition": {},
+"link": &"1_11",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_6": {
+"dialogue": "This can't be done, not to me.
+I'm getting out of here!",
+"offset": Vector2(1980, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_7",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_7": {
+"dialogue": "You are not going anywhere, you were chosen!
+This is destiny, will of the ones who rule!",
+"offset": Vector2(2380, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_8",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 1
+},
+"1_8": {
+"dialogue": "*slashing*
+...
+*slashing*
+...
+*gunshots*
+...
+*silence",
+"offset": Vector2(2780, 540),
+"options": {
+0: {
+"condition": {},
+"link": &"1_9",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": ""
+},
+"1_9": {
+"dialogue": "It's time to go home...
+But I'll never be the same, will I?",
+"offset": Vector2(3160, 580),
+"options": {
+0: {
+"condition": {},
+"link": &"1_10",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://v7oackurubqe"]
+[gd_scene load_steps=8 format=3 uid="uid://v7oackurubqe"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_ig6rn"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_43r3r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dtws5muri4x81" path="res://scenes/interactables/interactable_bucket.tscn" id="5_31sj2"]
 [ext_resource type="PackedScene" uid="uid://b4nt6uwkefulp" path="res://scenes/interactables/interactable_body.tscn" id="5_rxh4f"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="6_hyb2d"]
+[ext_resource type="Texture2D" uid="uid://b0q1vlib8snw7" path="res://sprites/objects/Props/Broom.png" id="7_neb7p"]
 
 [node name="LevelGF2" instance=ExtResource("1_ig6rn")]
 index = 1
@@ -33,7 +34,7 @@ set_obj = 5
 event = "find_body"
 
 [node name="InteractableBucket" parent="." index="5" instance=ExtResource("5_31sj2")]
-position = Vector2(2608, 760)
+position = Vector2(2544, 760)
 
 [node name="Body" parent="." index="6" instance=ExtResource("5_rxh4f")]
 position = Vector2(1312, 768)
@@ -41,3 +42,7 @@ position = Vector2(1312, 768)
 [node name="Cultist" parent="." index="7" instance=ExtResource("6_hyb2d")]
 position = Vector2(1896, 744)
 dialogue = "killer.tres"
+
+[node name="Broom" type="Sprite2D" parent="." index="8"]
+position = Vector2(2560, 768)
+texture = ExtResource("7_neb7p")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b0s8fnopc1h3k"]
+[gd_scene load_steps=11 format=3 uid="uid://b0s8fnopc1h3k"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_cc31r"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hxxvm"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="4_ntns8"]
 [ext_resource type="PackedScene" uid="uid://b6nfgobo68w7h" path="res://scenes/objects/gate.tscn" id="5_s72vs"]
 [ext_resource type="PackedScene" uid="uid://o3fn1dkq2v8x" path="res://scenes/interactables/interactable_dino_plush.tscn" id="6_ogkmd"]
+[ext_resource type="Texture2D" uid="uid://2h5v1odmi4oy" path="res://sprites/objects/Props/Window 2.png" id="7_gyr3p"]
+[ext_resource type="Texture2D" uid="uid://esmt1ht2xtco" path="res://sprites/objects/Props/Chair.png" id="8_4xk3y"]
+[ext_resource type="Texture2D" uid="uid://s56yenths54u" path="res://sprites/objects/Props/Plank table.png" id="9_av3ry"]
+[ext_resource type="Texture2D" uid="uid://d2b3ff7f0173q" path="res://sprites/objects/Props/Bottles.png" id="10_mdryy"]
 
 [node name="LevelT3" instance=ExtResource("1_cc31r")]
 index = 10
@@ -41,4 +45,25 @@ position = Vector2(912, 664)
 await_signal = "open_tutorial_gate"
 
 [node name="DinoPlush" parent="." index="6" instance=ExtResource("6_ogkmd")]
-position = Vector2(240, 752)
+z_index = 1
+position = Vector2(240, 748)
+
+[node name="Window2" type="Sprite2D" parent="." index="7"]
+position = Vector2(272, 672)
+texture = ExtResource("7_gyr3p")
+
+[node name="Window3" type="Sprite2D" parent="." index="8"]
+position = Vector2(624, 672)
+texture = ExtResource("7_gyr3p")
+
+[node name="Chair" type="Sprite2D" parent="." index="9"]
+position = Vector2(1248, 760)
+texture = ExtResource("8_4xk3y")
+
+[node name="PlankTable" type="Sprite2D" parent="." index="10"]
+position = Vector2(240, 768)
+texture = ExtResource("9_av3ry")
+
+[node name="Bottles" type="Sprite2D" parent="." index="11"]
+position = Vector2(1221, 776)
+texture = ExtResource("10_mdryy")

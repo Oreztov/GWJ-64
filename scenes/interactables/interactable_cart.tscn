@@ -1,14 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcjsrn21ysjka"]
+[gd_scene load_steps=5 format=3 uid="uid://bcjsrn21ysjka"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_mfpeq"]
 [ext_resource type="AudioStream" uid="uid://eqxk2pmerpgi" path="res://audio/sfx/inspect_cart.ogg" id="2_uaqrr"]
-
-[sub_resource type="Gradient" id="Gradient_e7p6v"]
-colors = PackedColorArray(1, 1, 0, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_iixmt"]
-gradient = SubResource("Gradient_e7p6v")
-width = 32
+[ext_resource type="Texture2D" uid="uid://ci5km5xg6fur7" path="res://sprites/objects/Interactable Sprites/Hand truck.png" id="2_vabst"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k7v0l"]
 radius = 16.0
@@ -19,7 +13,7 @@ inspectable = 5
 context = "Inspect..."
 
 [node name="Sprite2D" parent="." index="0"]
-texture = SubResource("GradientTexture2D_iixmt")
+texture = ExtResource("2_vabst")
 
 [node name="CollisionShape2D" parent="." index="1"]
 shape = SubResource("CapsuleShape2D_k7v0l")

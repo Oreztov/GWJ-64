@@ -14,7 +14,7 @@ Tutorial1, Tutorial2, Tutorial3,
 Rift1
 }
 var levels = {}
-var current_level
+var current_level = null
 
 enum DOORS {DoorGF1ToGF2, DoorGF2ToGF1, DoorGF2ToGF3, DoorGF3ToGF2,
 DoorB1ToB2, DoorB2ToB1, DoorB2ToB3, DoorB3ToB2,
@@ -83,6 +83,8 @@ var objectives = {
 var active_puzzle = null
 var answers = []
 
+signal enter_game
+signal intro_done
 signal level_changed
 signal inspect_item
 

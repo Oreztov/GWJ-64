@@ -1,0 +1,67 @@
+[gd_resource type="Resource" script_class="DialogueData" load_steps=2 format=3 uid="uid://crhmls5bl6ndr"]
+
+[ext_resource type="Script" path="res://addons/dialogue_nodes/objects/DialogueData.gd" id="1_q474p"]
+
+[resource]
+script = ExtResource("1_q474p")
+starts = {
+"START": &"0_1"
+}
+nodes = {
+"0_1": {
+"link": &"1_1",
+"offset": Vector2(-191.903, 81.0439),
+"start_id": "START"
+},
+"1_1": {
+"dialogue": "It's time.",
+"offset": Vector2(80, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_2",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_2": {
+"dialogue": "I'm going into the belly of the beast, except this beast wants me to get closer...
+I have to solve this case, but I pray I'll keep my mind doing it.
+The [color=red]Alumni[/color] are... welcoming, yet very dangerous.",
+"offset": Vector2(500, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"1_3",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"1_3": {
+"dialogue": "I've tracked them down to this hideout in an abandoned building.
+I'm going in.",
+"offset": Vector2(920, 40),
+"options": {
+0: {
+"condition": {},
+"link": &"3_1",
+"text": ""
+}
+},
+"size": Vector2(300, 332),
+"speaker": 0
+},
+"3_1": {
+"link": "END",
+"offset": Vector2(1320, 60),
+"signalValue": "intro_done"
+}
+}
+variables = {}
+comments = Array[String]([])
+strays = Array[String]([])
+characters = "res://resources/dialogue/Characters.tres"
