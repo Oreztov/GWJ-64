@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhlk2y3themde"]
+[gd_scene load_steps=8 format=3 uid="uid://dhlk2y3themde"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_5jvog"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_du6wf"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qwqi0w1iwaj5" path="res://scenes/objects/hole.tscn" id="4_y3glw"]
 [ext_resource type="Texture2D" uid="uid://dautbf6i7mtnl" path="res://sprites/tiles/arrow_up.png" id="5_8mkjb"]
 [ext_resource type="Texture2D" uid="uid://2h5v1odmi4oy" path="res://sprites/objects/Props/Window 2.png" id="6_2rxcq"]
+[ext_resource type="PackedScene" uid="uid://c6f1li1vv2cq4" path="res://scenes/objects/flourescent_light.tscn" id="7_lbwvu"]
 
 [node name="LevelGF3" instance=ExtResource("1_5jvog")]
 index = 2
@@ -61,3 +62,12 @@ texture = ExtResource("6_2rxcq")
 [node name="Window6" type="Sprite2D" parent="." index="9"]
 position = Vector2(1712, 672)
 texture = ExtResource("6_2rxcq")
+
+[node name="FlourescentLight3" parent="." index="10" instance=ExtResource("7_lbwvu")]
+position = Vector2(336, 544)
+
+[node name="FlourescentLight4" parent="." index="11" instance=ExtResource("7_lbwvu")]
+position = Vector2(1000, 544)
+
+[node name="FlourescentLight5" parent="." index="12" instance=ExtResource("7_lbwvu")]
+position = Vector2(1536, 544)

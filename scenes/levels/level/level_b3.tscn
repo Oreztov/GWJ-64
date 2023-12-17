@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bo3qqrw63sg0s"]
+[gd_scene load_steps=8 format=3 uid="uid://bo3qqrw63sg0s"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_6llox"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_aftus"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wkpmad3vcocb" path="res://scenes/interactables/interactable_altar.tscn" id="4_pkyqf"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="5_jj1w8"]
 [ext_resource type="Texture2D" uid="uid://ggjncmfwraue" path="res://sprites/objects/Props/Window 1.png" id="6_fioup"]
+[ext_resource type="PackedScene" uid="uid://c6f1li1vv2cq4" path="res://scenes/objects/flourescent_light.tscn" id="7_0pooy"]
 
 [node name="LevelB3" instance=ExtResource("1_6llox")]
 index = 5
@@ -63,3 +64,15 @@ texture = ExtResource("6_fioup")
 [node name="Window5" type="Sprite2D" parent="." index="11"]
 position = Vector2(1320, 360)
 texture = ExtResource("6_fioup")
+
+[node name="FlourescentLight3" parent="Window5" index="0" instance=ExtResource("7_0pooy")]
+position = Vector2(-1112, -128)
+
+[node name="FlourescentLight4" parent="Window5" index="1" instance=ExtResource("7_0pooy")]
+position = Vector2(-712, -128)
+
+[node name="FlourescentLight5" parent="Window5" index="2" instance=ExtResource("7_0pooy")]
+position = Vector2(-344, -128)
+
+[node name="FlourescentLight6" parent="Window5" index="3" instance=ExtResource("7_0pooy")]
+position = Vector2(24, -128)

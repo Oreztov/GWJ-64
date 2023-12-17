@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c30d13ejgxkxo"]
+[gd_scene load_steps=7 format=3 uid="uid://c30d13ejgxkxo"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_wd3lu"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hw52p"]
 [ext_resource type="PackedScene" uid="uid://b6nfgobo68w7h" path="res://scenes/objects/gate.tscn" id="4_3ow3y"]
 [ext_resource type="PackedScene" uid="uid://cans43no17mdi" path="res://scenes/interactables/cultist.tscn" id="5_sok2w"]
 [ext_resource type="PackedScene" uid="uid://dyyw6keiguvxo" path="res://scenes/helpers/event_area.tscn" id="6_s6v8n"]
+[ext_resource type="PackedScene" uid="uid://c6f1li1vv2cq4" path="res://scenes/objects/flourescent_light.tscn" id="6_wmu05"]
 
 [node name="LevelFF2" instance=ExtResource("1_wd3lu")]
 index = 6
@@ -49,3 +50,12 @@ dialogue = "syringe.tres"
 [node name="EventArea" parent="." index="7" instance=ExtResource("6_s6v8n")]
 position = Vector2(128, 416)
 event = "game_done"
+
+[node name="FlourescentLight3" parent="." index="8" instance=ExtResource("6_wmu05")]
+position = Vector2(944, 224)
+
+[node name="FlourescentLight4" parent="." index="9" instance=ExtResource("6_wmu05")]
+position = Vector2(600, 224)
+
+[node name="FlourescentLight5" parent="." index="10" instance=ExtResource("6_wmu05")]
+position = Vector2(120, 216)

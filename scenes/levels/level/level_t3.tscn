@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b0s8fnopc1h3k"]
+[gd_scene load_steps=12 format=3 uid="uid://b0s8fnopc1h3k"]
 
 [ext_resource type="PackedScene" uid="uid://boc83tvxnyrsu" path="res://scenes/levels/level/level.tscn" id="1_cc31r"]
 [ext_resource type="PackedScene" uid="uid://c4fsf75nfrc5b" path="res://scenes/objects/door.tscn" id="2_hxxvm"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://esmt1ht2xtco" path="res://sprites/objects/Props/Chair.png" id="8_4xk3y"]
 [ext_resource type="Texture2D" uid="uid://s56yenths54u" path="res://sprites/objects/Props/Plank table.png" id="9_av3ry"]
 [ext_resource type="Texture2D" uid="uid://d2b3ff7f0173q" path="res://sprites/objects/Props/Bottles.png" id="10_mdryy"]
+[ext_resource type="PackedScene" uid="uid://c6f1li1vv2cq4" path="res://scenes/objects/flourescent_light.tscn" id="11_366av"]
 
 [node name="LevelT3" instance=ExtResource("1_cc31r")]
 index = 10
@@ -66,3 +67,12 @@ texture = ExtResource("9_av3ry")
 [node name="Bottles" type="Sprite2D" parent="." index="11"]
 position = Vector2(1221, 776)
 texture = ExtResource("10_mdryy")
+
+[node name="FlourescentLight3" parent="." index="12" instance=ExtResource("11_366av")]
+position = Vector2(185, 520)
+
+[node name="FlourescentLight4" parent="." index="13" instance=ExtResource("11_366av")]
+position = Vector2(632, 520)
+
+[node name="FlourescentLight5" parent="." index="14" instance=ExtResource("11_366av")]
+position = Vector2(1120, 520)

@@ -11,7 +11,7 @@ func _ready():
 	timer.timeout.connect(on_timer_timeout)
 
 func get_random_interval() -> void:
-	var random_wait_time = randf_range(10, 30)
+	var random_wait_time = randf_range(10, 20)
 	
 	timer.wait_time = random_wait_time
 	timer.start()

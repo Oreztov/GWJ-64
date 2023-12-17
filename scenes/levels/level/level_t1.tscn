@@ -72,3 +72,9 @@ texture = ExtResource("8_5vb4s")
 
 [node name="FlourescentLight" parent="." index="12" instance=ExtResource("9_gh4r8")]
 position = Vector2(219, 531)
+
+[node name="FlourescentLight2" parent="." index="13" instance=ExtResource("9_gh4r8")]
+position = Vector2(600, 531)
+
+[node name="FlourescentLight3" parent="." index="14" instance=ExtResource("9_gh4r8")]
+position = Vector2(1016, 528)
