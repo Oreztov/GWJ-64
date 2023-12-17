@@ -35,6 +35,8 @@ func update():
 		volume_light_music.tween_property($musicLight, "volume_db", linear_to_db(ratio), 300/1000)
 		var volume_main_music = create_tween()
 		volume_main_music.tween_property($musicMain, "volume_db", linear_to_db(-1*ratio+1), 300/1000)
+		var volume_ambience = create_tween()
+		volume_ambience.tween_property($streetAmbience, "volume_db", linear_to_db(-1*ratio+1), 300/1000)
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true
@@ -54,3 +56,4 @@ func _on_button_quit_pressed():
 
 func _on_button_resume_pressed():
 	_on_menu_button_pressed()
+

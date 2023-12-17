@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=36 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -25,7 +25,8 @@
 [ext_resource type="Resource" uid="uid://nbx3rlmjxrit" path="res://game_settings/settings/input/interact_2.tres" id="20_elf12"]
 [ext_resource type="Resource" uid="uid://7pi5ug2ndd5r" path="res://game_settings/settings/input/notebook_open.tres" id="21_kt3ka"]
 [ext_resource type="Resource" uid="uid://bbv0nnucb51ta" path="res://game_settings/settings/input/notebook_close.tres" id="22_ki0sl"]
-[ext_resource type="Resource" uid="uid://bbxrsgynevb2a" path="res://game_settings/settings/input/skip_dialogue.tres" id="22_vdbqo"]
+[ext_resource type="Resource" uid="uid://dso32jf3ra8o2" path="res://game_settings/settings/input/skip_dialogue.tres" id="22_vdbqo"]
+[ext_resource type="AudioStream" uid="uid://dd6tdkuaktguk" path="res://audio/sfx/street_ambience.ogg" id="27_6ejcq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -534,7 +535,7 @@ horizontal_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 32
-text = "Technical Sound Design"
+text = "Sound Design & Music"
 
 [node name="Name4" type="Label" parent="Control/Paused/Credits/Credits"]
 custom_minimum_size = Vector2(200, 0)
@@ -560,7 +561,6 @@ bus = &"sfx"
 
 [node name="musicMain" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_0smnc")
-volume_db = -6.0
 autoplay = true
 bus = &"music"
 
@@ -572,6 +572,14 @@ bus = &"music"
 
 [node name="InputConfirmWindow" parent="." instance=ExtResource("19_o5ypy")]
 process_mode = 3
+
+[node name="musicNewObjective" type="AudioStreamPlayer" parent="."]
+bus = &"sfx"
+
+[node name="streetAmbience" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_6ejcq")
+autoplay = true
+bus = &"sfx"
 
 [connection signal="pressed" from="Control/VBoxContainer/Bar/MenuButton" to="." method="_on_menu_button_pressed"]
 [connection signal="pressed" from="Control/Paused/Menu/Menu/ButtonResume" to="." method="_on_button_resume_pressed"]
