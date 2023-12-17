@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://cbxwkapqo0p1i"]
+[gd_scene load_steps=10 format=3 uid="uid://cbxwkapqo0p1i"]
 
 [ext_resource type="Script" path="res://scripts/UI/inspectable_window.gd" id="1_5lgu4"]
 [ext_resource type="AudioStream" uid="uid://b64xjhfrpiuko" path="res://audio/sfx/note_pen_click.ogg" id="2_qayae"]
+[ext_resource type="FontFile" uid="uid://yx0g4rs8r264" path="res://fonts/stint/StintUltraCondensed-Regular.ttf" id="3_4l815"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jalk5"]
 font_size = 48
@@ -57,17 +58,22 @@ horizontal_alignment = 1
 vertical_alignment = 2
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 900)
+custom_minimum_size = Vector2(0, 750)
 layout_mode = 2
 texture = SubResource("ViewportTexture_jt1uf")
 expand_mode = 1
 stretch_mode = 2
 
 [node name="CloseButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 2
-size_flags_vertical = 10
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("3_4l815")
+theme_override_font_sizes/font_size = 72
 shortcut = SubResource("Shortcut_wfutk")
-text = "CLOSE"
+text = "CLOSE
+
+"
 
 [node name="SubViewport" type="SubViewport" parent="."]
 own_world_3d = true

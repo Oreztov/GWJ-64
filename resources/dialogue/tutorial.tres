@@ -84,6 +84,7 @@ Pass through it before your enlightenment decays.",
 "1_4": {
 "dialogue": "A new objective is issued.
 Open your notebook, and drag and drop the correct clue into the report, according to what the guard told you.
+Then click \"Submit\" to file your report, successful or not.
 Talk to the guard once successful.
 Move on.",
 "offset": Vector2(2500, 80),
