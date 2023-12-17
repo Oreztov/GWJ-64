@@ -6,7 +6,7 @@ room_size = 0.72
 damping = 0.04
 spread = 0.4
 hipass = 0.2
-wet = 0.03
+wet = 0.04
 
 [resource]
 bus/1/name = &"sfx"

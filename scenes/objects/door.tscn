@@ -18,4 +18,5 @@ shape = SubResource("RectangleShape2D_acsco")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_k1s5u")
+pitch_scale = 0.75
 bus = &"reverb"
