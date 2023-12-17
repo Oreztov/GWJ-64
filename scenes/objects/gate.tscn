@@ -1,9 +1,10 @@
-[gd_scene load_steps=28 format=3 uid="uid://b6nfgobo68w7h"]
+[gd_scene load_steps=29 format=3 uid="uid://b6nfgobo68w7h"]
 
 [ext_resource type="PackedScene" uid="uid://5ubt6u0lx60p" path="res://scenes/interactables/interactable.tscn" id="1_d5led"]
 [ext_resource type="Script" path="res://scripts/objects/gate.gd" id="2_2vtlm"]
 [ext_resource type="AudioStream" uid="uid://hfin5ew7254w" path="res://audio/sfx/gate_open.ogg" id="3_6vxyg"]
 [ext_resource type="Texture2D" uid="uid://bmgp3oqm7clr2" path="res://sprites/objects/Dungeon gate/Closed gate static.png" id="3_gxjva"]
+[ext_resource type="Texture2D" uid="uid://dei6w70ah4kg7" path="res://sprites/tiles/Gate wall.png" id="3_onrqv"]
 [ext_resource type="Texture2D" uid="uid://7hil1846yccd" path="res://sprites/objects/Button.png" id="3_q1umu"]
 [ext_resource type="Texture2D" uid="uid://h0nn8r8r87r4" path="res://sprites/objects/Dungeon gate/Opening animation.png" id="4_8shkg"]
 [ext_resource type="AudioStream" uid="uid://detoxalt358q" path="res://audio/sfx/button_press.ogg" id="7_j72c3"]
@@ -151,7 +152,13 @@ script = ExtResource("2_2vtlm")
 single_use = true
 context = "Open Gate..."
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="0"]
+[node name="Sprite2D2" type="Sprite2D" parent="." index="0"]
+position = Vector2(0, -89)
+scale = Vector2(2, 2)
+texture = ExtResource("3_onrqv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+z_index = 5
 position = Vector2(0, 24)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hdxsb")
@@ -164,22 +171,22 @@ autoplay = "closed"
 position = Vector2(-6, 0)
 shape = SubResource("RectangleShape2D_5i3nk")
 
-[node name="Sprite2D" parent="." index="1"]
+[node name="Sprite2D" parent="." index="2"]
 visible = false
 texture = SubResource("GradientTexture2D_kks6s")
 
-[node name="Button" type="Sprite2D" parent="." index="2"]
+[node name="Button" type="Sprite2D" parent="." index="3"]
 position = Vector2(48, 112)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_q1umu")
 
-[node name="CollisionShape2D" parent="." index="3"]
+[node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(48, 112)
 
-[node name="AudioStreamPlayer" parent="." index="4"]
+[node name="AudioStreamPlayer" parent="." index="5"]
 stream = ExtResource("3_6vxyg")
 bus = &"reverb"
 
-[node name="sfxButton" type="AudioStreamPlayer" parent="." index="5"]
+[node name="sfxButton" type="AudioStreamPlayer" parent="." index="6"]
 stream = ExtResource("7_j72c3")
 bus = &"reverb"

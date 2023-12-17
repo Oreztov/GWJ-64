@@ -29,4 +29,5 @@ level_from = 4
 level_to = 5
 
 [node name="Gate" parent="." index="4" instance=ExtResource("4_4bwdk")]
+z_index = 3
 position = Vector2(592, 344)
