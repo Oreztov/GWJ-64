@@ -40,6 +40,7 @@ func update():
 func set_objective(obj: Globals.OBJECTIVES):
 	%Objective.text = Globals.objectives[obj]
 	%GPUParticles2D.emitting = true
+	$musicNewObjective.play()
 	
 func set_overlay(value):
 	%Pattern.visible = value

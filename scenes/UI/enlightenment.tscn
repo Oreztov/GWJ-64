@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://csg86sscjba5r"]
+[gd_scene load_steps=37 format=3 uid="uid://csg86sscjba5r"]
 
 [ext_resource type="Script" path="res://scripts/UI/enlightenment.gd" id="1_w02es"]
 [ext_resource type="Shader" path="res://shaders/enlight.gdshader" id="2_o55hn"]
@@ -27,6 +27,7 @@
 [ext_resource type="Resource" uid="uid://bbv0nnucb51ta" path="res://game_settings/settings/input/notebook_close.tres" id="22_ki0sl"]
 [ext_resource type="Resource" uid="uid://dso32jf3ra8o2" path="res://game_settings/settings/input/skip_dialogue.tres" id="22_vdbqo"]
 [ext_resource type="AudioStream" uid="uid://dd6tdkuaktguk" path="res://audio/sfx/street_ambience.ogg" id="27_6ejcq"]
+[ext_resource type="AudioStream" uid="uid://ddmrtnirgjrfo" path="res://audio/music/music_new_objecteive_stinger.ogg" id="27_6fdyk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wo1dp"]
 shader = ExtResource("2_o55hn")
@@ -574,6 +575,7 @@ bus = &"music"
 process_mode = 3
 
 [node name="musicNewObjective" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_6fdyk")
 bus = &"sfx"
 
 [node name="streetAmbience" type="AudioStreamPlayer" parent="."]
